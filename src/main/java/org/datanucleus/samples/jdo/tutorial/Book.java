@@ -13,7 +13,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 Contributors:
-    ...
+    -Suhar
+	-Mikel
+	-Alberto
+	-Gorka
+	-Ibai
 **********************************************************************/
 package org.datanucleus.samples.jdo.tutorial;
 
