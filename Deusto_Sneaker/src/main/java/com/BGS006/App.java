@@ -1,7 +1,7 @@
 package com.BGS006;
 
 /**
- * Hello world!prueba2
+ * Hello world!prueba
  *
  */
 public class App 
