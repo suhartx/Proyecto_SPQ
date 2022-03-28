@@ -22,7 +22,5 @@ public class Limpiador extends Articulo{
 		this.plus = plus;
 	}
 
-	
-	
-	
+
 }
