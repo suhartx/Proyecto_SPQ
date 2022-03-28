@@ -1,19 +1,17 @@
 package com.BGS006.Cliente.jdo;
 
-public class Zapatillas extends Articulo {
+public class Calcetines extends Articulo{
 
 	private int talla;
 	private Color color;
 	private Genero gen;
 	
-	
-	public Zapatillas(String nombre, double precio, long id, String rutaImagen, int stock) {
+	public Calcetines(String nombre, double precio, long id, String rutaImagen, int stock) {
 		super(nombre, precio, id, rutaImagen, stock);
 		// TODO Auto-generated constructor stub
 	}
-
-
-	public Zapatillas(String nombre, double precio, long id, String rutaImagen, int stock, int talla, Color color,
+	
+	public Calcetines(String nombre, double precio, long id, String rutaImagen, int stock, int talla, Color color,
 			Genero gen) {
 		super(nombre, precio, id, rutaImagen, stock);
 		this.talla = talla;
@@ -22,34 +20,30 @@ public class Zapatillas extends Articulo {
 	}
 
 
+
 	public int getTalla() {
 		return talla;
 	}
-
 
 	public void setTalla(int talla) {
 		this.talla = talla;
 	}
 
-
 	public Color getColor() {
 		return color;
 	}
-
 
 	public void setColor(Color color) {
 		this.color = color;
 	}
 
-
 	public Genero getGen() {
 		return gen;
 	}
 
-
 	public void setGen(Genero gen) {
 		this.gen = gen;
 	}
-	
+
 	
 }
