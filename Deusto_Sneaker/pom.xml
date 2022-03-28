@@ -72,7 +72,85 @@
 
   </dependencies>
 
-  <profiles>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.soebes.maven.plugins</groupId>
+        <artifactId>doxygen-maven-plugin</artifactId>
+        <version>1.1.0</version>
+      </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.5.1</version>
+            <inherited>true</inherited>
+            <configuration>
+                <source>1.7</source>
+                <target>1.7</target>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-maven-plugin</artifactId>
+            <version>5.2.1</version>
+            <configuration>
+                <fork>false</fork>
+                <log4jConfiguration>${config.files.dir}/log4j.properties</log4jConfiguration>
+                <verbose>true</verbose>
+                <props>${config.files.dir}/datanucleus.properties</props>
+            </configuration>
+        </plugin>
+  <plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>cobertura-maven-plugin</artifactId>
+    <version>2.7</version>
+    <configuration>
+      <formats>
+        <format>html</format>
+        <format>xml</format>
+      </formats>
+      <check />
+    </configuration>
+  </plugin>
+        <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.6</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>prepare-agent</goal>
+                    </goals>
+                </execution>
+                <execution>
+                    <id>report</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>report</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.2.1</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>java</goal>
+                    </goals>
+                </execution>
+            </executions>
+            <configuration>
+                <mainClass>com.server.Main</mainClass>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+
+<!--   <profiles>
     <profile>
         <id>cliente</id>
         <build>
@@ -117,6 +195,6 @@
             </plugins>
         </build>
     </profile>
-  </profiles>
+  </profiles> -->
 
 </project>
