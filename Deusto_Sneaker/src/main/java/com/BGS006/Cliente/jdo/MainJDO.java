@@ -10,7 +10,7 @@ public class MainJDO {
  * Clase que inserta datos haciendo uso de maven y jdo
  */
     public static void main(String[] args) {
-
+//holajkeaseasdasdasdasd
             PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 
             PersistenceManager pm = pmf.getPersistenceManager();
