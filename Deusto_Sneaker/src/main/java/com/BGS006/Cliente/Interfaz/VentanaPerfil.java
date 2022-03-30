@@ -115,7 +115,6 @@ public class VentanaPerfil extends JFrame {
 		
 		JButton btnNewButton = new JButton("editar perfil");
 		panel_1.add(btnNewButton);
-		//panelNorte.setLayout(new MigLayout("", "[580.00px][292px,grow,right]", "[33px]"));
 		
 		JButton btnEditar = new JButton("Cambiar contraseya");
 		btnEditar.setForeground(Color.WHITE);
@@ -167,7 +166,7 @@ public class VentanaPerfil extends JFrame {
 		panel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		panel.setBackground(new Color(0, 0, 255));
 		panelCentral.add(panel);
-		//panel.setLayout(new MigLayout("", "[152px,grow,center]", "[83.00][55.00px][grow]"));
+		
 		
 		JLabel lblEnunciado = new JLabel("\tPedidos realizados:");
 		lblEnunciado.setHorizontalAlignment(SwingConstants.LEFT);
