@@ -31,6 +31,7 @@ public class LoginDeusto_Sneaker {
 	/**
 	 * Launch the application.
 	 */
+	
 
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -48,6 +49,7 @@ public class LoginDeusto_Sneaker {
 	}
 
 	public LoginDeusto_Sneaker() {
+		Funcionalidad.getInstance().CrearUsuario();
 		Funcionalidad.getInstance().Holamundo();
 		initialize();
 		

@@ -1,5 +1,6 @@
 package com.BGS006.Cliente.Funcionalidad;
 
+	//Arraylist
 	public class Funcionalidad {
 		private static Funcionalidad instance;
 
@@ -13,5 +14,12 @@ package com.BGS006.Cliente.Funcionalidad;
 
 		public void Holamundo() {
 			System.out.println("Hola mundo");
+		}
+		public void CrearUsuario() {
+			System.out.println("Usuario creado");
+		}
+		public void BorrarUsuario(String nombre) {
+			System.out.println("Usuario borrado");
+			
 		}
 }
