@@ -12,7 +12,9 @@ import javax.swing.JPasswordField;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import com.BGS006.Cliente.Funcionalidad.Funcionalidad;
+
+import com.BGS006.Cliente.Funcionalidad.FunUsuario;
+
 
 public class LoginDeusto_Sneaker {
 
@@ -49,9 +51,9 @@ public class LoginDeusto_Sneaker {
 	}
 
 	public LoginDeusto_Sneaker() {
-		Funcionalidad.getInstance().CrearUsuario();
-		Funcionalidad.getInstance().Holamundo();
-		initialize();
+	/*	FunUsuario.getInstance().CrearUsuario();
+		FunUsuario.getInstance().Holamundo();
+		*/initialize();
 		
 
 	}
