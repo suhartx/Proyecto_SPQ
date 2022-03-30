@@ -14,7 +14,7 @@ public class Usuario {
 	private ArrayList<Compra> pedidos;
 	
 	
-	public Usuario(String nombre, String contrasenya, String tarjetaPago, String rutaAvatar) {
+	public Usuario(String nombre, String contrasenya, String tarjetaPago, String rutaAvatar, String a2, String c, String d, int ta, boolean ad) {
 		super();
 		this.nombre = nombre;
 		this.contrasenya = contrasenya;

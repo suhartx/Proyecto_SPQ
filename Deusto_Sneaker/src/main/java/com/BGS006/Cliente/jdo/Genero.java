@@ -1,3 +1,3 @@
 package com.BGS006.Cliente.jdo;
 
-public enum Genero {H, M, N} //Hombre, mujer niño
+public enum Genero {H, M, N} //Hombre, mujer niï¿½o

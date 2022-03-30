@@ -1,4 +1,4 @@
-package com.cliente.ui;
+package com.BGS006.Cliente.Interfaz;
 
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
@@ -11,9 +11,6 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
-
-import com.cliente.jdo.Usuario;
-import com.database.UsuarioDB;
 
 public class LoginDeusto_Sneaker {
 
@@ -37,7 +34,7 @@ public class LoginDeusto_Sneaker {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LoginVShop window = new LoginVShop();
+					LoginDeusto_Sneaker window = new LoginDeusto_Sneaker();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -82,11 +79,11 @@ public class LoginDeusto_Sneaker {
 		ingresar.addActionListener(new ActionListener() {	
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				UsuarioDB.LoginUsuario(usuariotf.getText(), passwordField.getText());
+	/* 			UsuarioDB.LoginUsuario(usuariotf.getText(), passwordField.getText());
 				if(UsuarioDB.correcto== true) 
 				{
 					frame.dispose();
-				}
+				} */
 			
 				
 			}
@@ -198,8 +195,8 @@ public class LoginDeusto_Sneaker {
 				ta = Integer.parseInt(tarjeta.getText());
 				ad = false;
 				
-				Usuario u = new Usuario(n, ni, pa, a1, a2, c, d, ta, ad);
-				UsuarioDB.insertarUsuarios(u);
+/* 				Usuario u = new Usuario(n, ni, pa, a1, a2, c, d, ta, ad);
+				UsuarioDB.insertarUsuarios(u); */
 				
 			}
 		});
