@@ -37,7 +37,7 @@ public class LoginDeusto_Sneaker {
 			@Override
 			public void run() {
 				try {
-
+					
 					LoginDeusto_Sneaker window = new LoginDeusto_Sneaker();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
@@ -48,7 +48,7 @@ public class LoginDeusto_Sneaker {
 	}
 
 	public LoginDeusto_Sneaker() {
-
+		Funcionalidad.getInstance().Holamundo();
 		initialize();
 		
 
