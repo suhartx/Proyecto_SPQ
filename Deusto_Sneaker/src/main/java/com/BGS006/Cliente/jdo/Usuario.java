@@ -21,6 +21,13 @@ public class Usuario {
 		this.tarjetaPago = tarjetaPago;
 		this.rutaAvatar = rutaAvatar;
 	}
+	public Usuario() {
+		super();
+		this.nombre = "";
+		this.contrasenya = "";
+		this.tarjetaPago = "";
+		this.rutaAvatar = "";
+	}
 
 
 	public String getNombre() {
