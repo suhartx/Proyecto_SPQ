@@ -177,14 +177,7 @@ public class VentanaPerfil extends JFrame {
 		
 		}
 		
-		
 	
-		
-		
-				
-	
-		
-		
 	}
 	
 	
