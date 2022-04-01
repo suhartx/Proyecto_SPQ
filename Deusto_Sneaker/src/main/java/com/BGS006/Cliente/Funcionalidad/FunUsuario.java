@@ -1,6 +1,7 @@
 package com.BGS006.Cliente.Funcionalidad;
 import java.util.ArrayList;
 
+
 import com.BGS006.Cliente.jdo.Usuario;
 
 	//Arraylist
