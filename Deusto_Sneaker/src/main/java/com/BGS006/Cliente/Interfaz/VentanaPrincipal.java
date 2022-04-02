@@ -38,9 +38,6 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.border.BevelBorder;
 
-
-
-
 public class VentanaPrincipal extends JFrame {
 
 	private JPanel contentPane;
@@ -180,8 +177,6 @@ public class VentanaPrincipal extends JFrame {
 	public static void main(String[] args) throws BindException, HeadlessException {
 		SwingUtilities.invokeLater((Runnable) new VentanaPrincipal(new JFrame(), new com.BGS006.Cliente.jdo.Usuario()));
 		
-		
 	}
 }
-
 

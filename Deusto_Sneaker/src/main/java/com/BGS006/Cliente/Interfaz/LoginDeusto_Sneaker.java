@@ -3,6 +3,8 @@ package com.BGS006.Cliente.Interfaz;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.util.TreeMap;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,7 +15,10 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import com.BGS006.Cliente.BBDD.BD;
 import com.BGS006.Cliente.Funcionalidad.FunUsuario;
+import com.BGS006.Cliente.jdo.Articulo;
+import com.BGS006.Cliente.jdo.Usuario;
 
 
 public class LoginDeusto_Sneaker {
@@ -29,6 +34,9 @@ public class LoginDeusto_Sneaker {
 	private JTextField ape2;
 	private JTextField nick;
 	private JPasswordField passwordField;
+	public static Connection con;
+	public static TreeMap<String, Usuario> tmUsuarios = new TreeMap<>();
+	public static TreeMap<Integer,Articulo> tmArticulos = new TreeMap<>();
 
 	/**
 	 * Launch the application.
@@ -51,6 +59,10 @@ public class LoginDeusto_Sneaker {
 	}
 
 	public LoginDeusto_Sneaker() {
+		con = BD.initBD("baseDeDatos.db");
+		BD.crearTablas(con);
+		BD.cargarMapaArticulosDeInfoBBDD(con);
+		BD.closeBD(con);
 	/*	FunUsuario.getInstance().CrearUsuario();
 		FunUsuario.getInstance().Holamundo();
 		*/initialize();

@@ -3,16 +3,16 @@ package com.BGS006.Cliente.jdo;
 public class Calcetines extends Articulo{
 
 	private int talla;
-	private Color color;
-	private Genero gen;
+	private String color;
+	private String gen;
 	
 	public Calcetines(String nombre, double precio, long id, String rutaImagen, int stock) {
 		super(nombre, precio, id, rutaImagen, stock);
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Calcetines(String nombre, double precio, long id, String rutaImagen, int stock, int talla, Color color,
-			Genero gen) {
+	public Calcetines(String nombre, double precio, long id, String rutaImagen, int stock, int talla, String color,
+			String gen) {
 		super(nombre, precio, id, rutaImagen, stock);
 		this.talla = talla;
 		this.color = color;
@@ -29,19 +29,19 @@ public class Calcetines extends Articulo{
 		this.talla = talla;
 	}
 
-	public Color getColor() {
+	public String getColor() {
 		return color;
 	}
 
-	public void setColor(Color color) {
+	public void setColor(String color) {
 		this.color = color;
 	}
 
-	public Genero getGen() {
+	public String getGen() {
 		return gen;
 	}
 
-	public void setGen(Genero gen) {
+	public void setGen(String gen) {
 		this.gen = gen;
 	}
 
