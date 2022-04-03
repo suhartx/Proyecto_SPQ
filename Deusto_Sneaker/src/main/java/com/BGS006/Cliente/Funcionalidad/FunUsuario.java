@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import com.BGS006.Cliente.jdo.Articulo;
 import com.BGS006.Cliente.jdo.Usuario;
 
-//Arraylist
+
+
 
 public class FunUsuario {
 	public ArrayList<Usuario> arrayUsuarios;

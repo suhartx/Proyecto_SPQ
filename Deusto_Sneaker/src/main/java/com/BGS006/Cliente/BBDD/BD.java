@@ -111,10 +111,48 @@ public class BD {
 		}
 		return resul;
 	}
+	
+	/**
+	 * Metodo que comprueba si el nombre del usario esta ya introducido en la BBDD
+	 * @param con Conexion
+	 * @param nombre nick introducido por el usuario
+	 * @return resul 
+	 * 		
+	 * 		1. Si el nombre ya esta regitrado y se debra escoger otro nombre
+	 * 		0. Si el nombre no esta en la BBDD
+	 */
+	
+	public static int estaRegistrado(Connection con, String nombre) {
+		String sentencia = "SELECT Nombre FROM usuarios WHERE Nombre ='" + nombre + "'";
+		Statement st = null;
+		int resul = 0;
+		
+		try {
+			st = con.createStatement();
+			ResultSet rs = st.executeQuery(sentencia);
+			if(rs.next()) {
+				if(rs.getString("Nombre").equals(nombre));
+				resul = 1;
+			}else {
+				resul = 0;
+			}
+			rs.close();
+		} catch (Exception e) {
+		} finally {
+			if(st!=null) {
+				try {
+					st.close();
+				} catch (Exception e) {
+				}
+			}
+		}
+		return resul;
+	}
+	
 
 	public static void intertarUsuarioBBDD(Connection con, Usuario u) {
 		String sent = "INSERT INTO Usuarios VALUES('" + u.getNombre() + "','" + u.getContrasenya() + "','"
-				+ u.getTarjetaPago() + "','" + u.getRutaAvatar() + "','" + "')";
+				+ u.getTarjetaPago() + "','" + u.getRutaAvatar()+ "')";
 		Statement st = null;
 		try {
 			st = con.createStatement();

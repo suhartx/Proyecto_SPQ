@@ -13,11 +13,13 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
+import java.awt.GridLayout;
+import java.awt.Font;
 
 public class VentanaAdmin extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField txtStockNuevo;
+	private JTextField textField;
 
 	/**
 	 * Create the frame.
@@ -38,38 +40,45 @@ public class VentanaAdmin extends JFrame {
 		panelCentro.add(panelTitulo, BorderLayout.NORTH);
 		
 		JLabel lblAdministrador = new JLabel("Vista Administrador");
+		lblAdministrador.setFont(new Font("Tahoma", Font.PLAIN, 9));
 		panelTitulo.add(lblAdministrador);
 		
 		JPanel panelCentroDentro = new JPanel();
 		panelCentro.add(panelCentroDentro, BorderLayout.CENTER);
-		panelCentroDentro.setLayout(new MigLayout("", "[grow]", "[][][][][21.00][][]"));
 		
-		JLabel lblNumStock = new JLabel("");
-		panelCentroDentro.add(lblNumStock, "flowx,cell 0 0");
+		panelCentroDentro.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JLabel lblZapatillas = new JLabel("Zapatillas");
+		lblZapatillas.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblZapatillas.setHorizontalAlignment(SwingConstants.CENTER);
+		panelCentroDentro.add(lblZapatillas);
 		
 		JComboBox cbZapatillas = new JComboBox();
-		panelCentroDentro.add(cbZapatillas, "cell 0 1,growx");
+		panelCentroDentro.add(cbZapatillas);
 		
-		JLabel lblStocksDispo = new JLabel("Strock disponible:");
-		panelCentroDentro.add(lblStocksDispo, "cell 0 2");
+		JLabel lblNumStock = new JLabel("Stock disponible : ");
+		lblNumStock.setVerticalAlignment(SwingConstants.TOP);
+		lblNumStock.setHorizontalAlignment(SwingConstants.RIGHT);
+		panelCentroDentro.add(lblNumStock);
 		
-		JLabel lblCambiarStock = new JLabel("Cambiar Stock :");
-		panelCentroDentro.add(lblCambiarStock, "flowx,cell 0 4");
+		JPanel panelCambiarStock = new JPanel();
+		panelCentroDentro.add(panelCambiarStock);
+		panelCambiarStock.setLayout(new GridLayout(1, 2, 0, 0));
 		
-		txtStockNuevo = new JTextField();
-		panelCentroDentro.add(txtStockNuevo, "cell 0 4");
-		txtStockNuevo.setColumns(10);
+		JLabel lblCambiarStock_1 = new JLabel("Cambiar Stock : ");
+		lblCambiarStock_1.setHorizontalAlignment(SwingConstants.RIGHT);
+		panelCambiarStock.add(lblCambiarStock_1);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		panelCambiarStock.add(textField);
 		
 		JButton btnGuardarNuevoStock = new JButton("Guardar");
 		btnGuardarNuevoStock.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		panelCentroDentro.add(btnGuardarNuevoStock, "cell 0 5,alignx left");
-		
-		JLabel lblZapatillas = new JLabel("Zapatillas");
-		lblZapatillas.setHorizontalAlignment(SwingConstants.CENTER);
-		panelCentroDentro.add(lblZapatillas, "cell 0 0,growx");
+		panelCentroDentro.add(btnGuardarNuevoStock);
 		
 		JPanel panelSur = new JPanel();
 		contentPane.add(panelSur, BorderLayout.SOUTH);
