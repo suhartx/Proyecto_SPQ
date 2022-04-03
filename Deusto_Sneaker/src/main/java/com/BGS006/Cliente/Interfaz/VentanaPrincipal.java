@@ -55,7 +55,7 @@ public class VentanaPrincipal extends JFrame {
 	 * Create the frame.
 	 * @throws DeustoException 
 	 */
-	public VentanaPrincipal(JFrame va,com.BGS006.Cliente.jdo.Usuario u) throws BindException {
+	public VentanaPrincipal(final JFrame va,final com.BGS006.Cliente.jdo.Usuario u) throws BindException {
 		
 		ventanaAnterior = va;
 		ventanaActual = this;
@@ -175,7 +175,31 @@ public class VentanaPrincipal extends JFrame {
 		contentPane.add(scrollCentral);
 		scrollCentral.setViewportView(panelCentro);
 		
+		/*action listener botones*/
+		/**
+		 * Boton que lleva a la ventana Perfil
+		 */
+		btnPerfil.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ventanaActual.dispose();
+				try {
+					new VentanaPerfil(ventanaActual, u);
+				} catch (BindException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		
+		
+		
 	}
+	
+	
+	
+	
 	
 	public static void main(String[] args) throws BindException, HeadlessException {
 		SwingUtilities.invokeLater((Runnable) new VentanaPrincipal(new JFrame(), new com.BGS006.Cliente.jdo.Usuario()));
