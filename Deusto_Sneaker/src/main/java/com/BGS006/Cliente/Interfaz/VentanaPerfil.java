@@ -58,7 +58,7 @@ public class VentanaPerfil extends JFrame {
 	 * @throws DeustoException 
 	 */
 	
-	public VentanaPerfil(JFrame va, Usuario u) throws BindException {
+	public VentanaPerfil(JFrame va, final Usuario u) throws BindException {
 		
 		//cargarTMventasUsuarioAJlist();
 		System.out.println("Este es el logo " + u.getRutaAvatar());
@@ -98,7 +98,7 @@ public class VentanaPerfil extends JFrame {
 		btnCesta.setBackground(new Color(204, 102, 51));
 		panelSur.add(btnCesta);
 		
-		JButton btnPerfil = new JButton("Profile");
+		JButton btnPerfil = new JButton("Perfil");
 		btnPerfil.setFont(new Font("Lato", Font.PLAIN, 19));
 		btnPerfil.setForeground(new Color(255, 255, 255));
 		btnPerfil.setEnabled(false);
@@ -175,7 +175,25 @@ public class VentanaPerfil extends JFrame {
 		panel.add(lblEnunciado, "cell 0 0,alignx center,aligny bottom");
 		
 		
+	/*action listenerbotones */
+
+		btnWearHome.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ventanaActual.dispose();
+				try {
+					new VentanaPrincipal(ventanaActual,u);
+				} catch (BindException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				//new VentanaPerfil(ventanaActual);
+			}
+		});
+		
 		}
+
 		
 	
 	}
