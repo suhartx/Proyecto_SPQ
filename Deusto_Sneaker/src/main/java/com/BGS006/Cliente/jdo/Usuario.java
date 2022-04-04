@@ -28,14 +28,16 @@ public class Usuario {
 		this.tarjetaPago = "";
 		this.rutaAvatar = "";
 	}
-	
+
 	public Usuario(String nombre, String contrasenya,String tarjetaPago,String rutaAvatar) {
 		this.nombre = nombre;
 		this.contrasenya = contrasenya;
 		this.tarjetaPago = tarjetaPago;
 		this.rutaAvatar = rutaAvatar;
 	}
-	
+
+
+
 	public Usuario (String nombre, String contrasenya) {
 		this.nombre = nombre;
 		this.contrasenya = contrasenya;
