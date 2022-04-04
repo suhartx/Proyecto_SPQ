@@ -14,13 +14,17 @@ import javax.swing.plaf.DimensionUIResource;
 import javax.swing.text.html.ImageView;
 
 import com.BGS006.*;
+import com.BGS006.Cliente.jdo.Articulo;
 import com.BGS006.Cliente.jdo.Usuario;
 
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JList;
+
 import java.awt.Font;
 
 import javax.swing.ButtonGroup;
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
@@ -51,6 +55,8 @@ public class VentanaPrincipal extends JFrame {
 	private JFrame ventanaActual,ventanaAnterior;
 	private ButtonGroup bg;
 	private JScrollPane scrollCentral;
+	private JList<Articulo> listaArticulos;
+	private DefaultListModel<Articulo> modeloListaArticulos;
 	
 	/**
 	 * Create the frame.
@@ -128,7 +134,13 @@ public class VentanaPrincipal extends JFrame {
 		panelCentro.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		panelCentro.setBackground(new Color(255, 228, 196));
 		contentPane.add(panelCentro, BorderLayout.CENTER);
-		panelCentro.setLayout(new GridLayout(0, 3, 0, 0));		
+		panelCentro.setLayout(new GridLayout(0, 3, 0, 0));	
+		
+		modeloListaArticulos = new DefaultListModel<Articulo>();
+		listaArticulos = new JList<Articulo>(modeloListaArticulos);
+		panelCentro.add(listaArticulos);
+		
+		anyadirArticulosALista();
 
 		btnPerfil.addActionListener(new ActionListener() {
 			
@@ -155,6 +167,14 @@ public class VentanaPrincipal extends JFrame {
 			}
 		});
 		
+	}
+	
+	private void anyadirArticulosALista() {
+		for(int clave : LoginDeusto_Sneaker.getTmArticulos().keySet()) {
+			Articulo valor = LoginDeusto_Sneaker.getTmArticulos().get(clave);
+			modeloListaArticulos.addElement(valor);
+		}
+		listaArticulos.setModel(modeloListaArticulos);
 	}
 	
 }

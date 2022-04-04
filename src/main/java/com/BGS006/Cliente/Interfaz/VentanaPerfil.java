@@ -70,7 +70,7 @@ public class VentanaPerfil extends JFrame {
 		ventanaActual = this;
 		setTitle("Profile: " + u.getNombre());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(50, 50, 1292, 680);
+		setBounds(50, 50, 1064, 593);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -106,6 +106,9 @@ public class VentanaPerfil extends JFrame {
 		panelNorte.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		getContentPane().add(panelNorte, BorderLayout.NORTH);
 		panelNorte.setBackground(new Color(255, 222, 173));
+		
+		
+		
 		
 		JButton btnEditar = new JButton("Cambiar contraseya");
 		btnEditar.addActionListener(new ActionListener() {
@@ -181,7 +184,6 @@ public class VentanaPerfil extends JFrame {
 		panelCentroIzquierda.setForeground(new Color(255, 255, 255));
 		panelCentroIzquierda.setBackground(new Color(255, 228, 196));
 		panelCentral.add(panelCentroIzquierda);
-		//panelCentroIzquierda.setLayout(new MigLayout("", "[378.00px,grow][1px]", "[93.00px][72.00][grow]"));
 		
 		JLabel lblMyProfile = new JLabel("MY PROFILE");
 		lblMyProfile.setHorizontalAlignment(SwingConstants.CENTER);
@@ -189,6 +191,7 @@ public class VentanaPerfil extends JFrame {
 		lblMyProfile.setFont(new Font("Lato", Font.BOLD, 42));
 		lblMyProfile.setBackground(Color.WHITE);
 		panelCentroIzquierda.add(lblMyProfile, "cell 0 0,alignx center,aligny bottom");
+		//panelCentroIzquierda.setLayout(new MigLayout("", "[378.00px,grow][1px]", "[93.00px][72.00][grow]"));
 		
 		JLabel lblAvatar = new JLabel();
 		panelCentroIzquierda.add(lblAvatar, "cell 0 2,alignx center,aligny center");
@@ -201,7 +204,9 @@ public class VentanaPerfil extends JFrame {
 		ImageIcon im = new ImageIcon(avatar);
 		ImageIcon imagenConDimensiones = new ImageIcon(im.getImage().getScaledInstance(300,300,ImageView.CENTER));
 		lblAvatar.setIcon(imagenConDimensiones);
-		lblAvatar.setPreferredSize(new Dimension(400, 400));
+		lblAvatar.setPreferredSize(new Dimension(300, 300));
+		
+		
 		
 		
 		JPanel panel = new JPanel();

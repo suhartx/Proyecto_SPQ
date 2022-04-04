@@ -28,6 +28,7 @@ import com.BGS006.Cliente.BBDD.BD;
 import com.BGS006.Cliente.Funcionalidad.FunUsuario;
 import com.BGS006.Cliente.jdo.Articulo;
 import com.BGS006.Cliente.jdo.Usuario;
+import com.BGS006.Cliente.jdo.Zapatillas;
 
 
 public class LoginDeusto_Sneaker {
@@ -65,10 +66,20 @@ public class LoginDeusto_Sneaker {
 			}
 		});
 	}
+	
+	public static TreeMap<Integer, Articulo> getTmArticulos() {
+		return tmArticulos;
+	}
+
+	public static void setTmArticulos(TreeMap<Integer, Articulo> tmArticulos) {
+		LoginDeusto_Sneaker.tmArticulos = tmArticulos;
+	}
 
 	public LoginDeusto_Sneaker() {
-		con = BD.initBD("baseDeDatos.db");
+		//Zapatillas z = new Zapatillas("Jordan 1 Retro", 499.99, 527, "imagenes/airJordan1Retro.jpg", 12, 40, "Naranja/Blanco", "Hombre");
+		con = BD.initBD("baseDeDatos");
 		BD.crearTablas(con);
+		//BD.insertarZapatillaBBDD(con, z);
 		BD.cargarMapaArticulosDeInfoBBDD(con);
 		BD.closeBD(con);
 	/*	FunUsuario.getInstance().CrearUsuario();

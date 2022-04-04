@@ -18,6 +18,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 import java.awt.GridLayout;
 import java.awt.Font;
+import java.awt.Color;
 
 public class VentanaAdmin extends JFrame {
 
@@ -29,8 +30,10 @@ public class VentanaAdmin extends JFrame {
 	 */
 	public VentanaAdmin(JFrame frame, Usuario u) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 600, 500);
+	
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(255, 165, 0));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
@@ -41,28 +44,34 @@ public class VentanaAdmin extends JFrame {
 		panelCentro.setLayout(new BorderLayout(0, 0));
 		
 		JPanel panelTitulo = new JPanel();
+		panelTitulo.setForeground(new Color(255, 165, 0));
+		panelTitulo.setBackground(new Color(255, 222, 173));
 		panelCentro.add(panelTitulo, BorderLayout.NORTH);
 		
 		JLabel lblAdministrador = new JLabel("Vista Administrador");
-		lblAdministrador.setFont(new Font("Tahoma", Font.PLAIN, 9));
+		lblAdministrador.setForeground(new Color(255, 165, 0));
+		lblAdministrador.setFont(new Font("Lato", Font.BOLD, 22));
 		panelTitulo.add(lblAdministrador);
 		
 		JPanel panelCentroDentro = new JPanel();
+		panelCentroDentro.setBackground(new Color(255, 228, 196));
 		panelCentro.add(panelCentroDentro, BorderLayout.CENTER);
 		
 		panelCentroDentro.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		JLabel lblZapatillas = new JLabel("Zapatillas");
-		lblZapatillas.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblZapatillas.setHorizontalAlignment(SwingConstants.CENTER);
-		panelCentroDentro.add(lblZapatillas);
+		JLabel lblArticulos = new JLabel("Articulos");
+		lblArticulos.setForeground(new Color(255, 165, 0));
+		lblArticulos.setFont(new Font("Lato", Font.PLAIN, 12));
+		lblArticulos.setHorizontalAlignment(SwingConstants.CENTER);
+		panelCentroDentro.add(lblArticulos);
 		
 		JComboBox cbZapatillas = new JComboBox();
+		cbZapatillas.setBackground(new Color(255, 228, 196));
 		panelCentroDentro.add(cbZapatillas);
 		
 		JLabel lblNumStock = new JLabel("Stock disponible : ");
-		lblNumStock.setVerticalAlignment(SwingConstants.TOP);
-		lblNumStock.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblNumStock.setForeground(new Color(255, 165, 0));
+		lblNumStock.setHorizontalAlignment(SwingConstants.CENTER);
 		panelCentroDentro.add(lblNumStock);
 		
 		JPanel panelCambiarStock = new JPanel();
@@ -70,25 +79,36 @@ public class VentanaAdmin extends JFrame {
 		panelCambiarStock.setLayout(new GridLayout(1, 2, 0, 0));
 		
 		JLabel lblCambiarStock_1 = new JLabel("Cambiar Stock : ");
+		lblCambiarStock_1.setForeground(new Color(255, 165, 0));
+		lblCambiarStock_1.setBackground(new Color(255, 228, 196));
 		lblCambiarStock_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		panelCambiarStock.add(lblCambiarStock_1);
 		
 		textField = new JTextField();
+		textField.setBackground(new Color(255, 228, 196));
 		textField.setColumns(10);
 		panelCambiarStock.add(textField);
 		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(255, 228, 196));
+		panelCentroDentro.add(panel);
+		panel.setLayout(null);
+		
 		JButton btnGuardarNuevoStock = new JButton("Guardar");
-		btnGuardarNuevoStock.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		panelCentroDentro.add(btnGuardarNuevoStock);
+		btnGuardarNuevoStock.setBackground(new Color(255, 222, 173));
+		btnGuardarNuevoStock.setForeground(new Color(255, 165, 0));
+		btnGuardarNuevoStock.setBounds(285, 11, 87, 30);
+		panel.add(btnGuardarNuevoStock);
 		
 		JPanel panelSur = new JPanel();
+		panelSur.setBackground(new Color(255, 228, 181));
 		contentPane.add(panelSur, BorderLayout.SOUTH);
 		
-		JButton btnVerStock = new JButton("Ver stock");
-		panelSur.add(btnVerStock);
+		JButton btnVolver = new JButton("Volver");
+		btnVolver.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		btnVolver.setForeground(new Color(255, 165, 0));
+		btnVolver.setBackground(new Color(255, 222, 173));
+		panelSur.add(btnVolver);
 	}
 
 }

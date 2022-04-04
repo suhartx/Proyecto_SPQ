@@ -272,8 +272,8 @@ public class BD {
 	 */
 	
 	public static void insertarZapatillaBBDD(Connection con, Zapatillas z) {
-		String sent = "INSERT INTO Articulos VALUES(" + z.getId() + ",'" + z.getNombre() + "','" + z.getPrecio() + "',"
-				+ z.getRutaImagen() + ",'" + z.getStock() + "','" + z.getTalla() + "','" + z.getColor() + "','"
+		String sent = "INSERT INTO articulos VALUES(" + z.getId() + ",'" + z.getNombre() + "'," + z.getPrecio() + ",'"
+				+ z.getRutaImagen() + "'," + z.getStock() + "," + z.getTalla() + ",'" + z.getColor() + "','"
 				+ z.getGen() + "','null','z')";
 		Statement st = null;
 
@@ -428,7 +428,7 @@ public class BD {
 		TreeMap<Integer, Articulo> tmArticulo = new TreeMap<>();
 		Statement stmt = null;
 		
-		String sentSQL = "SELECT * FROM Articulos";
+		String sentSQL = "SELECT * FROM articulos";
 		try {
 			stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(sentSQL);
