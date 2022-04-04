@@ -169,7 +169,7 @@ public class BD {
 	}
 	
 	public static String conseguirAvatar(Connection con,String nick) {
-		String sent = "SELECT Avatar FROM Usuarios WHERE Nick ='"+nick+"'";
+		String sent = "SELECT Avatar FROM usuarios WHERE Nombre ='"+nick+"'";
 		Statement st = null;
 		try {
 			st = con.createStatement();
@@ -400,7 +400,7 @@ public class BD {
 	 * @param c La nueva contraseña
 	 */
 	public static void cambiarContrasenya(Connection con, String nick, String c) {
-		String sent = "UPDATE Usuarios SET Contraseya = '" + c + "' WHERE Nick = '" + nick + "'";
+		String sent = "UPDATE usuarios SET Contraseya = '" + c + "' WHERE Nombre = '" + nick + "'";
 		Statement st = null;
 
 		try {

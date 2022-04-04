@@ -83,14 +83,14 @@ public class LoginDeusto_Sneaker {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(255, 228, 181));
+		frame.getContentPane().setBackground(new Color(255, 165, 0));
 		frame.setBounds(100, 100, 334, 329);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setTitle("LoginDeusto Sneaker");
 
 		JTabbedPane tabbedPane = new JTabbedPane(SwingConstants.TOP);
-		tabbedPane.setBackground(new Color(255, 222, 173));
+		tabbedPane.setBackground(new Color(255, 165, 0));
 		tabbedPane.setBounds(0, 0, 323, 292);
 		frame.getContentPane().add(tabbedPane);
 
@@ -260,7 +260,7 @@ public class LoginDeusto_Sneaker {
 
 		JButton botonRegistro = new JButton("REGISTRARSE");
 		botonRegistro.setForeground(new Color(255, 140, 0));
-		botonRegistro.setBackground(new Color(238, 232, 170));
+		botonRegistro.setBackground(new Color(255, 222, 173));
 		botonRegistro.setFont(new Font("Lato", Font.BOLD, 16));
 		botonRegistro.addActionListener(new ActionListener() {
 			@Override

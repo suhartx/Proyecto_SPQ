@@ -49,10 +49,9 @@ public class VentanaPerfil extends JFrame {
 
 	private JPanel contentPane;
 	public static Connection con;
-	public static String nombreBD = "baseDeDatos.db";
+	public static String nombreBD = "baseDeDatos";
 	private JFrame ventanaActual, ventanaAnterior;
 	private JScrollPane scrollListaVentas;
-	String avatar;
 
 	/**
 	 * Create the frame.
@@ -71,59 +70,106 @@ public class VentanaPerfil extends JFrame {
 		ventanaActual = this;
 		setTitle("Profile: " + u.getNombre());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(50, 50, 1650, 750);
+		setBounds(50, 50, 1292, 680);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(10, 10));
-		contentPane.setBackground(new Color(0, 153, 255));
-
+		contentPane.setBackground(new Color(255, 165, 0));
 
 		JPanel panelSur = new JPanel();
 		panelSur.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		contentPane.add(panelSur, BorderLayout.SOUTH);
 		panelSur.setBackground(new Color(255, 102, 51));
-		panelSur.setLayout(new GridLayout(0, 4, 0, 0));
+		panelSur.setLayout(new GridLayout(0, 3, 0, 0));
 
-		JButton btnWearHome = new JButton("Home");
-		btnWearHome.setFont(new Font("Lato", Font.PLAIN, 19));
-		btnWearHome.setBackground(new Color(204, 102, 51));
-		panelSur.add(btnWearHome);
-		
-		/*JButton btnFavoritos = new JButton("Favorites");
-		btnFavoritos.setFont(new Font("Lato", Font.PLAIN, 19));
-		btnFavoritos.setBackground(new Color(204, 102, 51));
-		panelSur.add(btnFavoritos);*/
+		JButton btnPrincipal = new JButton("Home");
+		btnPrincipal.setForeground(new Color(255, 165, 0));
+		btnPrincipal.setFont(new Font("Lato", Font.PLAIN, 19));
+		btnPrincipal.setBackground(new Color(255, 222, 173));
+		panelSur.add(btnPrincipal);
 		
 		JButton btnCesta = new JButton("Cesta");
+		btnCesta.setForeground(new Color(255, 165, 0));
 		btnCesta.setFont(new Font("Lato", Font.PLAIN, 19));
-		btnCesta.setBackground(new Color(204, 102, 51));
+		btnCesta.setBackground(new Color(255, 222, 173));
 		panelSur.add(btnCesta);
 		
 		JButton btnPerfil = new JButton("Profile");
 		btnPerfil.setFont(new Font("Lato", Font.PLAIN, 19));
-		btnPerfil.setForeground(new Color(255, 255, 255));
+		btnPerfil.setForeground(new Color(255, 165, 0));
 		btnPerfil.setEnabled(false);
-		btnPerfil.setBackground(new Color(204, 102, 51));
+		btnPerfil.setBackground(new Color(255, 222, 173));
 		panelSur.add(btnPerfil);
 		
 		JPanel panelNorte = new JPanel();
 		panelNorte.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		getContentPane().add(panelNorte, BorderLayout.NORTH);
-		panelNorte.setBackground(Color.RED);
-		
-		JPanel panel_1 = new JPanel();
-		panelNorte.add(panel_1);
-		
-		JButton btnNewButton = new JButton("editar perfil");
-		panel_1.add(btnNewButton);
+		panelNorte.setBackground(new Color(255, 222, 173));
 		
 		JButton btnEditar = new JButton("Cambiar contraseya");
+		btnEditar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String contra = JOptionPane.showInputDialog("Introduzca la nueva contraseña:");
+				String ERcontraseya = "[0-9]{1,15}";
+				boolean correctoContra = Pattern.matches(ERcontraseya, contra);
+				if(correctoContra && !contra.equals(u.getContrasenya())) {
+					try {
+						con = BD.initBD(nombreBD);
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					try {
+						BD.cambiarContrasenya(con, u.getNombre(), contra);
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					try {
+						BD.closeBD(con);
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					JOptionPane.showMessageDialog(null, "Contraseña cambiada correctamente", "CAMBIO REALIZADO", JOptionPane.INFORMATION_MESSAGE);
+				}else {
+					JOptionPane.showMessageDialog(null, "Loading...Error", "!!ERROR!!", JOptionPane.ERROR_MESSAGE);
+				}
+			}
+
+		});
+		
+		
+		btnPrincipal.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ventanaActual.dispose();
+				try {
+					new VentanaPrincipal(ventanaActual,u);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				//new VentanaPerfil(ventanaActual);
+			}
+		});
+		btnCesta.addActionListener( new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				//ventanaActual.dispose();
+				//new VentanaCesta(ventanaActual,u);
+				//new VentanaPerfil(ventanaActual);
+			}
+		});
+		
+		
 		btnEditar.setForeground(Color.WHITE);
 		btnEditar.setFont(new Font("Lato", Font.PLAIN, 19));
 		btnEditar.setBackground(new Color(255, 153, 0));
 		panelNorte.add(btnEditar, "cell 0 0,grow");
-		
 		
 		JPanel panelCentral = new JPanel();
 		getContentPane().add(panelCentral, BorderLayout.CENTER);
@@ -133,53 +179,43 @@ public class VentanaPerfil extends JFrame {
 		JPanel panelCentroIzquierda = new JPanel();
 		panelCentroIzquierda.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		panelCentroIzquierda.setForeground(new Color(255, 255, 255));
-		panelCentroIzquierda.setBackground(Color.BLUE);
+		panelCentroIzquierda.setBackground(new Color(255, 228, 196));
 		panelCentral.add(panelCentroIzquierda);
 		//panelCentroIzquierda.setLayout(new MigLayout("", "[378.00px,grow][1px]", "[93.00px][72.00][grow]"));
 		
 		JLabel lblMyProfile = new JLabel("MY PROFILE");
 		lblMyProfile.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMyProfile.setForeground(new Color(255, 255, 255));
+		lblMyProfile.setForeground(new Color(255, 165, 0));
 		lblMyProfile.setFont(new Font("Lato", Font.BOLD, 42));
 		lblMyProfile.setBackground(Color.WHITE);
 		panelCentroIzquierda.add(lblMyProfile, "cell 0 0,alignx center,aligny bottom");
 		
-		JLabel lblNombreUsuario = new JLabel(u.getNombre());
-		lblNombreUsuario.setForeground(new Color(255, 255, 255));
-		lblNombreUsuario.setFont(new Font("Lato", Font.BOLD, 28));
-		lblNombreUsuario.setHorizontalAlignment(SwingConstants.CENTER);
-		panelCentroIzquierda.add(lblNombreUsuario, "cell 0 1,alignx center,aligny bottom");
-		
 		JLabel lblAvatar = new JLabel();
 		panelCentroIzquierda.add(lblAvatar, "cell 0 2,alignx center,aligny center");
-		
-		
-		
-		
+
+		BD.initBD("baseDeDatos");
+		String avatar = BD.conseguirAvatar(con, u.getNombre());
+		System.out.println("Este es el avatar "+ avatar);
+		BD.closeBD(con);
 		
 		ImageIcon im = new ImageIcon(avatar);
 		ImageIcon imagenConDimensiones = new ImageIcon(im.getImage().getScaledInstance(300,300,ImageView.CENTER));
 		lblAvatar.setIcon(imagenConDimensiones);
-		lblAvatar.setPreferredSize(new DimensionUIResource(100, 100));
-		lblAvatar.setIcon(imagenConDimensiones);
+		lblAvatar.setPreferredSize(new Dimension(400, 400));
 		
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		panel.setBackground(new Color(0, 0, 255));
+		panel.setBackground(new Color(255, 228, 196));
 		panelCentral.add(panel);
 		
 		
 		JLabel lblEnunciado = new JLabel("\tPedidos realizados:");
 		lblEnunciado.setHorizontalAlignment(SwingConstants.LEFT);
-		lblEnunciado.setForeground(new Color(255, 255, 255));
+		lblEnunciado.setForeground(new Color(255, 165, 0));
 		lblEnunciado.setFont(new Font("Dialog", Font.BOLD, 42));
 		panel.add(lblEnunciado, "cell 0 0,alignx center,aligny bottom");
-		
-		
 		}
-		
-	
 	}
 	
 	

@@ -47,9 +47,8 @@ public class VentanaPrincipal extends JFrame {
 
 	private JPanel contentPane;
 	private JPanel panelCentro;
-	private JComboBox<String> comboTalla, comboPrenda;
+	private JComboBox<String> comboTalla;
 	private JFrame ventanaActual,ventanaAnterior;
-	private JButton btnLogo;
 	private ButtonGroup bg;
 	private JScrollPane scrollCentral;
 	
@@ -57,64 +56,35 @@ public class VentanaPrincipal extends JFrame {
 	 * Create the frame.
 	 * @throws DeustoException 
 	 */
-	public VentanaPrincipal(JFrame va,Usuario u) throws BindException {
+	public VentanaPrincipal(JFrame va,final Usuario u) throws BindException {
 		
 		ventanaAnterior = va;
 		ventanaActual = this;
 		
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(50, 50, 1650, 950);
+		setBounds(50, 50, 1064, 593);
 		setTitle("Home");
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(10, 10));
-		contentPane.setBackground(new Color(0, 153, 255));
+		contentPane.setBackground(new Color(255, 165, 0));
 		
 		JPanel panelNorte = new JPanel();
 		panelNorte.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		panelNorte.setBackground(new Color(255, 153, 0));
+		panelNorte.setBackground(new Color(255, 228, 181));
 		contentPane.add(panelNorte, BorderLayout.NORTH);
 		//panelNorte.setLayout(new MigLayout("", "[59.00][372.00,grow,center]", "[]"));
 		
 		ImageIcon im = new ImageIcon("imagenes/logo.jpg");
 		ImageIcon imagenConDimensiones = new ImageIcon(im.getImage().getScaledInstance(70,70,ImageView.CENTER));
-		btnLogo = new JButton();
-		btnLogo.setBackground(new Color(255, 153, 0));
-		btnLogo.setPreferredSize(new DimensionUIResource(70, 70));
-		btnLogo.setIcon(imagenConDimensiones);
 		
-		panelNorte.add(btnLogo, "cell 0 0");
-		
-		JLabel lblTitulo = new JLabel("DeustoWear Shop " + u.getNombre() );
+		JLabel lblTitulo = new JLabel("DeustoSneaker Shop" );
 		lblTitulo.setBackground(new Color(255, 255, 255));
-		lblTitulo.setFont(new Font("Lato", Font.BOLD, 28));
-		lblTitulo.setForeground(new Color(255, 255, 255));
+		lblTitulo.setFont(new Font("Lato", Font.BOLD, 30));
+		lblTitulo.setForeground(new Color(255, 165, 0));
 		panelNorte.add(lblTitulo, "cell 1 0,alignx center,aligny center");
-		
-		JPanel panelWest = new JPanel();
-		panelWest.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
-		panelWest.setBackground(new Color(255, 255, 255));
-		contentPane.add(panelWest, BorderLayout.WEST);
-		
-		
-		JLabel lblBuscarAqui = new JLabel("Buscar aqui...");
-		lblBuscarAqui.setForeground(new Color(255, 255, 255));
-		lblBuscarAqui.setHorizontalAlignment(SwingConstants.CENTER);
-		lblBuscarAqui.setFont(new Font("Lato", Font.BOLD | Font.ITALIC, 19));
-		panelWest.add(lblBuscarAqui, "cell 0 1,alignx center,aligny center");
-		
-		JLabel lblComboPrenda = new JLabel("Prenda");
-		lblComboPrenda.setForeground(new Color(255, 255, 255));
-		lblComboPrenda.setFont(new Font("Lato", Font.PLAIN, 18));
-		panelWest.add(lblComboPrenda, "cell 0 5,alignx center,aligny center");
-		
-		
-		/*ComboBox Articulos*/
-		comboPrenda = new JComboBox<String>();
-		comboPrenda.setToolTipText("");
-		panelWest.add(comboPrenda, "cell 1 5,growx,aligny center");
 		
 		ArrayList<String> tiposArticulos = new ArrayList<>();
 		tiposArticulos.add("Articulos");
@@ -122,68 +92,71 @@ public class VentanaPrincipal extends JFrame {
 		tiposArticulos.add("Calcetines");
 		
 		
-		for(String articulo : tiposArticulos) {
-			comboPrenda.addItem(articulo);
-		}
 	
-	
-		
-		JButton btnBuscar = new JButton("Buscar");
-		btnBuscar.setForeground(new Color(255, 255, 255));
-		btnBuscar.setBackground(new Color(255, 102, 0));
-		btnBuscar.setFont(new Font("Lato", Font.PLAIN, 15));
-		panelWest.add(btnBuscar, "cell 0 18 2 1,alignx center,aligny center");
-		
 		JPanel panelSur = new JPanel();
 		panelSur.setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		panelSur.setBackground(new Color(255, 102, 51));
 		contentPane.add(panelSur, BorderLayout.SOUTH);
-		panelSur.setLayout(new GridLayout(0, 4, 0, 0));
+		panelSur.setLayout(new GridLayout(0, 3, 0, 0));
 
 	
 		
 		JButton btnWearHome = new JButton("Home");
 		btnWearHome.setFont(new Font("Lato", Font.PLAIN, 19));
-		btnWearHome.setForeground(new Color(255, 255, 255));
+		btnWearHome.setForeground(new Color(255, 165, 0));
 		btnWearHome.setEnabled(false);
-		btnWearHome.setBackground(new Color(204, 102, 51));
+		btnWearHome.setBackground(new Color(255, 222, 173));
 		panelSur.add(btnWearHome);
 		
 
 		
 		JButton btnCesta = new JButton("Cesta");
+		btnCesta.setForeground(new Color(255, 165, 0));
 		btnCesta.setFont(new Font("Lato", Font.PLAIN, 19));
-		btnCesta.setBackground(new Color(204, 102, 51));
+		btnCesta.setBackground(new Color(255, 222, 173));
 		panelSur.add(btnCesta);
 		
 		
 		JButton btnPerfil = new JButton("Profile");
+		btnPerfil.setForeground(new Color(255, 165, 0));
 		btnPerfil.setFont(new Font("Lato", Font.PLAIN, 19));
-		btnPerfil.setBackground(new Color(204, 102, 51));
+		btnPerfil.setBackground(new Color(255, 222, 173));
 		panelSur.add(btnPerfil);
 		
 		
 		panelCentro = new JPanel();
 		panelCentro.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		panelCentro.setBackground(new Color(153, 204, 255));
+		panelCentro.setBackground(new Color(255, 228, 196));
 		contentPane.add(panelCentro, BorderLayout.CENTER);
-		panelCentro.setLayout(new GridLayout(0, 3, 0, 0));
-	
-		//this.cargarPaneles();
+		panelCentro.setLayout(new GridLayout(0, 3, 0, 0));		
+
+		btnPerfil.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				ventanaActual.dispose();
+				try {
+					new VentanaPerfil(ventanaActual,u);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				//new VentanaPerfil(ventanaActual);
+			}
+		});
 		
-		scrollCentral = new JScrollPane();
-		scrollCentral.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-		scrollCentral.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		contentPane.add(scrollCentral);
-		scrollCentral.setViewportView(panelCentro);
+		btnCesta.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				//ventanaActual.dispose();
+				//new VentanaCesta(ventanaActual,u);
+				//new VentanaPerfil(ventanaActual);
+			}
+		});
 		
 	}
 	
-	public static void main(String[] args) throws BindException, HeadlessException {
-		SwingUtilities.invokeLater((Runnable) new VentanaPrincipal(new JFrame(), new com.BGS006.Cliente.jdo.Usuario()));
-		
-		
-	}
 }
 
 
