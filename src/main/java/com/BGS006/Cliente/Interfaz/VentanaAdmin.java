@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.BGS006.Cliente.jdo.Usuario;
+
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
@@ -24,7 +27,7 @@ public class VentanaAdmin extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public VentanaAdmin() {
+	public VentanaAdmin(JFrame frame, Usuario u) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();

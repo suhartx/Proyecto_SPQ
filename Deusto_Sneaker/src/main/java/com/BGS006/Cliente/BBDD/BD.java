@@ -1,11 +1,9 @@
 package com.BGS006.Cliente.BBDD;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.TreeMap;
-
 import com.BGS006.Cliente.jdo.Articulo;
 import com.BGS006.Cliente.jdo.Calcetines;
 import com.BGS006.Cliente.jdo.Color;
@@ -13,9 +11,7 @@ import com.BGS006.Cliente.jdo.Genero;
 import com.BGS006.Cliente.jdo.Limpiador;
 import com.BGS006.Cliente.jdo.Usuario;
 import com.BGS006.Cliente.jdo.Zapatillas;
-
 public class BD {
-
 	/**
 	 * Crea la conexion con la BBDD
 	 * 
@@ -31,7 +27,6 @@ public class BD {
 		}
 		return con;
 	}
-
 	/**
 	 * Cierra la BBDD
 	 * 
@@ -45,7 +40,6 @@ public class BD {
 			}
 		}
 	}
-
 	/**
 	 * Metodo que crea las tablas necesarias en la BBDD
 	 * 
@@ -54,9 +48,7 @@ public class BD {
 	public static void crearTablas(Connection con) {
 		String sent1 = "CREATE TABLE IF NOT EXISTS Articulos(ID Integer,Nombre String,Precio Double, Imagen String,Stock Integer, Talla Integer,Color String, Genero String, Plus String,TipoArticulo String)";
 		String sent2 = "CREATE TABLE IF NOT EXISTS Usuarios(Nombre String, Contraseya String, Tarjeta String,Avatar String)";
-
 		Statement st = null;
-
 		try {
 			st = con.createStatement();
 			st.executeUpdate(sent1);
@@ -71,7 +63,6 @@ public class BD {
 			}
 		}
 	}
-
 	/**
 	 * Método que recibe los datos de un Articulo y comprueba que está registrado en
 	 * la BBDD
@@ -111,7 +102,7 @@ public class BD {
 		}
 		return resul;
 	}
-	
+
 	/**
 	 * Metodo que comprueba si el nombre del usario esta ya introducido en la BBDD
 	 * @param con Conexion
@@ -121,12 +112,12 @@ public class BD {
 	 * 		1. Si el nombre ya esta regitrado y se debra escoger otro nombre
 	 * 		0. Si el nombre no esta en la BBDD
 	 */
-	
+
 	public static int estaRegistrado(Connection con, String nombre) {
 		String sentencia = "SELECT Nombre FROM usuarios WHERE Nombre ='" + nombre + "'";
 		Statement st = null;
 		int resul = 0;
-		
+
 		try {
 			st = con.createStatement();
 			ResultSet rs = st.executeQuery(sentencia);
@@ -148,11 +139,12 @@ public class BD {
 		}
 		return resul;
 	}
-	
+
 
 	public static void intertarUsuarioBBDD(Connection con, Usuario u) {
 		String sent = "INSERT INTO Usuarios VALUES('" + u.getNombre() + "','" + u.getContrasenya() + "','"
-				+ u.getTarjetaPago() + "','" + u.getRutaAvatar()+ "')";
+				+ u.getTarjetaPago() + "','" + u.getRutaAvatar() + "','" + "')";
+				
 		Statement st = null;
 		try {
 			st = con.createStatement();
@@ -190,7 +182,6 @@ public class BD {
 		}
 		return null;
 	}
-	
 	/**
 	 * Método que recibe los datos de un Usuario y comprueba que está registrado en la BBDD
 	 * @param nom nombre del usuario
@@ -198,16 +189,18 @@ public class BD {
 	 * @return 0 si el usuario no está registrado
 	 * 		   1 si el usuario está registrado pero la contraseña no es correcta
 	 * 		   2 si el usuario está registrado y la contraseña es correcta
+	 * @throws DeustoException 
 	 */
-	public static int obtenerUsuario(Connection con, String nombre, String c){
-		String sentencia = "SELECT Contraseya FROM usuarios WHERE 	Nombre ='"+nombre+"'";
+	public static int obtenerUsuario(Connection con, String nick, String c)  {
+		String sentencia = "SELECT Contraseya FROM Usuarios WHERE Nombre ='"+nick+"'";
 		Statement st = null;
 		int resul=0;
 		try {
 			st = con.createStatement();
+			
 			ResultSet rs = st.executeQuery(sentencia);
 			if(rs.next()) { //Hemos encontrado una tupla que cumple la condición
-				if(rs.getString("Contraseya").equals(c)) {
+				if(rs.getString("Contraseña").equals(c)) {
 					resul = 2;
 				}else {
 					resul = 1;
@@ -217,54 +210,19 @@ public class BD {
 			}
 			rs.close();
 		} catch (Exception e) {
+
 		} finally {
 			if(st!=null) {
 				try {
 					st.close();
 				} catch (Exception e) {
+					
 				}
 			}
 		}
 		return resul;
 	}
 	
-	/**
-	 * Método que recibe los datos de un Articulo y comprueba que está registrado en la BBDD
-	 * @param nom nombre del Artiuclo
-	 * @param con contraseña del Articulo
-	 * @return 0 si el Articulo no está registrado
-	 * 		   1 si el Articulo está registrado pero la contraseña no es correcta
-	 * 		   2 si el usuario está registrado y la contraseña es correcta
-	 */
-	public static int obtenerArticulo(Connection con, int ID, String nombre) {
-		String sentencia = "SELECT ID FROM articulos WHERE 	Nombre ='"+nombre+"'";
-		Statement st = null;
-		int resul=0;
-		try {
-			st = con.createStatement();
-			ResultSet rs = st.executeQuery(sentencia);
-			if(rs.next()) { //Hemos encontrado una tupla que cumple la condición
-				if(rs.getString("ID").equals(ID)) {
-					resul = 2;
-				}else {
-					resul = 1;
-				}
-			}else {
-				resul = 0;
-			}
-			rs.close();
-		} catch (Exception e) {
-		} finally {
-			if(st!=null) {
-				try {
-					st.close();
-				} catch (Exception e) {
-				}
-			}
-		}
-		return resul;
-	}
-
 	/**
 	 * Metodo que introduce un Zapatilla pasado por parametro en la tabla de Zapatilla de la BBDD
 	 * @param con Conexion
@@ -276,17 +234,13 @@ public class BD {
 				+ z.getRutaImagen() + ",'" + z.getStock() + "','" + z.getTalla() + "','" + z.getColor() + "','"
 				+ z.getGen() + "','null','z')";
 		Statement st = null;
-
 		try {
 			st = con.createStatement();
-
 		} catch (Exception e) {
-
 		}
 		try {
 			st.executeUpdate(sent);
 		} catch (Exception e) {
-
 		} finally {
 			if (st != null) {
 				try {
@@ -295,9 +249,7 @@ public class BD {
 				}
 			}
 		}
-
 	}
-
 	/**
 	 * Metodo que introduce un Limpiador pasado por parametro en la tabla de Limpiador de la BBDD
 	 * @param con Conexion
@@ -308,29 +260,22 @@ public class BD {
 		String sent = "INSERT INTO Articulos VALUES(" + l.getId() + ",'" + l.getNombre() + "','" + l.getPrecio() + "',"
 				+ l.getRutaImagen() + ",'" + l.getStock() + "','null','null','null','" + l.isPlus() + "','l')";
 		Statement st = null;
-
 		try {
 			st = con.createStatement();
-
 		} catch (Exception e) {
-
 		}
 		try {
 			st.executeUpdate(sent);
 		} catch (Exception e) {
-
 		} finally {
 			if (st != null) {
 				try {
 					st.close();
 				} catch (Exception e) {
-
 				}
 			}
 		}
-
 	}
-
 	/**
 	 * Metodo que introduce un Calcetin pasado por parametro en la tabla de Calcetin de la BBDD
 	 * @param con Conexion
@@ -344,26 +289,20 @@ public class BD {
 		Statement st = null;
 		try {
 			st = con.createStatement();
-
 		} catch (Exception e) {
-
 		}
 		try {
 			st.executeUpdate(sent);
 		} catch (Exception e) {
-
 		} finally {
 			if (st != null) {
 				try {
 					st.close();
 				} catch (Exception e) {
-
 				}
 			}
 		}
-
 	}
-
 	/**
 	 * Metodo que elimina un Articulo pasado por paremtro de la tabla de Articulos
 	 * de la BBDD
@@ -371,11 +310,9 @@ public class BD {
 	 * @param con Conexion
 	 * @param ID  ID del articulo a eliminar
 	 */
-
 	public static void eliminarArticuloBBDD(Connection con, long ID) {
 		String sent = "DELETE FROM Articulos WHERE ID='" + ID + "'";
 		Statement st = null;
-
 		try {
 			st = con.createStatement();
 		} catch (Exception e) {
@@ -392,7 +329,6 @@ public class BD {
 			}
 		}
 	}
-
 	/**
 	 * Método que permite al usuario cambiar su contraseña y se actualiza su info en la BD
 	 * @param con Conexion
@@ -402,7 +338,6 @@ public class BD {
 	public static void cambiarContrasenya(Connection con, String nick, String c) {
 		String sent = "UPDATE Usuarios SET Contraseya = '" + c + "' WHERE Nick = '" + nick + "'";
 		Statement st = null;
-
 		try {
 			st = con.createStatement();
 			st.executeUpdate(sent);
@@ -415,7 +350,6 @@ public class BD {
 				}
 			}
 		}
-
 	}
 	
 	/**

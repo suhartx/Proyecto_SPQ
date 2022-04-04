@@ -14,6 +14,8 @@ import javax.swing.plaf.DimensionUIResource;
 import javax.swing.text.html.ImageView;
 
 import com.BGS006.*;
+import com.BGS006.Cliente.jdo.Usuario;
+
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -55,7 +57,7 @@ public class VentanaPrincipal extends JFrame {
 	 * Create the frame.
 	 * @throws DeustoException 
 	 */
-	public VentanaPrincipal(JFrame va,com.BGS006.Cliente.jdo.Usuario u) throws BindException {
+	public VentanaPrincipal(JFrame va,Usuario u) throws BindException {
 		
 		ventanaAnterior = va;
 		ventanaActual = this;

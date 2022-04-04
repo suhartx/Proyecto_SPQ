@@ -33,14 +33,14 @@ import com.BGS006.Cliente.jdo.Usuario;
 public class LoginDeusto_Sneaker {
 
 	private JFrame frame;
-	private JTextField usuariotf;
+	private JTextField nombretxt;
 	private JTextField nombre;
 	private JPasswordField password;
 	private JTextField tarjeta;
-	private JPasswordField passwordField;
+	private JPasswordField contraseyatxt;
 	private JFileChooser fc;
 	private File ficheroSeleccionado;
-	private JLabel lblAvatarSeleccionado;
+	private JLabel lblAvatar;
 
 	public static Connection con;
 	public static TreeMap<String, Usuario> tmUsuarios = new TreeMap<>();
@@ -83,97 +83,171 @@ public class LoginDeusto_Sneaker {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(255, 228, 181));
 		frame.setBounds(100, 100, 334, 329);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setTitle("LoginDeusto Sneaker");
 
 		JTabbedPane tabbedPane = new JTabbedPane(SwingConstants.TOP);
+		tabbedPane.setBackground(new Color(255, 222, 173));
 		tabbedPane.setBounds(0, 0, 323, 292);
 		frame.getContentPane().add(tabbedPane);
-
-		JPanel panelLogin = new JPanel();
-		tabbedPane.addTab("Login", null, panelLogin, null);
-		panelLogin.setLayout(null);
-
-		usuariotf = new JTextField();
-		usuariotf.setBounds(157, 27, 96, 20);
-		// frame.getContentPane().add(usuariotf);
-		usuariotf.setColumns(10);
-		panelLogin.add(usuariotf);
-
-		JButton btningresar = new JButton("ACCEDER");
-		btningresar.setBounds(104, 114, 96, 23);
-		// frame.getContentPane().add(Ingresar);
-		panelLogin.add(btningresar);
 
 		/**
 		 * Eventos (Login)
 		 */
-		btningresar.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				/*
-				 * UsuarioDB.LoginUsuario(usuariotf.getText(), passwordField.getText());
-				 * if(UsuarioDB.correcto== true) { frame.dispose(); }
-				 */
-
-			}
-		});
-
-
-		JLabel lblNewLabel = new JLabel("NICKNAME");
-		lblNewLabel.setBounds(51, 30, 72, 14);
-		// frame.getContentPane().add(lblNewLabel);
-		panelLogin.add(lblNewLabel);
-
-		JLabel lblNewLabel_1 = new JLabel("CONTRASEYA");
-		lblNewLabel_1.setBounds(51, 68, 96, 14);
-		// frame.getContentPane().add(lblNewLabel_1);
-		panelLogin.add(lblNewLabel_1);
-
-		passwordField = new JPasswordField();
-		passwordField.setBounds(157, 65, 96, 20);
-		panelLogin.add(passwordField);
+		
+				JPanel panelLogin = new JPanel();
+				panelLogin.setBackground(new Color(255, 228, 196));
+				tabbedPane.addTab("Login", null, panelLogin, null);
+				panelLogin.setLayout(null);
+				
+						nombretxt = new JTextField();
+						nombretxt.setForeground(new Color(255, 140, 0));
+						nombretxt.setBackground(new Color(255, 228, 181));
+						nombretxt.setBounds(68, 52, 172, 22);
+						// frame.getContentPane().add(usuariotf);
+						nombretxt.setColumns(10);
+						panelLogin.add(nombretxt);
+						
+								JButton btningresar = new JButton("ENTRAR");
+								btningresar.setBackground(new Color(255, 222, 173));
+								btningresar.setForeground(new Color(255, 165, 0));
+								btningresar.setFont(new Font("Lato", Font.BOLD, 16));
+								btningresar.setBounds(108, 179, 105, 40);
+								// frame.getContentPane().add(Ingresar);
+								panelLogin.add(btningresar);
+								btningresar.addActionListener(new ActionListener() {
+									@Override
+									public void actionPerformed(ActionEvent e) {
+										// TODO Auto-generated method stub
+										String nick = nombretxt.getText();
+										String c = contraseyatxt.getText();
+										
+										if((!nick.equals("") && !c.equals("")) || (!nick.equals("admin") && !c.equals("admin"))) {
+											Connection con = null;
+											try {
+												con = BD.initBD("baseDeDatos.db");
+											} catch (Exception e3) {
+												// TODO Auto-generated catch block
+												e3.printStackTrace();
+											}
+											int resul = 0;
+											try {
+												resul = BD.obtenerUsuario(con, nick, c);
+											} catch (Exception e2) {
+												// TODO Auto-generated catch block
+												e2.printStackTrace();
+											}
+											if((resul == 0) && !nick.equals("admin") && !c.equals("admin")){
+												JOptionPane.showMessageDialog(null, "Todavia no te has registrado","¡¡ERROR!!", JOptionPane.ERROR_MESSAGE);
+												nombretxt.setText("");
+												contraseyatxt.setText("");
+											}else if(resul==1) {
+												JOptionPane.showMessageDialog(null, "La contraseña no es correcta","¡¡ERROR!!", JOptionPane.ERROR_MESSAGE);
+												
+												contraseyatxt.setText("");
+											}else {
+												if((resul == 2) && (!nick.equals("admin") && !c.equals("admin"))){
+													
+													JOptionPane.showMessageDialog(null, "Cargando SneakerHome, bienvenid@ "+ nick,"WELCOME", JOptionPane.INFORMATION_MESSAGE);
+													Usuario u = new Usuario(nick,c);
+													
+													try {
+														new VentanaPrincipal(frame, u);
+													} catch (Exception e1) {
+														// TODO Auto-generated catch block
+														e1.printStackTrace();
+													}
+													frame.dispose();
+												}else if(nick.equals("admin") && c.equals("admin")){
+													JOptionPane.showMessageDialog(null, "Cargando SneakerHome VISUAL admin web","WELCOME", JOptionPane.INFORMATION_MESSAGE);
+													Usuario admin = new Usuario("admin","admin");
+													new VentanaAdmin(frame, admin);
+													frame.dispose();
+												}
+											}
+										}
+									}
+										
+									
+								});
+								
+								
+										JLabel lblNewLabel = new JLabel("NICKNAME");
+										lblNewLabel.setForeground(new Color(255, 140, 0));
+										lblNewLabel.setFont(new Font("Lato", Font.BOLD, 18));
+										lblNewLabel.setBounds(108, 11, 132, 30);
+										// frame.getContentPane().add(lblNewLabel);
+										panelLogin.add(lblNewLabel);
+										
+												JLabel lblNewLabel_1 = new JLabel("PASSWORD");
+												lblNewLabel_1.setForeground(new Color(255, 140, 0));
+												lblNewLabel_1.setFont(new Font("Lato", Font.BOLD, 18));
+												lblNewLabel_1.setBounds(108, 85, 155, 30);
+												// frame.getContentPane().add(lblNewLabel_1);
+												panelLogin.add(lblNewLabel_1);
+												
+														contraseyatxt = new JPasswordField();
+														contraseyatxt.setForeground(new Color(255, 140, 0));
+														contraseyatxt.setBackground(new Color(255, 228, 181));
+														contraseyatxt.setBounds(68, 126, 172, 22);
+														panelLogin.add(contraseyatxt);
 
 		JPanel panelRegistro = new JPanel();
+		panelRegistro.setBackground(new Color(255, 228, 196));
 		tabbedPane.addTab("Registro", null, panelRegistro, null);
 		panelRegistro.setLayout(null);
 
 		JButton btnAvatar = new JButton("Escoger avatar");
-		btnAvatar.setBounds(168, 168, 129, 23);
+		btnAvatar.setBackground(new Color(255, 222, 173));
+		btnAvatar.setForeground(new Color(255, 140, 0));
+		btnAvatar.setBounds(167, 142, 129, 23);
 		// frame.getContentPane().add(Ingresar);
 		panelRegistro.add(btnAvatar);
 
 		JLabel labelNombre = new JLabel("Nombre:");
-		labelNombre.setBounds(36, 37, 63, 14);
+		labelNombre.setForeground(new Color(255, 140, 0));
+		labelNombre.setFont(new Font("Lato", Font.BOLD, 11));
+		labelNombre.setBounds(36, 11, 63, 14);
 		panelRegistro.add(labelNombre);
 
 		JLabel labelcontrasenya = new JLabel("Contraseya");
-		labelcontrasenya.setBounds(36, 84, 83, 14);
+		labelcontrasenya.setForeground(new Color(255, 140, 0));
+		labelcontrasenya.setFont(new Font("Lato", Font.BOLD, 11));
+		labelcontrasenya.setBounds(36, 62, 83, 14);
 		panelRegistro.add(labelcontrasenya);
 
 		JLabel labelTarjeta = new JLabel("Tarjeta Credito");
-		labelTarjeta.setBounds(36, 131, 96, 14);
+		labelTarjeta.setForeground(new Color(255, 140, 0));
+		labelTarjeta.setFont(new Font("Lato", Font.BOLD, 11));
+		labelTarjeta.setBounds(36, 118, 96, 14);
 		panelRegistro.add(labelTarjeta);
 
 		nombre = new JTextField();
-		nombre.setBounds(36, 53, 96, 20);
+		nombre.setForeground(new Color(255, 140, 0));
+		nombre.setBackground(new Color(255, 228, 181));
+		nombre.setBounds(36, 31, 96, 20);
 		panelRegistro.add(nombre);
 		nombre.setColumns(10);
 
 		password = new JPasswordField();
-		password.setBounds(36, 100, 96, 20);
+		password.setForeground(new Color(255, 140, 0));
+		password.setBackground(new Color(255, 228, 181));
+		password.setBounds(36, 87, 96, 20);
 		panelRegistro.add(password);
 
 		tarjeta = new JTextField();
-		tarjeta.setBounds(36, 145, 96, 20);
+		tarjeta.setForeground(new Color(255, 140, 0));
+		tarjeta.setBackground(new Color(255, 228, 181));
+		tarjeta.setBounds(36, 143, 96, 20);
 		panelRegistro.add(tarjeta);
 		tarjeta.setColumns(10);
 
-		JLabel lblAvatar = new JLabel("");
+		lblAvatar = new JLabel("");
 		lblAvatar.setSize(96, 108);
-		lblAvatar.setLocation(185, 49);
+		lblAvatar.setLocation(186, 23);
 		lblAvatar.setForeground(new Color(0, 0, 153));
 		lblAvatar.setFont(new Font("Lato", Font.BOLD, 21));
 		panelRegistro.add(lblAvatar);
@@ -185,6 +259,9 @@ public class LoginDeusto_Sneaker {
 		 */
 
 		JButton botonRegistro = new JButton("REGISTRARSE");
+		botonRegistro.setForeground(new Color(255, 140, 0));
+		botonRegistro.setBackground(new Color(238, 232, 170));
+		botonRegistro.setFont(new Font("Lato", Font.BOLD, 16));
 		botonRegistro.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -249,9 +326,10 @@ public class LoginDeusto_Sneaker {
 		});
 
 
-		botonRegistro.setBounds(82, 220, 147, 33);
+		botonRegistro.setBounds(85, 200, 147, 33);
 		panelRegistro.add(botonRegistro);
-
+		
+		
 		btnAvatar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				fc = new JFileChooser("avatares"); //Objeto que me va a permitir seleccionar un fichero
@@ -267,8 +345,8 @@ public class LoginDeusto_Sneaker {
 				}
 				ImageIcon im = new ImageIcon(ficheroSeleccionado.getAbsolutePath());
 				ImageIcon imagenConDimensiones = new ImageIcon(im.getImage().getScaledInstance(100,100,ImageView.CENTER));
-				lblAvatarSeleccionado.setIcon(imagenConDimensiones);
-				lblAvatarSeleccionado.setPreferredSize(new DimensionUIResource(100, 100));
+				lblAvatar.setIcon(imagenConDimensiones);
+				lblAvatar.setPreferredSize(new DimensionUIResource(100, 100));
 			}
 		});
 
@@ -278,7 +356,6 @@ public class LoginDeusto_Sneaker {
 		nombre.setText("");
 		password.setText("");
 		tarjeta.setText("");
-		lblAvatarSeleccionado.setIcon(null);
+		lblAvatar.setIcon(null);
 	}
-
 }
