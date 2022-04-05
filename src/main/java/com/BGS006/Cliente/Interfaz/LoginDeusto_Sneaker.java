@@ -343,7 +343,7 @@ public class LoginDeusto_Sneaker {
 		
 		btnAvatar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				fc = new JFileChooser("avatares"); //Objeto que me va a permitir seleccionar un fichero
+				fc = new JFileChooser("src/main/resources/avatares"); //Objeto que me va a permitir seleccionar un fichero
 				FileNameExtensionFilter fnef = new FileNameExtensionFilter("JPG & PNG", "jpg","png");
 				fc.setFileFilter(fnef);
 

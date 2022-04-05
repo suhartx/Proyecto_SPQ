@@ -2,7 +2,8 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/BGS006/Cliente/Interfaz/LoginDeusto_Sneaker.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/BGS006/Cliente/Interfaz/LoginDeusto_Sneaker.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/BGS006/Cliente/Interfaz/VentanaPerfil.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
 </project>
