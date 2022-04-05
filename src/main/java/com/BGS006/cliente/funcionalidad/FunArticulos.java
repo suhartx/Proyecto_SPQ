@@ -1,11 +1,11 @@
-package com.BGS006.Cliente.Funcionalidad;
+package com.BGS006.cliente.funcionalidad;
 
 import java.util.ArrayList;
 
-import com.BGS006.Cliente.jdo.Articulo;
-import com.BGS006.Cliente.jdo.Calcetines;
-import com.BGS006.Cliente.jdo.Limpiador;
-import com.BGS006.Cliente.jdo.Zapatillas;
+import com.BGS006.cliente.jdo.Articulo;
+import com.BGS006.cliente.jdo.Calcetines;
+import com.BGS006.cliente.jdo.Limpiador;
+import com.BGS006.cliente.jdo.Zapatillas;
 
 public class FunArticulos {
 	public ArrayList<Articulo> arrayArticulos;
@@ -34,7 +34,7 @@ public class FunArticulos {
 	
 	public void addCalcetin(Calcetines c) {
 		if(comprobarArticulo(c.getNombre())){
-			System.out.println("El usuario ya está registrado");
+			System.out.println("El usuario ya estï¿½ registrado");
 		} else {
 			arrayArticulos.add(c);
 		}
@@ -43,7 +43,7 @@ public class FunArticulos {
 	
 	public void addZapatilla(Zapatillas z) {
 		if(comprobarArticulo(z.getNombre())){
-			System.out.println("El usuario ya está registrado");
+			System.out.println("El usuario ya estï¿½ registrado");
 		} else {
 			arrayArticulos.add(z);
 		}
@@ -51,7 +51,7 @@ public class FunArticulos {
 	
 	public void addLimpiador(Limpiador l) {
 		if(comprobarArticulo(l.getNombre())){
-			System.out.println("El usuario ya está registrado");
+			System.out.println("El usuario ya estï¿½ registrado");
 		} else {
 			arrayArticulos.add(l);
 		}
@@ -61,7 +61,7 @@ public class FunArticulos {
 		if(comprobarArticulo(a.getNombre())){
 			arrayArticulos.remove(a);
 		} else {
-			System.out.println("Ese usuario no está en el sistema");
+			System.out.println("Ese usuario no estï¿½ en el sistema");
 		}
 	}
 	

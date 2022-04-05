@@ -1,20 +1,17 @@
-package com.BGS006.Cliente.Interfaz;
+package com.BGS006.cliente.interfaz;
 
 import java.awt.BorderLayout;
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import com.BGS006.Cliente.jdo.Usuario;
+import com.BGS006.cliente.jdo.Usuario;
 
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 import java.awt.GridLayout;
 import java.awt.Font;

@@ -1,4 +1,4 @@
-package com.BGS006.Cliente.jdo;
+package com.BGS006.cliente.jdo;
 
 public class Limpiador extends Articulo{
 

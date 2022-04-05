@@ -1,4 +1,4 @@
-package com.BGS006.Cliente.Interfaz;
+package com.BGS006.cliente.interfaz;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -24,14 +24,12 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.plaf.DimensionUIResource;
 import javax.swing.text.html.ImageView;
 
-import com.BGS006.Cliente.BBDD.BD;
-import com.BGS006.Cliente.Funcionalidad.FunUsuario;
-import com.BGS006.Cliente.jdo.Articulo;
-import com.BGS006.Cliente.jdo.Usuario;
-import com.BGS006.Cliente.jdo.Zapatillas;
+import com.BGS006.cliente.bbdd.BD;
+import com.BGS006.cliente.jdo.Articulo;
+import com.BGS006.cliente.jdo.Usuario;
 
 
-public class LoginDeusto_Sneaker {
+public class LoginDeustoSneaker {
 
 	private JFrame frame;
 	private JTextField nombretxt;
@@ -58,7 +56,7 @@ public class LoginDeusto_Sneaker {
 			public void run() {
 				try {
 					
-					LoginDeusto_Sneaker window = new LoginDeusto_Sneaker();
+					LoginDeustoSneaker window = new LoginDeustoSneaker();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -72,10 +70,10 @@ public class LoginDeusto_Sneaker {
 	}
 
 	public static void setTmArticulos(TreeMap<Integer, Articulo> tmArticulos) {
-		LoginDeusto_Sneaker.tmArticulos = tmArticulos;
+		LoginDeustoSneaker.tmArticulos = tmArticulos;
 	}
 
-	public LoginDeusto_Sneaker() {
+	public LoginDeustoSneaker() {
 		//Zapatillas z = new Zapatillas("Jordan 1 Retro", 499.99, 527, "imagenes/airJordan1Retro.jpg", 12, 40, "Naranja/Blanco", "Hombre");
 		con = BD.initBD("baseDeDatos");
 		BD.crearTablas(con);
@@ -152,11 +150,11 @@ public class LoginDeusto_Sneaker {
 												e2.printStackTrace();
 											}
 											if((resul == 0) && !nick.equals("admin") && !c.equals("admin")){
-												JOptionPane.showMessageDialog(null, "Todavia no te has registrado","¡¡ERROR!!", JOptionPane.ERROR_MESSAGE);
+												JOptionPane.showMessageDialog(null, "Todavia no te has registrado","ï¿½ï¿½ERROR!!", JOptionPane.ERROR_MESSAGE);
 												nombretxt.setText("");
 												contraseyatxt.setText("");
 											}else if(resul==1) {
-												JOptionPane.showMessageDialog(null, "La contraseña no es correcta","¡¡ERROR!!", JOptionPane.ERROR_MESSAGE);
+												JOptionPane.showMessageDialog(null, "La contraseï¿½a no es correcta","ï¿½ï¿½ERROR!!", JOptionPane.ERROR_MESSAGE);
 												
 												contraseyatxt.setText("");
 											}else {
@@ -304,7 +302,7 @@ public class LoginDeusto_Sneaker {
 					}
 					if(valor == 0) {
 						Usuario u = new Usuario(n, pa,ta,av);
-						LoginDeusto_Sneaker.tmUsuarios.put(u.getNombre(), u);
+						LoginDeustoSneaker.tmUsuarios.put(u.getNombre(), u);
 						try {
 							con2 = BD.initBD("baseDeDatos");
 						} catch (Exception e2) {

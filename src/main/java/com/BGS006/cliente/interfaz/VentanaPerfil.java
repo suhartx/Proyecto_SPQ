@@ -1,48 +1,32 @@
-package com.BGS006.Cliente.Interfaz;
+package com.BGS006.cliente.interfaz;
 
 
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.Graphics;
 import java.awt.GridLayout;
-import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.net.BindException;
 import java.sql.Connection;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.regex.Pattern;
 
-import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.BevelBorder;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
-import javax.swing.plaf.DimensionUIResource;
 import javax.swing.text.html.ImageView;
 
-import com.BGS006.Cliente.BBDD.BD;
-import com.BGS006.Cliente.jdo.Usuario;
+import com.BGS006.cliente.bbdd.BD;
+import com.BGS006.cliente.jdo.Usuario;
 
-import javax.swing.JList;
 import java.awt.Dimension;
 
 public class VentanaPerfil extends JFrame {
@@ -113,7 +97,7 @@ public class VentanaPerfil extends JFrame {
 		JButton btnEditar = new JButton("Cambiar contraseya");
 		btnEditar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String contra = JOptionPane.showInputDialog("Introduzca la nueva contraseña:");
+				String contra = JOptionPane.showInputDialog("Introduzca la nueva contraseï¿½a:");
 				String ERcontraseya = "[0-9]{1,15}";
 				boolean correctoContra = Pattern.matches(ERcontraseya, contra);
 				if(correctoContra && !contra.equals(u.getContrasenya())) {
@@ -135,7 +119,7 @@ public class VentanaPerfil extends JFrame {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
-					JOptionPane.showMessageDialog(null, "Contraseña cambiada correctamente", "CAMBIO REALIZADO", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Contraseï¿½a cambiada correctamente", "CAMBIO REALIZADO", JOptionPane.INFORMATION_MESSAGE);
 				}else {
 					JOptionPane.showMessageDialog(null, "Loading...Error", "!!ERROR!!", JOptionPane.ERROR_MESSAGE);
 				}

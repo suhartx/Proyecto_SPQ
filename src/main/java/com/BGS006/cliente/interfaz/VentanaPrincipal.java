@@ -1,23 +1,18 @@
-package com.BGS006.Cliente.Interfaz;
+package com.BGS006.cliente.interfaz;
 
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import javax.swing.border.EmptyBorder;
-import javax.swing.plaf.DimensionUIResource;
 import javax.swing.text.html.ImageView;
 
-import com.BGS006.*;
-import com.BGS006.Cliente.jdo.Articulo;
-import com.BGS006.Cliente.jdo.Usuario;
+import com.BGS006.cliente.jdo.Articulo;
+import com.BGS006.cliente.jdo.Usuario;
 
-import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JList;
 
@@ -27,20 +22,14 @@ import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.SwingConstants;
-import javax.swing.SwingUtilities;
 
 import java.awt.GridLayout;
-import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.BindException;
-import java.sql.Connection;
 import java.util.ArrayList;
-import java.util.TreeMap;
 
 import javax.swing.JComboBox;
-import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.border.BevelBorder;
 
@@ -170,8 +159,8 @@ public class VentanaPrincipal extends JFrame {
 	}
 	
 	private void anyadirArticulosALista() {
-		for(int clave : LoginDeusto_Sneaker.getTmArticulos().keySet()) {
-			Articulo valor = LoginDeusto_Sneaker.getTmArticulos().get(clave);
+		for(int clave : LoginDeustoSneaker.getTmArticulos().keySet()) {
+			Articulo valor = LoginDeustoSneaker.getTmArticulos().get(clave);
 			modeloListaArticulos.addElement(valor);
 		}
 		listaArticulos.setModel(modeloListaArticulos);

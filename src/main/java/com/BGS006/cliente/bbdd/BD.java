@@ -1,4 +1,4 @@
-package com.BGS006.Cliente.BBDD;
+package com.BGS006.cliente.bbdd;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,13 +6,11 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.TreeMap;
 
-import com.BGS006.Cliente.jdo.Articulo;
-import com.BGS006.Cliente.jdo.Calcetines;
-import com.BGS006.Cliente.jdo.Color;
-import com.BGS006.Cliente.jdo.Genero;
-import com.BGS006.Cliente.jdo.Limpiador;
-import com.BGS006.Cliente.jdo.Usuario;
-import com.BGS006.Cliente.jdo.Zapatillas;
+import com.BGS006.cliente.jdo.Articulo;
+import com.BGS006.cliente.jdo.Calcetines;
+import com.BGS006.cliente.jdo.Limpiador;
+import com.BGS006.cliente.jdo.Usuario;
+import com.BGS006.cliente.jdo.Zapatillas;
 
 public class BD {
 
@@ -73,14 +71,14 @@ public class BD {
 	}
 
 	/**
-	 * Método que recibe los datos de un Articulo y comprueba que está registrado en
+	 * Mï¿½todo que recibe los datos de un Articulo y comprueba que estï¿½ registrado en
 	 * la BBDD
 	 * 
 	 * @param nom nombre del Artiuclo
-	 * @param con contraseña del Articulo
-	 * @return 0 si el Articulo no está registrado 1 si el Articulo está registrado
-	 *         pero la contraseña no es correcta 2 si el usuario está registrado y
-	 *         la contraseña es correcta
+	 * @param con contraseï¿½a del Articulo
+	 * @return 0 si el Articulo no estï¿½ registrado 1 si el Articulo estï¿½ registrado
+	 *         pero la contraseï¿½a no es correcta 2 si el usuario estï¿½ registrado y
+	 *         la contraseï¿½a es correcta
 	 * @throws DeustoException
 	 */
 	public static int articuloRegistrado(Connection con, int ID, String name) {
@@ -90,7 +88,7 @@ public class BD {
 		try {
 			st = con.createStatement();
 			ResultSet rs = st.executeQuery(sentencia);
-			if (rs.next()) { // Hemos encontrado una tupla que cumple la condición
+			if (rs.next()) { // Hemos encontrado una tupla que cumple la condiciï¿½n
 				if (rs.getString("ID").equals(ID)) {
 					resul = 2;
 				} else {
@@ -174,7 +172,7 @@ public class BD {
 		try {
 			st = con.createStatement();
 			ResultSet rs = st.executeQuery(sent);
-			if(rs.next()) { //Hemos encontrado una tupla que cumple la condición
+			if(rs.next()) { //Hemos encontrado una tupla que cumple la condiciï¿½n
 				String avatar = rs.getString("Avatar");
 				rs.close();
 				return avatar;
@@ -192,12 +190,12 @@ public class BD {
 	}
 	
 	/**
-	 * Método que recibe los datos de un Usuario y comprueba que está registrado en la BBDD
+	 * Mï¿½todo que recibe los datos de un Usuario y comprueba que estï¿½ registrado en la BBDD
 	 * @param nom nombre del usuario
-	 * @param con contraseña del usuario
-	 * @return 0 si el usuario no está registrado
-	 * 		   1 si el usuario está registrado pero la contraseña no es correcta
-	 * 		   2 si el usuario está registrado y la contraseña es correcta
+	 * @param con contraseï¿½a del usuario
+	 * @return 0 si el usuario no estï¿½ registrado
+	 * 		   1 si el usuario estï¿½ registrado pero la contraseï¿½a no es correcta
+	 * 		   2 si el usuario estï¿½ registrado y la contraseï¿½a es correcta
 	 */
 	public static int obtenerUsuario(Connection con, String nombre, String c){
 		String sentencia = "SELECT Contraseya FROM usuarios WHERE 	Nombre ='"+nombre+"'";
@@ -206,7 +204,7 @@ public class BD {
 		try {
 			st = con.createStatement();
 			ResultSet rs = st.executeQuery(sentencia);
-			if(rs.next()) { //Hemos encontrado una tupla que cumple la condición
+			if(rs.next()) { //Hemos encontrado una tupla que cumple la condiciï¿½n
 				if(rs.getString("Contraseya").equals(c)) {
 					resul = 2;
 				}else {
@@ -229,12 +227,12 @@ public class BD {
 	}
 	
 	/**
-	 * Método que recibe los datos de un Articulo y comprueba que está registrado en la BBDD
+	 * Mï¿½todo que recibe los datos de un Articulo y comprueba que estï¿½ registrado en la BBDD
 	 * @param nom nombre del Artiuclo
-	 * @param con contraseña del Articulo
-	 * @return 0 si el Articulo no está registrado
-	 * 		   1 si el Articulo está registrado pero la contraseña no es correcta
-	 * 		   2 si el usuario está registrado y la contraseña es correcta
+	 * @param con contraseï¿½a del Articulo
+	 * @return 0 si el Articulo no estï¿½ registrado
+	 * 		   1 si el Articulo estï¿½ registrado pero la contraseï¿½a no es correcta
+	 * 		   2 si el usuario estï¿½ registrado y la contraseï¿½a es correcta
 	 */
 	public static int obtenerArticulo(Connection con, int ID, String nombre) {
 		String sentencia = "SELECT ID FROM articulos WHERE 	Nombre ='"+nombre+"'";
@@ -243,7 +241,7 @@ public class BD {
 		try {
 			st = con.createStatement();
 			ResultSet rs = st.executeQuery(sentencia);
-			if(rs.next()) { //Hemos encontrado una tupla que cumple la condición
+			if(rs.next()) { //Hemos encontrado una tupla que cumple la condiciï¿½n
 				if(rs.getString("ID").equals(ID)) {
 					resul = 2;
 				}else {
@@ -394,10 +392,10 @@ public class BD {
 	}
 
 	/**
-	 * Método que permite al usuario cambiar su contraseña y se actualiza su info en la BD
+	 * Mï¿½todo que permite al usuario cambiar su contraseï¿½a y se actualiza su info en la BD
 	 * @param con Conexion
-	 * @param nick El nick del usuario al que le vamos a cambiar la contraseña
-	 * @param c La nueva contraseña
+	 * @param nick El nick del usuario al que le vamos a cambiar la contraseï¿½a
+	 * @param c La nueva contraseï¿½a
 	 */
 	public static void cambiarContrasenya(Connection con, String nick, String c) {
 		String sent = "UPDATE usuarios SET Contraseya = '" + c + "' WHERE Nombre = '" + nick + "'";
@@ -419,8 +417,8 @@ public class BD {
 	}
 	
 	/**
-	 * Método que obtiene un mapa con los Articulos de la BBDD
-	 * @param con Conexión con la BBDD
+	 * Mï¿½todo que obtiene un mapa con los Articulos de la BBDD
+	 * @param con Conexiï¿½n con la BBDD
 	 * @return TreeMap<String,Articulo>
 	 * @throws DeustoException 
 	 */
