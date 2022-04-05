@@ -103,11 +103,7 @@ public class LoginDeustoSneaker {
 		tabbedPane.setBounds(0, 0, 323, 292);
 		frame.getContentPane().add(tabbedPane);
 
-		/**
-		 * Eventos (Login)
-		 */
-		
-				JPanel panelLogin = new JPanel();
+		JPanel panelLogin = new JPanel();
 				panelLogin.setBackground(new Color(255, 228, 196));
 				tabbedPane.addTab("Login", null, panelLogin, null);
 				panelLogin.setLayout(null);
