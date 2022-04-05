@@ -83,7 +83,7 @@
                 <artifactId>doxygen-maven-plugin</artifactId>
                 <version>1.1.0</version>
             </plugin>
-            <plugin>
+<!--            <plugin>
                 <groupId>org.datanucleus</groupId>
                 <artifactId>datanucleus-maven-plugin</artifactId>
                 <version>5.2.1</version>
@@ -93,7 +93,7 @@
                     <verbose>true</verbose>
                     <props>${config.files.dir}/datanucleus.properties</props>
                 </configuration>
-            </plugin>
+            </plugin>-->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
