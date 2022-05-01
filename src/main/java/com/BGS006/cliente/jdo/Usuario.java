@@ -41,7 +41,7 @@ public class Usuario {
 	public Usuario (String nombre, String contrasenya) {
 		this.nombre = nombre;
 		this.contrasenya = contrasenya;
-}
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -98,9 +98,28 @@ public class Usuario {
 	}
 
 
+
 	public void setPedidos(ArrayList<Compra> pedidos) {
 		this.pedidos = pedidos;
 	}
-	
-	
+
+	public void addCarrito(Articulo a) {
+		if(a !=null) {
+			carro.add(a);
+		}
+	}
+
+	public void limpiarCarrito() {
+		carro.clear();
+	}
+
+	public  void eliminarArticulo(int id) {
+		Articulo f = carro.remove(id);
+	}
+
+	public int compareTo(Usuario u) {
+		return u.nombre.compareTo(this.nombre);
+	}
+
+
 }

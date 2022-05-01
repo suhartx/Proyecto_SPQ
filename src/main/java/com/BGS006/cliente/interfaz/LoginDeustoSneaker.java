@@ -25,8 +25,7 @@ import javax.swing.plaf.DimensionUIResource;
 import javax.swing.text.html.ImageView;
 
 import com.BGS006.cliente.bbdd.BD;
-import com.BGS006.cliente.jdo.Articulo;
-import com.BGS006.cliente.jdo.Usuario;
+import com.BGS006.cliente.jdo.*;
 
 
 public class LoginDeustoSneaker {
@@ -64,27 +63,25 @@ public class LoginDeustoSneaker {
 			}
 		});
 	}
-	
-	public static TreeMap<Integer, Articulo> getTmArticulos() {
-		return tmArticulos;
-	}
-
-	public static void setTmArticulos(TreeMap<Integer, Articulo> tmArticulos) {
-		LoginDeustoSneaker.tmArticulos = tmArticulos;
-	}
 
 	public LoginDeustoSneaker() {
-		//Zapatillas z = new Zapatillas("Jordan 1 Retro", 499.99, 527, "imagenes/airJordan1Retro.jpg", 12, 40, "Naranja/Blanco", "Hombre");
+		//Zapatillas z = new Zapatillas("Jordan 1 Retro", 499.99, 527, "src/main/resources/imagenes/airJordan1Retro.jpg", 12, 40, "Naranja/Blanco", "Hombre");
+
+		Limpiador l = new Limpiador("Creep Clean", 19.99,927,"src/main/resources/imagenes/limpiadorCreep.jpg",33,true);
+		Calcetines c = new Calcetines("Nike shocks",9.99,332,"src/main/resources/imagenes/calcetinesNike.jpg",9,42,"Negro","Hombre");
+
 		con = BD.initBD("baseDeDatos");
 		BD.crearTablas(con);
 		//BD.insertarZapatillaBBDD(con, z);
+		BD.insertarLimpiadorBBDD(con,l);
+		BD.insertarCalcetinBBDD(con,c);
 		BD.cargarMapaArticulosDeInfoBBDD(con);
 		BD.closeBD(con);
-	/*	FunUsuario.getInstance().CrearUsuario();
-		FunUsuario.getInstance().Holamundo();
-		*/initialize();
-		
+		initialize();
+	}
 
+	public static TreeMap<Integer, Articulo> getTmArticulos() {
+		return tmArticulos;
 	}
 
 	/**

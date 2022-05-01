@@ -79,7 +79,6 @@ public class BD {
 	 * @return 0 si el Articulo no est� registrado 1 si el Articulo est� registrado
 	 *         pero la contrase�a no es correcta 2 si el usuario est� registrado y
 	 *         la contrase�a es correcta
-	 * @throws DeustoException
 	 */
 	public static int articuloRegistrado(Connection con, int ID, String name) {
 		String sentencia = "SELECT ID FROM Articulos WHERE 	Name ='" + name + "'";
@@ -303,8 +302,8 @@ public class BD {
 	 */
 	
 	public static void insertarLimpiadorBBDD(Connection con, Limpiador l) {
-		String sent = "INSERT INTO Articulos VALUES(" + l.getId() + ",'" + l.getNombre() + "','" + l.getPrecio() + "',"
-				+ l.getRutaImagen() + ",'" + l.getStock() + "','null','null','null','" + l.isPlus() + "','l')";
+		String sent = "INSERT INTO Articulos VALUES(" + l.getId() + ",'" + l.getNombre() + "'," + l.getPrecio() + ",'"
+				+ l.getRutaImagen() + "'," + l.getStock() + ",'null','null','null','" + l.isPlus() + "','l')";
 		Statement st = null;
 
 		try {
@@ -336,8 +335,8 @@ public class BD {
 	 */
 	
 	public static void insertarCalcetinBBDD(Connection con, Calcetines c) {
-		String sent = "INSERT INTO Articulos VALUES(" + c.getId() + ",'" + c.getNombre() + "','" + c.getPrecio() + "',"
-				+ c.getRutaImagen() + ",'" + c.getStock() + "','" + c.getTalla() + "','" + c.getColor() + "','"
+		String sent = "INSERT INTO Articulos VALUES(" + c.getId() + ",'" + c.getNombre() + "'," + c.getPrecio() + ",'"
+				+ c.getRutaImagen() + "'," + c.getStock() + "," + c.getTalla() + ",'" + c.getColor() + "','"
 				+ c.getGen() + "','null','c')";
 		Statement st = null;
 		try {
@@ -466,4 +465,135 @@ public class BD {
 		}
 		return tmArticulo;
 	}
+
+	/**
+	 * Metodo que permite cargar un treeMap con todas las zaptillas de la BBDD
+	 * @param con
+	 * @return TreeMap con todas las zapatillas regitradas
+	 */
+	public static TreeMap<Integer,Articulo> cargarZapatillasDeInfoDeBBDD(Connection con) {
+		TreeMap<Integer, Articulo> tmZapatillas = new TreeMap<>();
+		Statement stmt = null;
+
+		String sentSQL = "SELECT * FROM Articulos WHERE TipoArticulo = 'z'";
+		try {
+			stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sentSQL);
+			while(rs.next()) {
+				int ID = rs.getInt("ID");
+				String nombre = rs.getString("Nombre");
+				int precio = rs.getInt("Precio");
+				String imagen = rs.getString("Imagen");
+				int stock = rs.getInt("Stock");
+				int talla = rs.getInt("Talla");
+				String color = rs.getString("Color");
+				String genero = rs.getString("Genero");
+
+				Zapatillas z = new Zapatillas(nombre,precio,ID,imagen,stock,talla,color,genero);
+				tmZapatillas.put(ID, z);
+			}
+			rs.close();
+			stmt.close();
+			System.out.println("Zapatillas cargadas con exito.... \n");
+		} catch (Exception e1) {
+
+		} finally {
+			if(stmt!=null) {
+				try {
+					stmt.close();
+				} catch (Exception e) {
+
+				}
+			}
+		}
+
+		return tmZapatillas;
+	}
+
+	/**
+	 * Metodo que permite cargar un treeMap con todas los calcetines de la BBDD
+	 * @param con
+	 * @return TreeMap con todas las calcetines regitradas
+	 */
+	public static TreeMap<Integer,Articulo> cargarCalcetinesDeInfoDeBBDD(Connection con){
+		TreeMap<Integer, Articulo> tmCalcetines = new TreeMap<>();
+		Statement stmt = null;
+
+		String sentSQL = "SELECT * FROM Articulos WHERE TipoArticulo = 'c'";
+		try {
+			stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sentSQL);
+			while(rs.next()) {
+				int ID = rs.getInt("ID");
+				String nombre = rs.getString("Nombre");
+				int precio = rs.getInt("Precio");
+				String imagen = rs.getString("Imagen");
+				int stock = rs.getInt("Stock");
+				int talla = rs.getInt("Talla");
+				String color = rs.getString("Color");
+				String genero = rs.getString("Genero");
+
+				Calcetines z = new Calcetines(nombre,precio,ID,imagen,stock,talla,color,genero);
+				tmCalcetines.put(ID, z);
+			}
+			rs.close();
+			stmt.close();
+			System.out.println("Calcetines cargados con exito.... \n");
+		} catch (Exception e) {
+
+		} finally {
+			if(stmt!=null) {
+				try {
+					stmt.close();
+				} catch (Exception e) {
+
+				}
+			}
+		}
+
+		return tmCalcetines;
+	}
+
+	/**
+	 * Metodo que permite cargar un treeMap con todas los limpiadores de la BBDD
+	 * @param con
+	 * @return TreeMap con todas los limpiadores regitradas
+	 */
+	public static TreeMap<Integer,Articulo> cargarLimpiadoresDeInfoDeBBDD(Connection con){
+		TreeMap<Integer, Articulo> tmLimpiadores = new TreeMap<>();
+		Statement stmt=null;
+
+		String sentSQL = "SELECT * FROM Articulos WHERE TipoArticulo = 'l'";
+		try {
+			stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sentSQL);
+			while(rs.next()) {
+				int ID = rs.getInt("ID");
+				String nombre = rs.getString("Nombre");
+				int precio = rs.getInt("Precio");
+				String imagen = rs.getString("Imagen");
+				int stock = rs.getInt("Stock");
+				Boolean plus = rs.getBoolean("Plus");
+
+				Limpiador l = new Limpiador(nombre,precio,ID,imagen,stock,plus);
+				tmLimpiadores.put(ID, l);
+			}
+			rs.close();
+			stmt.close();
+			System.out.println("Sudadera cargados con exito.... \n");
+		} catch (Exception e) {
+
+		} finally {
+			if(stmt!=null) {
+				try {
+					stmt.close();
+				} catch (Exception e) {
+
+				}
+			}
+		}
+
+		return tmLimpiadores;
+	}
+
 }

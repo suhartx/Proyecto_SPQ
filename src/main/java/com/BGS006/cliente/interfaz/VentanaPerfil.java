@@ -39,13 +39,10 @@ public class VentanaPerfil extends JFrame {
 
 	/**
 	 * Create the frame.
-	 * @param ventanaActual2 
-	 * @throws DeustoException 
 	 */
 
 	public VentanaPerfil(JFrame va, final Usuario u) throws BindException {
 
-		// cargarTMventasUsuarioAJlist();
 		System.out.println("Este es el logo " + u.getRutaAvatar());
 		System.out.println(u.getContrasenya());
 		ventanaAnterior = va;
