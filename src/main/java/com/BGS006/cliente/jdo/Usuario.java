@@ -11,7 +11,7 @@ public class Usuario {
 	private String rutaAvatar;
 	
 	private ArrayList<Articulo> carro; // Compra
-	private ArrayList<Compra> pedidos;
+	private ArrayList<Compra> compras;
 	
 	
 	public Usuario(String nombre, String contrasenya, String tarjetaPago, String rutaAvatar, String a2, String c, String d, int ta, boolean ad) {
@@ -20,7 +20,7 @@ public class Usuario {
 		this.contrasenya = contrasenya;
 		this.tarjetaPago = tarjetaPago;
 		this.rutaAvatar = rutaAvatar;
-		this.pedidos = null;
+		this.compras = null;
 		
 	}
 	public Usuario() {
@@ -29,7 +29,7 @@ public class Usuario {
 		this.contrasenya = "";
 		this.tarjetaPago = "";
 		this.rutaAvatar = "";
-		this.pedidos = null;
+		this.compras = null;
 	}
 
 	public Usuario(String nombre, String contrasenya,String tarjetaPago,String rutaAvatar) {
@@ -96,14 +96,14 @@ public class Usuario {
 	}
 
 
-	public ArrayList<Compra> getPedidos() {
-		return pedidos;
+	public ArrayList<Compra> getCompras() {
+		return compras;
 	}
 
 
 
-	public void setPedidos(ArrayList<Compra> pedidos) {
-		this.pedidos = pedidos;
+	public void setPedidos(ArrayList<Compra> compras) {
+		this.compras = compras;
 	}
 
 	public void addCarrito(Articulo a) {
