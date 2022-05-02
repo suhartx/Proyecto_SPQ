@@ -6,16 +6,20 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
+import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.BindException;
 import java.sql.Connection;
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -25,6 +29,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.text.html.ImageView;
 
 import com.BGS006.cliente.bbdd.BD;
+import com.BGS006.cliente.jdo.Compra;
 import com.BGS006.cliente.jdo.Usuario;
 
 import java.awt.Dimension;
@@ -35,14 +40,21 @@ public class VentanaPerfil extends JFrame {
 	public static Connection con;
 	public static String nombreBD = "baseDeDatos";
 	private JFrame ventanaActual, ventanaAnterior;
-	private JScrollPane scrollListaVentas;
+	private DefaultListModel<Compra> modeloListComprasUsuario;
+	private JList<Compra> listaComprasUsuario;
+	private JScrollPane scrollListaCompras;
+	
+	
 
 	/**
 	 * Create the frame.
+	 * @param ventanaActual2 
+	 * @throws DeustoException 
 	 */
 
 	public VentanaPerfil(JFrame va, final Usuario u) throws BindException {
 
+		// cargarTMventasUsuarioAJlist();
 		System.out.println("Este es el logo " + u.getRutaAvatar());
 		System.out.println(u.getContrasenya());
 		ventanaAnterior = va;
@@ -88,6 +100,25 @@ public class VentanaPerfil extends JFrame {
 		getContentPane().add(panelNorte, BorderLayout.NORTH);
 		panelNorte.setBackground(new Color(255, 222, 173));
 		
+		JPanel panelCentral = new JPanel();
+		getContentPane().add(panelCentral, BorderLayout.CENTER);
+		panelCentral.setBackground(new Color(255, 153, 51));
+		panelCentral.setLayout(new GridLayout(1, 2, 0, 0));
+		
+		JPanel panelCentroIzquierda = new JPanel();
+		panelCentroIzquierda.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panelCentroIzquierda.setForeground(new Color(255, 255, 255));
+		panelCentroIzquierda.setBackground(new Color(255, 228, 196));
+		panelCentral.add(panelCentroIzquierda);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panel.setBackground(new Color(255, 228, 196));
+		panelCentral.add(panel);
+		
+		
+		
+			
 		
 		
 		
@@ -155,16 +186,7 @@ public class VentanaPerfil extends JFrame {
 		btnEditar.setBackground(new Color(255, 153, 0));
 		panelNorte.add(btnEditar, "cell 0 0,grow");
 		
-		JPanel panelCentral = new JPanel();
-		getContentPane().add(panelCentral, BorderLayout.CENTER);
-		panelCentral.setBackground(new Color(255, 153, 51));
-		panelCentral.setLayout(new GridLayout(1, 2, 0, 0));
 		
-		JPanel panelCentroIzquierda = new JPanel();
-		panelCentroIzquierda.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		panelCentroIzquierda.setForeground(new Color(255, 255, 255));
-		panelCentroIzquierda.setBackground(new Color(255, 228, 196));
-		panelCentral.add(panelCentroIzquierda);
 		
 		JLabel lblMyProfile = new JLabel("MY PROFILE");
 		lblMyProfile.setHorizontalAlignment(SwingConstants.CENTER);
@@ -190,18 +212,29 @@ public class VentanaPerfil extends JFrame {
 		
 		
 		
-		JPanel panel = new JPanel();
-		panel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		panel.setBackground(new Color(255, 228, 196));
-		panelCentral.add(panel);
+		
 		
 		
 		JLabel lblEnunciado = new JLabel("\tPedidos realizados:");
+		
 		lblEnunciado.setHorizontalAlignment(SwingConstants.LEFT);
 		lblEnunciado.setForeground(new Color(255, 165, 0));
 		lblEnunciado.setFont(new Font("Dialog", Font.BOLD, 42));
 		panel.add(lblEnunciado, "cell 0 0,alignx center,aligny bottom");
-		}
+		
+	/**
+	 * Lista de compras hechas por cliente
+	 */
+	modeloListComprasUsuario = new DefaultListModel<>();
+	listaComprasUsuario = new JList<Compra>(modeloListComprasUsuario);
+	listaComprasUsuario.setForeground(new Color(255, 255, 255));
+	listaComprasUsuario.setBackground(new Color(153, 204, 255));
+	//scrollListaCompras = new JScrollPane(listaComprasUsuario);
+	panel.add(listaComprasUsuario, "cell 0 2,alignx center,aligny center");
+	
+	for(Compra c: u.getCompras()) {
+		modeloListComprasUsuario.addElement(c);
+		
 	}
-	
-	
+	}
+}
