@@ -20,6 +20,8 @@ public class Usuario {
 		this.contrasenya = contrasenya;
 		this.tarjetaPago = tarjetaPago;
 		this.rutaAvatar = rutaAvatar;
+		this.pedidos = null;
+		
 	}
 	public Usuario() {
 		super();
@@ -27,6 +29,7 @@ public class Usuario {
 		this.contrasenya = "";
 		this.tarjetaPago = "";
 		this.rutaAvatar = "";
+		this.pedidos = null;
 	}
 
 	public Usuario(String nombre, String contrasenya,String tarjetaPago,String rutaAvatar) {
