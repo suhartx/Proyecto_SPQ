@@ -1,9 +1,12 @@
 /target/
 
 # ignore all logs
-*.log
+
 .settings
 .idea
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+Deusto_Sneaker.iml
+datanucleus.log
+dependency-reduced-pom.xml

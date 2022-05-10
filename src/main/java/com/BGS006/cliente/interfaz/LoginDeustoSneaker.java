@@ -23,6 +23,8 @@ import javax.swing.SwingConstants;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.plaf.DimensionUIResource;
 import javax.swing.text.html.ImageView;
+import javax.ws.rs.client.*;
+import javax.ws.rs.core.MediaType;
 
 import com.BGS006.cliente.bbdd.BD;
 import com.BGS006.cliente.jdo.*;
@@ -43,6 +45,15 @@ public class LoginDeustoSneaker {
 	public static Connection con;
 	public static TreeMap<String, Usuario> tmUsuarios = new TreeMap<>();
 	public static TreeMap<Integer,Articulo> tmArticulos = new TreeMap<>();
+
+	Client client = ClientBuilder.newClient();
+	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
+
+
+
+	final WebTarget usersTarget = appTarget.path("usuarios/AnyadirUsuario");
+
+
 
 	/**
 	 * Launch the application.
@@ -278,48 +289,62 @@ public class LoginDeustoSneaker {
 				System.out.println(av);
 
 				if(!n.equals("admin") && (!n.equals("") && !pa.equals("") && !ta.equals(""))) {
-					Connection con = null;
-					Connection con2 = null;
-					try {
-						con = BD.initBD("baseDeDatos");
-					} catch (Exception e2) {
-						// TODO Auto-generated catch block
-						e2.printStackTrace();
-					}
-					int valor = 0;
-					try {
-						valor = BD.estaRegistrado(con, n);
-					} catch (Exception e2) {
-						// TODO Auto-generated catch block
-						e2.printStackTrace();
-					}
-					if(valor == 0) {
-						Usuario u = new Usuario(n, pa,ta,av);
-						LoginDeustoSneaker.tmUsuarios.put(u.getNombre(), u);
-						try {
-							con2 = BD.initBD("baseDeDatos");
-						} catch (Exception e2) {
-							// TODO Auto-generated catch block
-							e2.printStackTrace();
-						}
-						try {
-							BD.intertarUsuarioBBDD(con2,u);
-						} catch (Exception e2) {
-							// TODO Auto-generated catch block
-							e2.printStackTrace();
-						}
-						try {
-							BD.closeBD(con2);
-						} catch (Exception e2) {
-							// TODO Auto-generated catch block
-							e2.printStackTrace();
-						}
-						JOptionPane.showMessageDialog(null, "Usuario registrado correctamente", "REGISTRO CORRECTO", JOptionPane.INFORMATION_MESSAGE);
-						vaciarCampos();
-					}else {
-						JOptionPane.showMessageDialog(null, "Nick ya en uso, prueba con otro distinto", "��ERROR!!", JOptionPane.ERROR_MESSAGE);
-						nombre.setText("");
-					}
+//					Connection con = null;
+//					Connection con2 = null;
+//					try {
+//						con = BD.initBD("baseDeDatos");
+//					} catch (Exception e2) {
+//						// TODO Auto-generated catch block
+//						e2.printStackTrace();
+//					}
+//					int valor = 0;
+//					try {
+//						valor = BD.estaRegistrado(con, n);
+//					} catch (Exception e2) {
+//						// TODO Auto-generated catch block
+//						e2.printStackTrace();
+//					}
+//					if(valor == 0) {
+//						Usuario u = new Usuario(n, pa,ta,av);
+//						LoginDeustoSneaker.tmUsuarios.put(u.getNombre(), u);
+//						try {
+//							con2 = BD.initBD("baseDeDatos");
+//						} catch (Exception e2) {
+//							// TODO Auto-generated catch block
+//							e2.printStackTrace();
+//						}
+//						try {
+//							BD.intertarUsuarioBBDD(con2,u);
+//						} catch (Exception e2) {
+//							// TODO Auto-generated catch block
+//							e2.printStackTrace();
+//						}
+//						try {
+//							BD.closeBD(con2);
+//						} catch (Exception e2) {
+//							// TODO Auto-generated catch block
+//							e2.printStackTrace();
+//						}
+//						JOptionPane.showMessageDialog(null, "Usuario registrado correctamente", "REGISTRO CORRECTO", JOptionPane.INFORMATION_MESSAGE);
+//						vaciarCampos();
+//					}else {
+//						JOptionPane.showMessageDialog(null, "Nick ya en uso, prueba con otro distinto", "��ERROR!!", JOptionPane.ERROR_MESSAGE);
+//						nombre.setText("");
+//					}
+
+					Invocation.Builder invocationBuilder = appTarget.request(MediaType.APPLICATION_JSON);
+
+					Usuario u = new Usuario(n,pa,ta,av);
+
+					usersTarget.request().post(Entity.entity(u, MediaType.APPLICATION_JSON));
+
+
+					System.out.println(u.toString());
+
+
+					System.out.println("esho");
+
+
 				}else {
 					JOptionPane.showMessageDialog(null, "El nombre no es correcto, recuerda que tu nick: \n\t 1. No puede contener numeros, solo letras \n\t 2. No puedes crear cuenta con nick 'admin' \n\t 3. El campo contrase�a no puede estar vacio", "��ERROR!!", JOptionPane.ERROR_MESSAGE);
 					nombre.setText("");

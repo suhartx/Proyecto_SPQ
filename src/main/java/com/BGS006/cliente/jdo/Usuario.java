@@ -1,34 +1,37 @@
 package com.BGS006.cliente.jdo;
 
+import javax.jdo.annotations.*;
 import java.util.ArrayList;
+import java.util.List;
 
+@PersistenceCapable
+@Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
 public class Usuario {
 
-	
+	@PrimaryKey
 	private String nombre;
 	private String contrasenya;
 	private String tarjetaPago;
 	private String rutaAvatar;
+
+	@Persistent(defaultFetchGroup = "true")
+	@Join
+
+	private List<Articulo> carro; // Compra
+
+
+	@Persistent(mappedBy = "usuario", dependentElement = "true", defaultFetchGroup = "true")
+	private List<Compra> compras;
 	
-	private ArrayList<Articulo> carro; // Compra
-	private ArrayList<Compra> compras;
-	
-	
-	public Usuario(String nombre, String contrasenya, String tarjetaPago, String rutaAvatar, String a2, String c, String d, int ta, boolean ad) {
-		super();
-		this.nombre = nombre;
-		this.contrasenya = contrasenya;
-		this.tarjetaPago = tarjetaPago;
-		this.rutaAvatar = rutaAvatar;
-		this.compras = null;
-		
-	}
+
+
 	public Usuario() {
 		super();
 		this.nombre = "";
 		this.contrasenya = "";
 		this.tarjetaPago = "";
 		this.rutaAvatar = "";
+		this.carro=new ArrayList<Articulo>();
 		this.compras = null;
 	}
 
@@ -37,6 +40,8 @@ public class Usuario {
 		this.contrasenya = contrasenya;
 		this.tarjetaPago = tarjetaPago;
 		this.rutaAvatar = rutaAvatar;
+		this.carro=new ArrayList<Articulo>();
+		this.compras = null;
 	}
 
 
@@ -44,7 +49,7 @@ public class Usuario {
 	public Usuario (String nombre, String contrasenya) {
 		this.nombre = nombre;
 		this.contrasenya = contrasenya;
-	}
+}
 
 	public String getNombre() {
 		return nombre;
@@ -85,9 +90,8 @@ public class Usuario {
 		this.rutaAvatar = rutaAvatar;
 	}
 
-
 	public ArrayList<Articulo> getCarro() {
-		return carro;
+		return (ArrayList<Articulo>) carro;
 	}
 
 
@@ -97,7 +101,7 @@ public class Usuario {
 
 
 	public ArrayList<Compra> getCompras() {
-		return compras;
+		return (ArrayList<Compra>) compras;
 	}
 
 
@@ -122,6 +126,18 @@ public class Usuario {
 
 	public int compareTo(Usuario u) {
 		return u.nombre.compareTo(this.nombre);
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "Usuario{" +
+				"nombre='" + nombre + '\'' +
+				", contrasenya='" + contrasenya + '\'' +
+				", tarjetaPago='" + tarjetaPago + '\'' +
+				", rutaAvatar='" + rutaAvatar + '\'' +
+				'}';
 	}
 
 

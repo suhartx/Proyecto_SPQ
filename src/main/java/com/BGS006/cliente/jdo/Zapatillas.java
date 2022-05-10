@@ -5,8 +5,8 @@ public class Zapatillas extends Articulo {
 	private int talla;
 	private String color;
 	private String gen;
-	
-	
+
+
 	public Zapatillas(String nombre, double precio, long id, String rutaImagen, int stock) {
 		super(nombre, precio, id, rutaImagen, stock);
 		// TODO Auto-generated constructor stub
@@ -14,7 +14,7 @@ public class Zapatillas extends Articulo {
 
 
 	public Zapatillas(String nombre, double precio, long id, String rutaImagen, int stock, int talla, String color,
-			String gen) {
+					  String gen) {
 		super(nombre, precio, id, rutaImagen, stock);
 		this.talla = talla;
 		this.color = color;
@@ -50,6 +50,6 @@ public class Zapatillas extends Articulo {
 	public void setGen(String gen) {
 		this.gen = gen;
 	}
-	
-	
+
+
 }

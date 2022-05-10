@@ -1,14 +1,22 @@
 package com.BGS006.cliente.jdo;
 
-public abstract class Articulo {
-	
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
+
+@PersistenceCapable(detachable = "true")
+public class Articulo {
+
+	@PrimaryKey
 	private String nombre;
 	private double precio;
 	private long id;
+
 	private String rutaImagen;
 	private int stock;
-	
-	
+
+
+
+
 	public Articulo(String nombre, double precio, long id, String rutaImagen, int stock) {
 		super();
 		this.nombre = nombre;
@@ -17,6 +25,10 @@ public abstract class Articulo {
 		this.rutaImagen = rutaImagen;
 		this.stock = stock;
 	}
+
+    public Articulo() {
+
+    }
 
 
 	public String getNombre() {
@@ -38,17 +50,6 @@ public abstract class Articulo {
 		this.precio = precio;
 	}
 
-
-	public long getId() {
-		return id;
-	}
-
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-
 	public String getRutaImagen() {
 		return rutaImagen;
 	}
@@ -58,6 +59,14 @@ public abstract class Articulo {
 		this.rutaImagen = rutaImagen;
 	}
 
+	public long getId() {
+		return id;
+	}
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public int getStock() {
 		return stock;
