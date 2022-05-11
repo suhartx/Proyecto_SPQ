@@ -48,9 +48,6 @@ public class LoginDeustoSneaker {
 
 	Client client = ClientBuilder.newClient();
 	final WebTarget appTarget = client.target("http://localhost:8080/myapp");
-
-
-
 	final WebTarget usersTarget = appTarget.path("usuarios/AnyadirUsuario");
 
 
@@ -332,7 +329,7 @@ public class LoginDeustoSneaker {
 //						nombre.setText("");
 //					}
 
-					Invocation.Builder invocationBuilder = appTarget.request(MediaType.APPLICATION_JSON);
+					//Invocation.Builder invocationBuilder = appTarget.request(MediaType.APPLICATION_JSON);
 
 					Usuario u = new Usuario(n,pa,ta,av);
 

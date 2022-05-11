@@ -419,50 +419,50 @@ public class BD {
 	 * M�todo que obtiene un mapa con los Articulos de la BBDD
 	 * @param con Conexi�n con la BBDD
 	 * @return TreeMap<String,Articulo>
-	 * @throws DeustoException 
+	 * @thros DeustoException
 	 */
 	public static TreeMap<Integer, Articulo> cargarMapaArticulosDeInfoBBDD(Connection con) {
 		TreeMap<Integer, Articulo> tmArticulo = new TreeMap<>();
 		Statement stmt = null;
 		
 		String sentSQL = "SELECT * FROM articulos";
-		try {
-			stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery(sentSQL);
-			while(rs.next()) { 
-					long ID = rs.getInt("ID");
-					String nombre = rs.getString("Nombre");
-					int precio = rs.getInt("Precio");
-					String imagen = rs.getString("Imagen");
-					int stock = rs.getInt("Stock");
-					int talla = rs.getInt("Talla");
-					String color = rs.getString("Color");
-					String gen = rs.getString("Genero");
-					Boolean plus = rs.getBoolean("Plus");
-					String tipoArticulo = rs.getString("TipoArticulo");
-					Articulo a = null;
-					if(tipoArticulo.equals("z")) {
-						a = new Zapatillas(nombre,precio,ID,imagen,stock,talla,color,gen);
-					}else if(tipoArticulo.equals("l")) {
-						a = new Limpiador(nombre,precio,ID,imagen,stock,plus);	
-					}else if(tipoArticulo.equals("c")) {
-						a = new Calcetines(nombre,precio,ID,imagen,stock,talla,color,gen);
-					}
-					tmArticulo.put((int) ID, a);
-					
-				}
-			rs.close();
-			stmt.close();
-			
-		} catch (Exception e) {
-		} finally {
-			if(stmt!=null) {
-				try {
-					stmt.close();
-				} catch (Exception e) {
-				}
-			}
-		}
+//		try {
+//			stmt = con.createStatement();
+//			ResultSet rs = stmt.executeQuery(sentSQL);
+//			while(rs.next()) {
+//					long ID = rs.getInt("ID");
+//					String nombre = rs.getString("Nombre");
+//					int precio = rs.getInt("Precio");
+//					String imagen = rs.getString("Imagen");
+//					int stock = rs.getInt("Stock");
+//					int talla = rs.getInt("Talla");
+//					String color = rs.getString("Color");
+//					String gen = rs.getString("Genero");
+//					Boolean plus = rs.getBoolean("Plus");
+//					String tipoArticulo = rs.getString("TipoArticulo");
+//					Articulo a = null;
+//					if(tipoArticulo.equals("z")) {
+//						a = new Zapatillas(nombre,precio,ID,imagen,stock,talla,color,gen);
+//					}else if(tipoArticulo.equals("l")) {
+//						a = new Limpiador(nombre,precio,ID,imagen,stock,plus);
+//					}else if(tipoArticulo.equals("c")) {
+//						a = new Calcetines(nombre,precio,ID,imagen,stock,talla,color,gen);
+//					}
+//					tmArticulo.put((int) ID, a);
+//
+//				}
+//			rs.close();
+//			stmt.close();
+//
+//		} catch (Exception e) {
+//		} finally {
+//			if(stmt!=null) {
+//				try {
+//					stmt.close();
+//				} catch (Exception e) {
+//				}
+//			}
+//		}
 		return tmArticulo;
 	}
 
@@ -476,36 +476,36 @@ public class BD {
 		Statement stmt = null;
 
 		String sentSQL = "SELECT * FROM Articulos WHERE TipoArticulo = 'z'";
-		try {
-			stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery(sentSQL);
-			while(rs.next()) {
-				int ID = rs.getInt("ID");
-				String nombre = rs.getString("Nombre");
-				int precio = rs.getInt("Precio");
-				String imagen = rs.getString("Imagen");
-				int stock = rs.getInt("Stock");
-				int talla = rs.getInt("Talla");
-				String color = rs.getString("Color");
-				String genero = rs.getString("Genero");
-
-				Zapatillas z = new Zapatillas(nombre,precio,ID,imagen,stock,talla,color,genero);
-				tmZapatillas.put(ID, z);
-			}
-			rs.close();
-			stmt.close();
-			System.out.println("Zapatillas cargadas con exito.... \n");
-		} catch (Exception e1) {
-
-		} finally {
-			if(stmt!=null) {
-				try {
-					stmt.close();
-				} catch (Exception e) {
-
-				}
-			}
-		}
+//		try {
+//			stmt = con.createStatement();
+//			ResultSet rs = stmt.executeQuery(sentSQL);
+//			while(rs.next()) {
+//				int ID = rs.getInt("ID");
+//				String nombre = rs.getString("Nombre");
+//				int precio = rs.getInt("Precio");
+//				String imagen = rs.getString("Imagen");
+//				int stock = rs.getInt("Stock");
+//				int talla = rs.getInt("Talla");
+//				String color = rs.getString("Color");
+//				String genero = rs.getString("Genero");
+//
+//				Zapatillas z = new Zapatillas(nombre,precio,ID,imagen,stock,talla,color,genero);
+//				tmZapatillas.put(ID, z);
+//			}
+//			rs.close();
+//			stmt.close();
+//			System.out.println("Zapatillas cargadas con exito.... \n");
+//		} catch (Exception e1) {
+//
+//		} finally {
+//			if(stmt!=null) {
+//				try {
+//					stmt.close();
+//				} catch (Exception e) {
+//
+//				}
+//			}
+//		}
 
 		return tmZapatillas;
 	}

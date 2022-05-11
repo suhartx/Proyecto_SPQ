@@ -48,21 +48,19 @@ public static void main(String[] args)
     Usuario suhar = new Usuario("suhar", "suhar","","");
 
 
-    Articulo a1 = new Articulo("hola",20,1,"",6);
-    Articulo a2 = new Articulo("ktal",20,2,"",6);
-    Articulo a3 = new Articulo("holakpasaktal",20,3,"",6);
+    Articulo a1 = new Zapatillas("hola",20,1,"",6,5, "negro","H");
+    Articulo a2 = new Calcetines("ktal",20,2,"",6,5,"rojo","h");
+    Articulo a3 = new Limpiador("holakpasaktal",20,3,"",6,true);
 
 
     Compra c1 = new Compra(1,"suhar",30);
-    System.out.println("hasta aqui va 1");
-
-    System.out.println("hasta aqui va 1");
     c1.anyadirArticulo(a1);
-    System.out.println("hasta aqui va 1");
     suhar.addCarrito(a3);
-    System.out.println("hasta aqui va 1");
     c1.anyadirArticulo(a2);
     suhar.addPedido(c1);
+
+
+
     UsuarioDAO.getInstance().saveObject(suhar);
 
 
