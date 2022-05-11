@@ -1,6 +1,9 @@
-# Proyecto_SPQ BGS006
-**Proyecto de la asignatura de SPQ Para el grupo BGS006**
+Proyecto_SPQ BGS006
+===============================
+[![Java CI](https://github.com/suhartx/Proyecto_SPQ/actions/workflows/main.yml/badge.svg)](https://github.com/suhartx/Proyecto_SPQ/actions/workflows/main.yml)
 
+**Proyecto de la asignatura de SPQ Para el grupo BGS006**
+------------- 
 **Crear la base de datos y darle permisos a un usuario**
 
     /* DELETE 'messagesDB' database*/
