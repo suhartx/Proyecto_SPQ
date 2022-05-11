@@ -16,11 +16,11 @@ public class Usuario {
 
 	@Persistent(defaultFetchGroup = "true")
 	@Join
-
 	private List<Articulo> carro; // Compra
 
 
 	@Persistent(mappedBy = "usuario", dependentElement = "true", defaultFetchGroup = "true")
+	@Join
 	private List<Compra> compras;
 	
 
@@ -32,7 +32,7 @@ public class Usuario {
 		this.tarjetaPago = "";
 		this.rutaAvatar = "";
 		this.carro=new ArrayList<Articulo>();
-		this.compras = null;
+		this.compras =new ArrayList<Compra>();
 	}
 
 	public Usuario(String nombre, String contrasenya,String tarjetaPago,String rutaAvatar) {
@@ -41,7 +41,7 @@ public class Usuario {
 		this.tarjetaPago = tarjetaPago;
 		this.rutaAvatar = rutaAvatar;
 		this.carro=new ArrayList<Articulo>();
-		this.compras = null;
+		this.compras =new ArrayList<Compra>();
 	}
 
 
@@ -108,6 +108,9 @@ public class Usuario {
 
 	public void setPedidos(ArrayList<Compra> compras) {
 		this.compras = compras;
+	}
+	public void addPedido(Compra compra){
+		this.compras.add(compra);
 	}
 
 	public void addCarrito(Articulo a) {

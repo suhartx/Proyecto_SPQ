@@ -1,5 +1,7 @@
 package com.BGS006.cliente.jdo;
 
+import com.BGS006.dao.UsuarioDAO;
+
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
@@ -11,37 +13,58 @@ public class MainJDO {
  */
 public static void main(String[] args)
 {
-    // Create a PersistenceManagerFactory for this datastore
-    PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+//    // Create a PersistenceManagerFactory for this datastore
+//    PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
+//
+//    System.out.println("DataNucleus AccessPlatform with JDO");
+//    System.out.println("===================================");
+//
+//    // Persistence of a set of Accounts and a User
+//    PersistenceManager pm = pmf.getPersistenceManager();
+//    Transaction tx=pm.currentTransaction();
+//    try
+//    {
+//        tx.begin();
+//        System.out.println("Persisting users");
+//        Usuario dipina = new Usuario("dipina", "dipina","","");
+////        Articulo articulo1 = new Articulo("Nike1",100, "src/main/resources/imagenes/airJordan1Retro.jpg");
+////        Articulo articulo2 = new Articulo("Nike2",100,"src/main/resources/imagenes/airJordan1Retro.jpg");
+////        dipina.getCarro().add(articulo1);
+////        dipina.getCarro().add(articulo2);
+//        pm.makePersistent(dipina);
+//        tx.commit();
+//        System.out.println("User and his articles have been persisted");
+//    }
+//    finally
+//    {
+//        if (tx.isActive())
+//        {
+//            tx.rollback();
+//        }
+//        pm.close();
+//    }
+//    System.out.println("");
 
-    System.out.println("DataNucleus AccessPlatform with JDO");
-    System.out.println("===================================");
+    Usuario suhar = new Usuario("suhar", "suhar","","");
 
-    // Persistence of a set of Accounts and a User
-    PersistenceManager pm = pmf.getPersistenceManager();
-    Transaction tx=pm.currentTransaction();
-    try
-    {
-        tx.begin();
-        System.out.println("Persisting users");
-        Usuario dipina = new Usuario("dipina", "dipina","","");
-//        Articulo articulo1 = new Articulo("Nike1",100, "src/main/resources/imagenes/airJordan1Retro.jpg");
-//        Articulo articulo2 = new Articulo("Nike2",100,"src/main/resources/imagenes/airJordan1Retro.jpg");
-//        dipina.getCarro().add(articulo1);
-//        dipina.getCarro().add(articulo2);
-        pm.makePersistent(dipina);
-        tx.commit();
-        System.out.println("User and his articles have been persisted");
-    }
-    finally
-    {
-        if (tx.isActive())
-        {
-            tx.rollback();
-        }
-        pm.close();
-    }
-    System.out.println("");
+
+    Articulo a1 = new Articulo("hola",20,1,"",6);
+    Articulo a2 = new Articulo("ktal",20,2,"",6);
+    Articulo a3 = new Articulo("holakpasaktal",20,3,"",6);
+
+
+    Compra c1 = new Compra(1,"suhar",30);
+    System.out.println("hasta aqui va 1");
+
+    System.out.println("hasta aqui va 1");
+    c1.anyadirArticulo(a1);
+    System.out.println("hasta aqui va 1");
+    suhar.addCarrito(a3);
+    System.out.println("hasta aqui va 1");
+    c1.anyadirArticulo(a2);
+    suhar.addPedido(c1);
+    UsuarioDAO.getInstance().saveObject(suhar);
+
 
 //
 //

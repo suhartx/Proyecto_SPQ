@@ -1,6 +1,7 @@
 package com.BGS006.servidor;
 
 import com.BGS006.bbdd.UsuarioDB;
+import com.BGS006.dao.UsuarioDAO;
 
 
 import javax.ws.rs.*;
@@ -75,7 +76,16 @@ public class Usuario {
 //        //return Response.ok().build();
 
 
-        UsuarioDB.getInstance().insertarUsuarios(usuario);
+//        UsuarioDB.getInstance().insertarUsuarios(usuario);
+
+        System.out.println(usuario.getNombre());
+        System.out.println(usuario.getContrasenya());
+        System.out.println(usuario.getTarjetaPago());
+        System.out.println(usuario.getRutaAvatar());
+
+        UsuarioDAO.getInstance().saveObject(usuario);
+
+
     }
 
 

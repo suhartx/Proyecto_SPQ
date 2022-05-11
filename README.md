@@ -20,10 +20,11 @@ Proyecto_SPQ BGS006
 
 **Compilar el proyecto**
 
-    mvn clean
-    mvn compile
-    mvn datanucleus:enhance
-
+```
+mvn clean
+mvn compile
+mvn datanucleus:enhance
+```
 
 **Crear las tablas de la base de datos**
 

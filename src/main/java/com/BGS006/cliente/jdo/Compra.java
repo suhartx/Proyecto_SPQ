@@ -36,6 +36,7 @@ public class Compra {
 		this.idCompra = id;
 		this.nombreUsuario = nombreUsuario;
 		this.precio = precio;
+		this.articulos = new ArrayList<Articulo>();
 	}
 
 	public String getNombreUsuario(){
