@@ -154,7 +154,7 @@ public class CoverTest {
 
         // us = new Usuario("Ibai", "Test");
         Usuario user = new Usuario();
-        Usuario user2 = new Usuario("Nombre", "Contra", "5555", null, null, null, null, 5, true);
+        Usuario user2 = new Usuario("Nombre", "Contra", "5555","");
         Usuario user3 = new Usuario("Name", "hola", "55555", null);
 
         ArrayList compras = new ArrayList<Compra>();
