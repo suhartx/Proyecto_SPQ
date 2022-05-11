@@ -1,6 +1,6 @@
 Proyecto_SPQ BGS006
 ===============================
-[![Java CI](https://github.com/suhartx/Proyecto_SPQ/actions/workflows/main.yml/badge.svg)](https://github.com/suhartx/Proyecto_SPQ/actions/workflows/main.yml)
+[![Java CI](https://github.com/suhartx/Proyecto_SPQ/actions/workflows/main.yml/badge.svg)](https://github.com/suhartx/Proyecto_SPQ/actions/workflows/main.yml)   [![codecov](https://codecov.io/gh/suhartx/Proyecto_SPQ/branch/main/graph/badge.svg?token=MA8OLVZG8F)](https://codecov.io/gh/suhartx/Proyecto_SPQ)
 
 **Proyecto de la asignatura de SPQ Para el grupo BGS006**
 ------------- 
