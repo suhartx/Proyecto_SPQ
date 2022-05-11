@@ -65,9 +65,9 @@ public class CoverTest {
 
     @Test
     public void testCalcetines() {
-        // cal = new Calcetines("Calcetin 1", 32, null);
+         cal = new Calcetines("Calcetin 1", 4,1, "", 5);
 
-        Calcetines cal2 = new Calcetines("Cal 2", 4,1, "", 5);
+        Calcetines cal2 = new Calcetines("Cal 2", 4,1, null, 5);
         assertEquals("Cal 2", cal2.getNombre());
         assertEquals(4, cal2.getPrecio(), 0);
         assertNull(cal2.getRutaImagen());
@@ -97,11 +97,11 @@ public class CoverTest {
 
     @Test
     public void testLimpiador() {
-        // l = new Limpiador("Limpiador Plus", 10, null, true);
-        Limpiador l2 = new Limpiador("L2", 5,5, "",6);
+         l = new Limpiador("Limpiador Plus", 5,5, "",6);
+        Limpiador l2 = new Limpiador("L2", 5,5, null,6);
 
         assertEquals("L2", l2.getNombre());
-        assertEquals(5, l2.getPrecio(), 0);
+        assertEquals(5, l2.getPrecio(),0);
         assertNull(l2.getRutaImagen());
 
         l.setNombre("L");
