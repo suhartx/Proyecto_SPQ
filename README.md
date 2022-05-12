@@ -49,6 +49,17 @@ mvn install
 ```
 mvn -Pdatos exec:java
 ```
+**Generar documentacion**
+```
+doxygen:report
+```
+**Generar latex**
+
+en ProyectoSPQ\target\doxygen\latex
+```
+Make
+```
+
 
 *Lanzar server*
 ```

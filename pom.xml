@@ -220,6 +220,10 @@
                 <groupId>com.soebes.maven.plugins</groupId>
                 <artifactId>doxygen-maven-plugin</artifactId>
                 <version>1.1.0</version>
+                <configuration>
+                    <configurationFile>${doxygen.config.file}</configurationFile>
+                </configuration>
+
             </plugin>
 <!--            <plugin>
                 <groupId>org.datanucleus</groupId>
