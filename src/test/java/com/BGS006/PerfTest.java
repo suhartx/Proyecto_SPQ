@@ -60,11 +60,11 @@ public class PerfTest {
     @Test
     @org.databene.contiperf.PerfTest(invocations = 1000, threads = 20)
     @Required(max = 1200, average = 300)
-    public void testBagMultiply() throws Exception {
+    public void testArticulos() throws Exception {
         logger.info("Starting testBagMultiply");
         // {[12 CHF][7 USD]} *2 == {[24 CHF][14 USD]}
         Articulo expected = new Zapatillas("hola",20,1,"",6,5, "negro","H");
-        assertEquals(expected, a1);
+        assertEquals(suhar.getCompras().get(0).getArticulo().get(0), a1);
         assertEquals(suhar.getCarro().get(0), a3);
         assertTrue(((Limpiador)a3).isPlus());
         Thread.sleep(0);
@@ -73,10 +73,6 @@ public class PerfTest {
 
 
 
-    c1.anyadirArticulo(a1);
-    suhar.addCarrito(a3);
-    c1.anyadirArticulo(a2);
-    suhar.addPedido(c1);
 
 
 
