@@ -18,8 +18,12 @@ jobs:
       - uses: codecov/codecov-action@v3.1.0
       - name: Run the Maven verify phase
         run: mvn --batch-mode --update-snapshots verify
+      - name: Install doxygen
+        run: sudo apt-get install -y doxygen
       - name: Run the Maven Test phase
         run: mvn test
+      - name: Generate documentation
+        run: mvn doxygen:report
       - name: Publish on Github Pages
         uses: crazy-max/ghaction-github-pages@v2.3.0
         with:
