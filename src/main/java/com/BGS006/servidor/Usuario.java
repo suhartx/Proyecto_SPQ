@@ -24,8 +24,10 @@ public class Usuario {
     @Path("/VerUsuarios")
     @Produces(MediaType.APPLICATION_JSON)
     public ArrayList<com.BGS006.cliente.jdo.Usuario> getUsers() {
-        ArrayList<com.BGS006.cliente.jdo.Usuario> users = new ArrayList<>();
-        UsuarioDB.getAllUsers(users);
+
+        ArrayList<com.BGS006.cliente.jdo.Usuario> users = UsuarioDB.getAllUsers();
+
+
         return users;
     }
     /**
@@ -38,7 +40,9 @@ public class Usuario {
     public void AnyadirUsuario(com.BGS006.cliente.jdo.Usuario usuario){
 
 
-        UsuarioDAO.getInstance().saveObject(usuario);
+        UsuarioDAO u = new UsuarioDAO();
+
+        u.saveObject(usuario);
 
 
     }

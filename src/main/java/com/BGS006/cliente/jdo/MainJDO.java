@@ -44,6 +44,7 @@ public static void main(String[] args)
 //        pm.close();
 //    }
 //    System.out.println("");
+    UsuarioDAO u = new UsuarioDAO();
 
     Usuario suhar = new Usuario("suhar", "suhar","","");
 
@@ -61,7 +62,8 @@ public static void main(String[] args)
 
 
 
-    UsuarioDAO.getInstance().saveObject(suhar);
+    u.saveObject(suhar);
+
 
 
 //

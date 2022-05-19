@@ -14,18 +14,9 @@ import com.BGS006.cliente.jdo.Usuario;
 //This class implements Singleton and DAO patterns
 public class UsuarioDAO extends DataAccessObjectBase implements IDataAccessObject<Usuario> {
 
-	private static UsuarioDAO instance;
 
-	public static UsuarioDAO getInstance() {
-		if (instance == null) {
-			instance = new UsuarioDAO();
-		}
 
-		return instance;
-	}
 
-	private UsuarioDAO() {
-	}
 
 	@Override
 	public void delete(Usuario object) {
@@ -34,15 +25,14 @@ public class UsuarioDAO extends DataAccessObjectBase implements IDataAccessObjec
 
 	@Override
 	public Usuario find(String param) {
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx = pm.currentTransaction();
+		Transaction tx = pmf.getPersistenceManager().currentTransaction();
 
 		Usuario result = null;
 
 		try {
 			tx.begin();
 
-			Query<?> query = pm.newQuery("SELECT FROM " + Usuario.class.getName() + " WHERE NOMBRE == '" + param + "'");
+			Query<?> query = pmf.getPersistenceManager().newQuery("SELECT FROM " + Usuario.class.getName() + " WHERE NOMBRE == '" + param + "'");
 			query.setUnique(true);
 			result = (Usuario) query.execute();
 
@@ -54,7 +44,7 @@ public class UsuarioDAO extends DataAccessObjectBase implements IDataAccessObjec
 				tx.rollback();
 			}
 
-			pm.close();
+			pmf.getPersistenceManager().close();
 		}
 
 		return result;
@@ -62,29 +52,27 @@ public class UsuarioDAO extends DataAccessObjectBase implements IDataAccessObjec
 
 	@Override
 	public List<Usuario> getAll() {
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx = pm.currentTransaction();
 
 		List<Usuario> users = new ArrayList<>();
 
 		try {
-			tx.begin();
+			pmf.getPersistenceManager().currentTransaction().begin();
 
-			Extent<Usuario> userExtent = pm.getExtent(Usuario.class, true);
+			Extent<Usuario> userExtent = pmf.getPersistenceManager().getExtent(Usuario.class, true);
 
 			for (Usuario user : userExtent) {
 				users.add(user);
 			}
 
-			tx.commit();
+			pmf.getPersistenceManager().currentTransaction().commit();
 		} catch (Exception ex) {
 			System.out.println("  $ Error querying all users: " + ex.getMessage());
 		} finally {
-			if (tx != null && tx.isActive()) {
-				tx.rollback();
+			if (pmf.getPersistenceManager().currentTransaction() != null && pmf.getPersistenceManager().currentTransaction().isActive()) {
+				pmf.getPersistenceManager().currentTransaction().rollback();
 			}
 
-			pm.close();
+			pmf.getPersistenceManager().close();
 		}
 
 		return users;

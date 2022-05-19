@@ -10,17 +10,17 @@ import java.util.ArrayList;
 public class UsuarioDB {
 
 
-
-    private static UsuarioDB instance;
-
-    public static UsuarioDB getInstance() {
-
-        if(instance == null) {
-            instance = new UsuarioDB();
-        }
-
-        return instance;
-    }
+//
+//    private static UsuarioDB instance;
+//
+//    public static UsuarioDB getInstance() {
+//
+//        if(instance == null) {
+//            instance = new UsuarioDB();
+//        }
+//
+//        return instance;
+//    }
 	public static boolean correcto;
 	
     public static Usuario u = new Usuario();
@@ -174,9 +174,9 @@ public class UsuarioDB {
 
     /**
      * Method used to recover all the users
-     * @param usuarioslist
      */
-    public static void getAllUsers (ArrayList<Usuario>usuarioslist) {
+    public static ArrayList<Usuario> getAllUsers () {
+        ArrayList<Usuario> usuarioslist= new ArrayList<>();
         PreparedStatement preparedStatement = null;
         Connection con = ConexionDB.Conexion();
 
@@ -204,6 +204,7 @@ public class UsuarioDB {
         } catch (Exception e) {
             // TODO: handle exception
         }
+        return usuarioslist;
     }
 
     /**

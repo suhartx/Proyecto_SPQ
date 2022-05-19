@@ -311,7 +311,7 @@ public class LoginDeustoSneaker {
 //							e2.printStackTrace();
 //						}
 //						try {
-//							BD.intertarUsuarioBBDD(con2,u);
+//							BD.insertarUsuarioBBDD(con2,u);
 //						} catch (Exception e2) {
 //							// TODO Auto-generated catch block
 //							e2.printStackTrace();
