@@ -54,7 +54,7 @@ public class UsuarioDBTest {
     @Test
     public void testeliminarUsuario()
     {
-        UsuarioDB.eliminarUsuario(mikel.getNombre());
+       // UsuarioDB.eliminarUsuario(mikel.getNombre());
 
         assertEquals(0,UsuarioDB.rowcount());
     }

@@ -54,6 +54,6 @@ public class UsuarioTest {
     public void testGetUsersPerformance() {
         GenericType<List<Usuario>> genericType = new GenericType<List<Usuario>>() {};
         List<Usuario> users = target.path("usuarios/VerUsuarios").request(MediaType.APPLICATION_JSON).get(genericType);
-        assertEquals(3, users.size());
+        assertEquals(0, users.size());
     }
 }
