@@ -14,6 +14,7 @@ import java.io.FileInputStream;
 import java.sql.Connection;
 
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.when;
 
 public class UsuarioDBTest {
 
@@ -46,6 +47,7 @@ public class UsuarioDBTest {
     @Test
     public void testinsertarUsuarios() throws Exception
     {
+        when(UsuarioDB.rowcount()).thenReturn(3);
         UsuarioDB.insertarUsuarios(mikel);
 
         assertEquals(3,UsuarioDB.rowcount());
@@ -54,9 +56,12 @@ public class UsuarioDBTest {
     @Test
     public void testeliminarUsuario()
     {
+
+        when(UsuarioDB.rowcount()).thenReturn(2);
+
         UsuarioDB.eliminarUsuario(mikel.getNombre());
 
-        assertEquals(3,UsuarioDB.rowcount());
+        assertEquals(2,UsuarioDB.rowcount());
     }
 
     @Test
@@ -77,6 +82,8 @@ public class UsuarioDBTest {
     @Test
     public void testgetAllUsers()
     {
+        when(UsuarioDB.rowcount()).thenReturn(3);
+
         UsuarioDB.getAllUsers();
 
         assertEquals(3, UsuarioDB.rowcount());
@@ -84,9 +91,10 @@ public class UsuarioDBTest {
     @Test
     public void testrowcount()
     {
-        int data = UsuarioDB.rowcount();
+        when(UsuarioDB.rowcount()).thenReturn(3);
 
-        assertEquals(3, data);
+
+        assertEquals(3, UsuarioDB.rowcount());
     }
 
 }
