@@ -77,9 +77,22 @@ public class PerfTest {
     public void testCompra() throws Exception {
         logger.info("Starting testShopMultiply");
         assertEquals(suhar.getCompras().get(0).getNumArticulo(),2);
-        logger.debug("Finishing testBagMultiply");
+        logger.debug("Finishing testShopMultiply");
     }
 
+    @Test
+    @org.databene.contiperf.PerfTest(invocations = 1000, threads = 20)
+    @Required(max = 1200, average = 300)
+    public void testCompra2() throws  Exception {
+        logger.info("Starting testShop2Multiply");
+        assertEquals(suhar.getCompras().get(0).getArticulo().get(0).getId(),a1.getId());
+        logger.debug("Finishing testShop2Multiply");
+    }
+
+    public void testArticulos2() throws Exception {
+        logger.info("Starting testArticleMultiply");
+        
+    }
 
 
 
