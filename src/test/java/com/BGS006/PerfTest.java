@@ -100,7 +100,32 @@ public class PerfTest {
         assertEquals(suhar.getNombre(), expected.getNombre());
         Thread.sleep(0);
         logger.debug("Finishing testBagMultiply");
+    }
 
+    @Test
+    @org.databene.contiperf.PerfTest(invocations = 1000, threads = 20)
+    @Required(max = 1200, average = 300)
+    public void testArticulo() throws Exception {
+        logger.info("Starting testArticle2Multiply");
+        boolean enc = false;
+        if(suhar.getCarro().get(0).getNombre() == a3.getNombre()){
+            enc = true;
+        }
+        assertTrue(enc);
+        logger.debug("Finishing testArticle2Multiply");
+    }
+
+    @Test
+    @org.databene.contiperf.PerfTest(invocations = 1000, threads = 20)
+    @Required(max = 1200, average = 300)
+    public void testArticulo3() throws Exception {
+        logger.info("Starting testArticle3Multiply");
+        boolean enc = false;
+        if(suhar.getCarro().get(0) instanceof Limpiador){
+            enc = true;
+        }
+        assertTrue(enc);
+        logger.debug("Finishing testArticle3Multiply");
     }
 
 
