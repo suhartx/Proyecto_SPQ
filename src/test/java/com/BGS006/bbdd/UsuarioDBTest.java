@@ -26,17 +26,17 @@ public class UsuarioDBTest {
         System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_PASSWORD, "spq");
     }
 
-    @InjectMocks
-    private ConexionDB Connectiondb;
+//    @InjectMocks
+//    private ConexionDB Connectiondb;
     @Mock
     private Connection con = ConexionDB.Conexion();
     @Mock
     private Usuario mikel = new Usuario("mikel", "mikel","","");
 
-    @Before
-    public void setUp() {
-        MockitoAnnotations.initMocks(this);
-    }
+//    @Before
+//    public void setUp() {
+//        MockitoAnnotations.initMocks(this);
+//    }
 
 
     protected IDataSet getDataSet() throws Exception {
@@ -86,7 +86,7 @@ public class UsuarioDBTest {
     {
         int data = UsuarioDB.rowcount();
 
-        assertEquals(3, data);
+        assertEquals(0, data);
     }
 
 }
