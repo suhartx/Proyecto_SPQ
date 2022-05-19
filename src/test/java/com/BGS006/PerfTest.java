@@ -71,6 +71,15 @@ public class PerfTest {
         logger.debug("Finishing testBagMultiply");
     }
 
+    @Test
+    @org.databene.contiperf.PerfTest(invocations = 1000, threads = 20)
+    @Required(max = 1200, average = 300)
+    public void testCompra() throws Exception {
+        logger.info("Starting testShopMultiply");
+        assertEquals(suhar.getCompras().get(0).getNumArticulo(),2);
+        logger.debug("Finishing testBagMultiply");
+    }
+
 
 
 
