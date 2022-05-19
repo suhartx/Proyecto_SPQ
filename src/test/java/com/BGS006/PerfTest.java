@@ -90,6 +90,24 @@ public class PerfTest {
         logger.debug("Finishing testShop2Multiply");
     }
 
+
+    @Test
+    @org.databene.contiperf.PerfTest(invocations = 1000, threads = 20)
+    @Required(max = 1200, average = 300)
+    public void testCompra3() throws Exception {
+        logger.info("Starting testBagMultiply");
+        // {[12 CHF][7 USD]} *2 == {[24 CHF][14 USD]}
+        //Usuario expected = new Usuario("suhar", "suhar","","");
+        boolean enc = false;
+        if(suhar.getCompras().get(0).getArticulo() == c1.getArticulo()){
+            enc = true;
+        }
+        assertTrue(enc);
+        Thread.sleep(0);
+        logger.debug("Finishing testBagMultiply");
+
+    }
+
     @Test
     @org.databene.contiperf.PerfTest(invocations = 1000, threads = 20)
     @Required(max = 1200, average = 300)
@@ -113,6 +131,23 @@ public class PerfTest {
         }
         assertTrue(enc);
         logger.debug("Finishing testArticle2Multiply");
+    }
+
+    @Test
+    @org.databene.contiperf.PerfTest(invocations = 1000, threads = 20)
+    @Required(max = 1200, average = 300)
+    public void testArticulo2() throws Exception {
+        logger.info("Starting testBagMultiply");
+        // {[12 CHF][7 USD]} *2 == {[24 CHF][14 USD]}
+        //Usuario expected = new Usuario("suhar", "suhar","","");
+        boolean enc = false;
+        if(suhar.getCarro().get(0).getPrecio() == a3.getPrecio()){
+            enc = true;
+        }
+        assertTrue(enc);
+        Thread.sleep(0);
+        logger.debug("Finishing testBagMultiply");
+
     }
 
     @Test
