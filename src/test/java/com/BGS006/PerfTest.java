@@ -71,6 +71,7 @@ public class PerfTest {
         logger.debug("Finishing testBagMultiply");
     }
 
+
     @Test
     @org.databene.contiperf.PerfTest(invocations = 1000, threads = 20)
     @Required(max = 1200, average = 300)
@@ -87,6 +88,19 @@ public class PerfTest {
         logger.info("Starting testShop2Multiply");
         assertEquals(suhar.getCompras().get(0).getArticulo().get(0).getId(),a1.getId());
         logger.debug("Finishing testShop2Multiply");
+    }
+
+    @Test
+    @org.databene.contiperf.PerfTest(invocations = 1000, threads = 20)
+    @Required(max = 1200, average = 300)
+    public void testUsuario() throws Exception {
+        logger.info("Starting testBagMultiply");
+        // {[12 CHF][7 USD]} *2 == {[24 CHF][14 USD]}
+        Usuario expected = new Usuario("suhar", "suhar","","");
+        assertEquals(suhar.getNombre(), expected.getNombre());
+        Thread.sleep(0);
+        logger.debug("Finishing testBagMultiply");
+
     }
 
 
