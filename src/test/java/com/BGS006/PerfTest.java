@@ -89,10 +89,6 @@ public class PerfTest {
         logger.debug("Finishing testShop2Multiply");
     }
 
-    public void testArticulos2() throws Exception {
-        logger.info("Starting testArticleMultiply");
-        
-    }
 
 
 
