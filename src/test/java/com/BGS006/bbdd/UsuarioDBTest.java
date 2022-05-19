@@ -26,8 +26,8 @@ public class UsuarioDBTest {
         System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_PASSWORD, "spq");
     }
 
-    @InjectMocks
-    private ConexionDB Connectiondb;
+//    @InjectMocks
+//    private ConexionDB Connectiondb;
     @Mock
     private Connection con = ConexionDB.Conexion();
     @Mock
