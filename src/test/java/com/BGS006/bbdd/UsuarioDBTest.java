@@ -4,8 +4,11 @@ import com.BGS006.cliente.jdo.Usuario;
 import org.dbunit.PropertiesBasedJdbcDatabaseTester;
 import org.dbunit.dataset.IDataSet;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
+import org.junit.Before;
 import org.junit.Test;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -23,10 +26,18 @@ public class UsuarioDBTest {
         System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_PASSWORD, "spq");
     }
 
+    @InjectMocks
+    private ConexionDB Connectiondb;
     @Mock
     private Connection con = ConexionDB.Conexion();
     @Mock
     private Usuario mikel = new Usuario("mikel", "mikel","","");
+
+    @Before
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
+    }
+
 
     protected IDataSet getDataSet() throws Exception {
         return new FlatXmlDataSetBuilder().build(new FileInputStream("dbsample/usuarios.xml"));
@@ -45,7 +56,7 @@ public class UsuarioDBTest {
     {
         UsuarioDB.eliminarUsuario(mikel.getNombre());
 
-        assertEquals(2,UsuarioDB.rowcount());
+        assertEquals(3,UsuarioDB.rowcount());
     }
 
     @Test
@@ -75,7 +86,7 @@ public class UsuarioDBTest {
     {
         int data = UsuarioDB.rowcount();
 
-        assertEquals(2, data);
+        assertEquals(3, data);
     }
 
 }
