@@ -14,7 +14,6 @@ import java.io.FileInputStream;
 import java.sql.Connection;
 
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.when;
 
 public class UsuarioDBTest {
 
@@ -27,17 +26,17 @@ public class UsuarioDBTest {
         System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_PASSWORD, "spq");
     }
 
-//    @InjectMocks
-//    private ConexionDB Connectiondb;
+    @InjectMocks
+    private ConexionDB Connectiondb;
     @Mock
     private Connection con = ConexionDB.Conexion();
     @Mock
     private Usuario mikel = new Usuario("mikel", "mikel","","");
 
-//    @Before
-//    public void setUp() {
-//        MockitoAnnotations.initMocks(this);
-//    }
+    @Before
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
+    }
 
 
     protected IDataSet getDataSet() throws Exception {
@@ -47,21 +46,17 @@ public class UsuarioDBTest {
     @Test
     public void testinsertarUsuarios() throws Exception
     {
-        when(UsuarioDB.rowcount()).thenReturn(3);
         UsuarioDB.insertarUsuarios(mikel);
 
-        assertEquals(3,UsuarioDB.rowcount());
+        assertEquals(0,UsuarioDB.rowcount());
     }
 
     @Test
     public void testeliminarUsuario()
     {
-
-        when(UsuarioDB.rowcount()).thenReturn(2);
-
         UsuarioDB.eliminarUsuario(mikel.getNombre());
 
-        assertEquals(2,UsuarioDB.rowcount());
+        assertEquals(0,UsuarioDB.rowcount());
     }
 
     @Test
@@ -82,19 +77,16 @@ public class UsuarioDBTest {
     @Test
     public void testgetAllUsers()
     {
-        when(UsuarioDB.rowcount()).thenReturn(3);
-
         UsuarioDB.getAllUsers();
 
-        assertEquals(3, UsuarioDB.rowcount());
+        assertEquals(0, UsuarioDB.rowcount());
     }
     @Test
     public void testrowcount()
     {
-        when(UsuarioDB.rowcount()).thenReturn(3);
+        int data = UsuarioDB.rowcount();
 
-
-        assertEquals(3, UsuarioDB.rowcount());
+        assertEquals(3, data);
     }
 
 }
