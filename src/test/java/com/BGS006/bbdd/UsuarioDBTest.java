@@ -33,10 +33,10 @@ public class UsuarioDBTest {
     @Mock
     private Usuario mikel = new Usuario("mikel", "mikel","","");
 
-    @Before
-    public void setUp() {
-        MockitoAnnotations.initMocks(this);
-    }
+//    @Before
+//    public void setUp() {
+//        MockitoAnnotations.initMocks(this);
+//    }
 
 
     protected IDataSet getDataSet() throws Exception {
