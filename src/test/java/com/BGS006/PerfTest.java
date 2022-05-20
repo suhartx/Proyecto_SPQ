@@ -10,6 +10,8 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -48,6 +50,7 @@ public class PerfTest {
         a3 = new Limpiador("holakpasaktal",20,3,"",6,true);
 
         c1 = new Compra(1,"suhar",30);
+
 
         c1.anyadirArticulo(a1);
         suhar.addCarrito(a3);
@@ -162,7 +165,6 @@ public class PerfTest {
         assertTrue(enc);
         logger.debug("Finishing testArticle3Multiply");
     }
-
 
 
 
