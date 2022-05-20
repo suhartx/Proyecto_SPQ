@@ -153,5 +153,4 @@ public class UsuarioTest extends Usuario {
         assertEquals(list1.remove(list1.size()-1), u.getCompras().get(0).getArticulo());
         logger.debug("Finishing testBagMultiply");
     }
-
 }
