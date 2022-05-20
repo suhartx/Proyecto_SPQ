@@ -137,20 +137,5 @@ public class UsuarioTest extends Usuario {
                 '}';
         assertEquals(expected, u.toString());
     }
-    @Test
-    public void testQuitarArticulo() throws Exception {
-        Articulo a1 = new Zapatillas("hola",20,1,"",6,5, "negro","H");
-        Articulo a2 = new Calcetines("ktal",20,2,"",6,5,"rojo","h");
-        Compra c1 = new Compra(1,"suhar",30);
 
-        c1.anyadirArticulo(a1);
-        c1.anyadirArticulo(a2);
-        u.addPedido(c1);
-
-        logger.info("Starting testBagMultiply");
-        ArrayList<Articulo> list1 = u.getCompras().get(0).getArticulo(); //lista de articulos
-        u.getCompras().get(0).quitarArticulo(a2); //quito el articulo de la compra
-        assertEquals(list1.remove(list1.size()-1), u.getCompras().get(0).getArticulo());
-        logger.debug("Finishing testBagMultiply");
-    }
 }
