@@ -86,7 +86,7 @@ public class UsuarioDBTest {
     public void testrowcount()
     {
         int data = UsuarioDB.rowcount();
-        assertEquals(0, data);
+        assertNotEquals(0, data);
     }
 
 }
