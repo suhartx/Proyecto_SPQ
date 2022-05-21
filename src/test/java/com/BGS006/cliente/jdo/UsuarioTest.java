@@ -88,7 +88,7 @@ public class UsuarioTest extends Usuario {
 
     @Test
     public void testSetPedidos() {
-        Compra c = new Compra(1,"gorka", 100);
+        Compra c = new Compra(1,"gorka", 100,4);
         ArrayList<Compra> a =  new ArrayList<Compra>();
         a.add(c);
         u.setPedidos(a);
@@ -98,7 +98,7 @@ public class UsuarioTest extends Usuario {
 
     @Test
     public void testAddPedido() {
-        Compra c = new Compra(2,"ibai", 100);
+        Compra c = new Compra(2,"ibai", 100,4);
         u.addPedido(c);
         assertEquals("ibai", u.getCompras().get(0).getNombreUsuario());
 

@@ -3,7 +3,6 @@ package com.BGS006.bbdd;
 
 
 import com.BGS006.cliente.jdo.Compra;
-import com.BGS006.cliente.jdo.Usuario;
 
 import java.sql.*;
 import java.util.TreeMap;
@@ -17,7 +16,7 @@ public class ComprasDB {
     public static void insertarCompra(Compra nuevaCompra) {
         Statement st = null;
         Connection con = ConexionDB.Conexion();
-        String query = "INSERT INTO COMPRA_ARTICULOS VALUES(" + nuevaCompra.getIdCompra() + ",'"+nuevaCompra.getNombreUsuario()+"',"+nuevaCompra.getPrecio()+")";
+        String query = "INSERT INTO COMPRA VALUES(" + nuevaCompra.getIdCompra() + ","+nuevaCompra.getNumArticulo()+","+nuevaCompra.getPrecio()+",'"+nuevaCompra.getNombreUsuario()+"',"+ 0 +")";
 
         try {
             st = con.createStatement();
@@ -37,17 +36,15 @@ public class ComprasDB {
      */
     public static void eliminarCompra(Compra c) {
 
-        PreparedStatement preparedStatement = null;
+        Statement st = null;
         Connection con = ConexionDB.Conexion();
+        String query = "DELETE FROM Compra WHERE idCompra = '" + c.getIdCompra() + "'";
 
         try {
+            st = con.createStatement();
+            st.executeUpdate(query);
+            System.out.println("Se elimino la compra correctamente");
 
-            String query = "DELETE FROM ARTICULO WHERE IDCOMPRA_OID = '" + c.getIdCompra() + "'";
-
-            preparedStatement = con.prepareStatement(query);
-
-            preparedStatement.execute();
-            preparedStatement.close();
 
         } catch (SQLException e) {
 
@@ -75,9 +72,9 @@ public class ComprasDB {
                 String usuario = rs.getString("NOMBRE_EID");
                 double precio = rs.getDouble("IDX");
 
-                Compra c = new Compra(id,usuario,precio);
+                //Compra c = new Compra(id,usuario,precio);
 
-                tmCompras.put(id, c);
+                //tmCompras.put(id, c);
             }
             rs.close();
             stmt.close();

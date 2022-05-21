@@ -183,7 +183,7 @@ public class CoverTest {
         //Articulo art2 = new Articulo("Articulo 2", 43, null);
         //compra = new Compra(arts, art.getPrecio() + art2.getPrecio());
 
-       Compra newComp = new Compra (5, "Ibai", 55);
+       Compra newComp = new Compra (5, "Ibai", 55,6);
         newComp.setArticulos(arts);
         assertEquals(compra.getArticulo(), arts);
         assertEquals(compra.getIdCompra(), 5);

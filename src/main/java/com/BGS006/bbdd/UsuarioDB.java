@@ -11,17 +11,6 @@ import java.util.ArrayList;
 public class UsuarioDB {
 
 
-//
-//    private static UsuarioDB instance;
-//
-//    public static UsuarioDB getInstance() {
-//
-//        if(instance == null) {
-//            instance = new UsuarioDB();
-//        }
-//
-//        return instance;
-//    }
 	public static boolean correcto;
 	
     public static Usuario u = new Usuario();
@@ -44,13 +33,11 @@ public class UsuarioDB {
         }
     }
 
-
-
     /**
      * This is the method that inserts Users into the database
      * @param nuevoUsuario
      */
-    public static void insertarUsuarios(Usuario nuevoUsuario) {
+    /*public static void insertarUsuarios(Usuario nuevoUsuario) {
        
         PreparedStatement preparedStatement = null;
         Connection con = ConexionDB.Conexion();
@@ -74,7 +61,7 @@ public class UsuarioDB {
             System.out.println("ERROR al insertar el usuario");
             System.out.println(e);
         }
-    }
+    }*/
 
 
     /**

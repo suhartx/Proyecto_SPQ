@@ -49,7 +49,7 @@ public class PerfTest {
         a2 = new Calcetines("ktal",20,2,"",6,5,"rojo","h");
         a3 = new Limpiador("holakpasaktal",20,3,"",6,true);
 
-        c1 = new Compra(1,"suhar",30);
+        c1 = new Compra(1,"suhar",30,5);
 
 
         c1.anyadirArticulo(a1);

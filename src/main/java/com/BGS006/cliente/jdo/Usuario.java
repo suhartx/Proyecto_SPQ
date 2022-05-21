@@ -1,12 +1,13 @@
 package com.BGS006.cliente.jdo;
 
 import javax.jdo.annotations.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @PersistenceCapable
 @Inheritance(strategy=InheritanceStrategy.NEW_TABLE)
-public class Usuario {
+public class Usuario implements Serializable {
 
 	@PrimaryKey
 	private String nombre;

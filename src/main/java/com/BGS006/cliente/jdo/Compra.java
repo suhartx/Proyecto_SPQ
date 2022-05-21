@@ -32,10 +32,11 @@ public class Compra {
 		this.articulos = articulos;
 	}
 
-	public Compra(long id, String nombreUsuario,double precio) {
+	public Compra(long id, String nombreUsuario,double precio,int numArticulos) {
 		this.idCompra = id;
 		this.nombreUsuario = nombreUsuario;
 		this.precio = precio;
+		this.numArticulos = numArticulos;
 		this.articulos = new ArrayList<Articulo>();
 	}
 

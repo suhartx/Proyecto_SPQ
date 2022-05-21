@@ -54,7 +54,7 @@ public static void main(String[] args)
     Articulo a3 = new Limpiador("holakpasaktal",20,3,"",6,true);
 
 
-    Compra c1 = new Compra(1,"suhar",30);
+    Compra c1 = new Compra(1,"suhar",30,5);
     c1.anyadirArticulo(a1);
     suhar.addCarrito(a3);
     c1.anyadirArticulo(a2);

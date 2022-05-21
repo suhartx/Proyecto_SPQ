@@ -1,5 +1,6 @@
 package com.BGS006.bbdd;
 
+import com.BGS006.cliente.jdo.Articulo;
 import com.BGS006.cliente.jdo.Compra;
 import com.BGS006.cliente.jdo.Usuario;
 import org.dbunit.PropertiesBasedJdbcDatabaseTester;
@@ -10,8 +11,10 @@ import org.mockito.Mock;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 public class CompraDBTest {
 
@@ -28,7 +31,8 @@ public class CompraDBTest {
     @Mock
     private Connection con = ConexionDB.Conexion();
     @Mock
-    private Compra c = new Compra(5,"alberto",25.55);
+    private Compra c = new Compra(5,"alberto",25.55,3);
+
 
 //    @Before
 //    public void setUp() {
@@ -44,7 +48,7 @@ public class CompraDBTest {
     public void testInsertarCompra() throws Exception
     {
         ComprasDB.insertarCompra(c);
-        assertEquals(0,ComprasDB.rowcount());
+        assertNotEquals(0,ComprasDB.rowcount());
     }
 
     @Test
@@ -54,6 +58,12 @@ public class CompraDBTest {
         assertEquals(0,UsuarioDB.rowcount());
     }
 
+    @Test
+    public void testrowcount()
+    {
+        int data = ComprasDB.rowcount();
+        assertEquals(0, data);
+    }
 
 
 }
