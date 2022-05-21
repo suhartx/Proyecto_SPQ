@@ -1,5 +1,6 @@
 package com.BGS006.bbdd;
 
+import com.BGS006.cliente.jdo.Compra;
 import com.BGS006.cliente.jdo.Usuario;
 
 
@@ -24,6 +25,24 @@ public class UsuarioDB {
 	public static boolean correcto;
 	
     public static Usuario u = new Usuario();
+
+
+    public static void insertarUsuario2(Usuario u1) {
+        Statement st = null;
+        Connection con = ConexionDB.Conexion();
+        String query = "INSERT INTO USUARIO VALUES('" + u1.getNombre() + "','"+u1.getContrasenya()+"','"+u1.getTarjetaPago()+"','"+u1.getRutaAvatar()+"')";
+
+        try {
+            st = con.createStatement();
+            st.executeUpdate(query);
+
+            System.out.println("Insert compra existosa");
+
+        } catch (Exception e) {
+            System.out.println("ERROR al insertar la compra");
+            System.out.println(e);
+        }
+    }
 
 
 
@@ -60,21 +79,20 @@ public class UsuarioDB {
 
     /**
      * This method is used to delete users from the database using the mail as parameter
-     * @param nombre
+     * @param
      */
-    public static void eliminarUsuario(String nombre) {
+    public static void eliminarUsuario(Usuario u) {
 
-        PreparedStatement preparedStatement = null;
+        Statement st = null;
         Connection con = ConexionDB.Conexion();
 
         try {
 
-            String query = "DELETE FROM USUARIO WHERE NOMBRE = '" + nombre + "'";
+            String query = "DELETE FROM USUARIO WHERE NOMBRE = '" + u.getNombre() + "'";
 
-            preparedStatement = con.prepareStatement(query);
-
-            preparedStatement.execute();
-            preparedStatement.close();
+            st = con.createStatement();
+            st.executeUpdate(query);
+            System.out.println("Usuario correctamente eliminado");
 
         } catch (SQLException e) {
 
@@ -83,7 +101,7 @@ public class UsuarioDB {
         }
 
     }
-    
+
     /**
      * Method used to log the User
      * @param nombre
@@ -91,12 +109,11 @@ public class UsuarioDB {
      * @return
      */
     public static boolean LoginUsuario(String nombre, String contrasenya) {
-    	
     	correcto = false;
         boolean comprobar = false;
 
         try {
-            PreparedStatement preparedStatement;
+            Statement preparedStatement;
             Connection con = ConexionDB.Conexion();
 
             String query = "SELECT CONTRASENYA FROM USUARIO WHERE NOMBRE = '" + nombre + "'";

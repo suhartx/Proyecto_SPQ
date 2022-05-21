@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
-    <USUARIO nombre='admin' contrasenya='admin' rutaavatar='1' tarjetapago='2' />
+    <USUARIO ID='IDCOMPRA_OID' nombre='NOMBRE_EID' IDX='IDX' />
+
 </dataset>

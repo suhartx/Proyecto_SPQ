@@ -3,6 +3,7 @@ package com.BGS006.bbdd;
 
 
 import com.BGS006.cliente.jdo.Compra;
+import com.BGS006.cliente.jdo.Usuario;
 
 import java.sql.*;
 import java.util.TreeMap;
@@ -14,19 +15,13 @@ public class ComprasDB {
      * @param nuevaCompra
      */
     public static void insertarCompra(Compra nuevaCompra) {
-
-        PreparedStatement preparedStatement = null;
+        Statement st = null;
         Connection con = ConexionDB.Conexion();
+        String query = "INSERT INTO COMPRA_ARTICULOS VALUES(" + nuevaCompra.getIdCompra() + ",'"+nuevaCompra.getNombreUsuario()+"',"+nuevaCompra.getPrecio()+")";
 
         try {
-            String query = " INSERT INTO COMPRA_ARTICULOS (IDCOMPRA_OID, NOMBRE_EID, IDX)"
-                    + " VALUES (?, ?, ?, ?)";
-
-            preparedStatement = con.prepareStatement(query);
-            preparedStatement.setLong(1, nuevaCompra.getIdCompra());
-            preparedStatement.setString(2, nuevaCompra.getNombreUsuario());
-            preparedStatement.setDouble(3, nuevaCompra.getPrecio());
-            preparedStatement.execute();
+            st = con.createStatement();
+            st.executeUpdate(query);
 
             System.out.println("Insert compra existosa");
 
@@ -38,16 +33,16 @@ public class ComprasDB {
 
     /**
      * This method is used to delete compras from the database using the ID as parameter
-     * @param ID
+     * @param
      */
-    public static void eliminarCompra(Long id) {
+    public static void eliminarCompra(Compra c) {
 
         PreparedStatement preparedStatement = null;
         Connection con = ConexionDB.Conexion();
 
         try {
 
-            String query = "DELETE FROM ARTICULO WHERE IDCOMPRA_OID = '" + id + "'";
+            String query = "DELETE FROM ARTICULO WHERE IDCOMPRA_OID = '" + c.getIdCompra() + "'";
 
             preparedStatement = con.prepareStatement(query);
 
@@ -97,6 +92,29 @@ public class ComprasDB {
             }
         }
         return tmCompras;
+    }
+
+    /**
+     * This is the method that shows the quantity of Users in the database
+     * @return
+     */
+    public static int rowcount () {
+        PreparedStatement preparedStatement = null;
+        Connection con = ConexionDB.Conexion();
+        int count=0;
+        try {
+            String query = "SELECT * FROM COMPRA_ARTICULOS";
+            Statement statement = con.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next())
+            {
+                count++;
+            }
+
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        return count;
     }
 
 
