@@ -48,7 +48,7 @@ public class CompraDBTest {
     public void testInsertarCompra() throws Exception
     {
         ComprasDB.insertarCompra(c);
-        assertNotEquals(0,ComprasDB.rowcount());
+        assertNotEquals(1,ComprasDB.rowcount());
     }
 
     @Test
