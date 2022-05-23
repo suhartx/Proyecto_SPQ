@@ -15,7 +15,10 @@ public class UsuarioDB {
 	
     public static Usuario u = new Usuario();
 
-
+    /**
+     * Método que inserta en la bd un usuario nuevo
+     * @param u1
+     */
     public static void insertarUsuarios(Usuario u1) {
         Statement st = null;
         Connection con = ConexionDB.Conexion();

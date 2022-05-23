@@ -7,6 +7,10 @@ import java.util.TreeMap;
 
 public class ArticuloDB {
 
+    /**
+     * Método que inserta en la base de datos el artículo pasado por parámetro
+     * @param nuevoarticulo
+     */
     public static void insertarArticulo(Articulo nuevoarticulo) {
         Statement st = null;
         Connection con = ConexionDB.Conexion();
@@ -24,7 +28,10 @@ public class ArticuloDB {
         }
     }
 
-
+    /**
+     * Método que elimina el artículo pasado por parámetro en caso de estar en la base de datos
+     * @param a
+     */
     public static void eliminarArticulo(Articulo a) {
 
         Statement st = null;
@@ -45,7 +52,11 @@ public class ArticuloDB {
 
     }
 
-
+    /**
+     * Método que muestra todos los artículos en la base de datos
+     * @param con
+     * @return mapa con los artículos
+     */
     public static TreeMap<String, Articulo> cargarMapaArticulosDeInfoBBDD(Connection con) {
         TreeMap<String, Articulo> tmArticulos = new TreeMap<>();
         Statement stmt = null;
@@ -81,7 +92,7 @@ public class ArticuloDB {
 
     /**
      * This is the method that shows the quantity of Users in the database
-     * @return
+     * @return número de usuarios en la base de datos
      */
     public static int rowcount () {
         PreparedStatement preparedStatement = null;
