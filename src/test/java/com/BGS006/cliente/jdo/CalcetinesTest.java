@@ -32,19 +32,20 @@ public class CalcetinesTest {
         assertEquals("rojo", c.getColor());
     }
 
-    public void testSetColor(String color) {
+    @Test
+    public void testSetColor() {
         c.setColor("azul");
         assertEquals("azul", c.getColor());
     }
-
+    @Test
     public void testGetGen() {
 
             assertEquals("hombre", c.getGen());
 
 
     }
-
-    public void setGen(String gen) {
+    @Test
+    public void setGen() {
         c.setGen("mujer");
         assertEquals("mujer", c.getGen());
     }
