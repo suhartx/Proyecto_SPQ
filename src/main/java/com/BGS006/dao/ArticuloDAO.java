@@ -16,6 +16,10 @@ public class ArticuloDAO extends DataAccessObjectBase implements IDataAccessObje
 
     private static ArticuloDAO instance;
 
+    /**
+     * Metodo que permite la conexion entre objetos
+     * @return Instancia del objeto articulo
+     */
     public static ArticuloDAO getInstance() {
         if (instance == null) {
             instance = new ArticuloDAO();
@@ -27,12 +31,21 @@ public class ArticuloDAO extends DataAccessObjectBase implements IDataAccessObje
     private ArticuloDAO() {
     }
 
+    /**
+     * Metodo que elimina un articulo pasado por parametro
+     * @param object
+     */
     @Override
     public void delete(Articulo object) {
         // TODO Auto-generated method stub
         super.deleteObject(object);
     }
 
+    /**
+     * Metodo que busca un articulo
+     * @param param String del nombre del articulo
+     * @return Articulo
+     */
     @Override
     public Articulo find(String param) {
         // TODO Auto-generated method stub
@@ -62,6 +75,10 @@ public class ArticuloDAO extends DataAccessObjectBase implements IDataAccessObje
         return result;
     }
 
+    /**
+     * Metodo que devuelve todos los Articulos de una lista
+     * @return lista con articulos
+     */
     @Override
     public List<Articulo> getAll() {
         // TODO Auto-generated method stub
@@ -93,6 +110,10 @@ public class ArticuloDAO extends DataAccessObjectBase implements IDataAccessObje
         return articulos;
     }
 
+    /**
+     * Metodo que guarda un objeto
+     * @param object
+     */
     @Override
     public void save(Articulo object) {
         // TODO Auto-generated method stub

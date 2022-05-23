@@ -21,7 +21,9 @@ import java.util.TreeMap;
 
 import javax.swing.border.BevelBorder;
 
-
+/**
+ * clase donde se crea la ventana principal
+ */
 
 
 public class VentanaPrincipal extends JFrame {
@@ -38,7 +40,7 @@ public class VentanaPrincipal extends JFrame {
 	//private DefaultListModel<Articulo> modeloListaArticulos;
 	
 	/**
-	 * Create the frame.
+	 * Crear el panel
 	 */
 	public VentanaPrincipal(JFrame va, final Usuario u) throws BindException {
 		ventanaAnterior = va;
@@ -150,8 +152,9 @@ public class VentanaPrincipal extends JFrame {
 		scrollCentral.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		contentPane.add(scrollCentral);
 		scrollCentral.setViewportView(panelCentro);
-
-
+		/**
+		 * action listeners para moverse entre ventanas
+		 */
 		btnPerfil.addActionListener(new ActionListener() {
 			
 			@Override
@@ -166,7 +169,9 @@ public class VentanaPrincipal extends JFrame {
 				//new VentanaPerfil(ventanaActual);
 			}
 		});
-		
+		/**
+		 * Action listener para moverse entre ventanas
+		 */
 		btnCesta.addActionListener(new ActionListener() {
 			
 			@Override
@@ -176,7 +181,9 @@ public class VentanaPrincipal extends JFrame {
 				//new VentanaPerfil(ventanaActual);
 			}
 		});
-
+/**
+ * Action listener para el boton buscar
+ */
 		btnBuscar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -231,7 +238,7 @@ public class VentanaPrincipal extends JFrame {
 		BD.closeBD(con);
 	}
 
-	/*
+	/**
 	 * Metodos para el sistema de busqueda de articulos
 	 */
 	public void cargarPanelesConZapatillas()  {
@@ -258,7 +265,7 @@ public class VentanaPrincipal extends JFrame {
 		BD.closeBD(con);
 	}
 
-	/*
+	/**
 	 * Metodos para el sistema de busqueda de articulos
 	 */
 	public void cargarPanelesConLimpiadores() {

@@ -14,15 +14,20 @@ import com.BGS006.cliente.jdo.Usuario;
 //This class implements Singleton and DAO patterns
 public class UsuarioDAO extends DataAccessObjectBase implements IDataAccessObject<Usuario> {
 
-
-
-
-
+	/**
+	 * Metodo que elimina un usario
+	 * @param object
+	 */
 	@Override
 	public void delete(Usuario object) {
 		super.deleteObject(object);
 	}
 
+	/**
+	 * Metodo que busca un usuario
+	 * @param param
+	 * @return
+	 */
 	@Override
 	public Usuario find(String param) {
 		Transaction tx = pmf.getPersistenceManager().currentTransaction();
@@ -50,6 +55,10 @@ public class UsuarioDAO extends DataAccessObjectBase implements IDataAccessObjec
 		return result;
 	}
 
+	/**
+	 * Metodo que devuelve una lista con todos los usuarios
+	 * @return lista de usuarios
+	 */
 	@Override
 	public List<Usuario> getAll() {
 
@@ -78,6 +87,10 @@ public class UsuarioDAO extends DataAccessObjectBase implements IDataAccessObjec
 		return users;
 	}
 
+	/**
+	 * Metodo que guarda un usuario
+	 * @param object
+	 */
 	@Override
 	public void save(Usuario object) {
 
