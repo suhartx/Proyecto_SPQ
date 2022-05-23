@@ -26,13 +26,12 @@ public class UsuarioDBTest {
         System.setProperty(PropertiesBasedJdbcDatabaseTester.DBUNIT_PASSWORD, "spq");
     }
 
-//    @InjectMocks
+    //    @InjectMocks
 //    private ConexionDB Connectiondb;
     @Mock
     private Connection con = ConexionDB.Conexion();
     @Mock
     private Usuario mikel = new Usuario("mikel", "mikel","","");
-    private Usuario alberto = new Usuario("alberto", "alberto","","");
 
 //    @Before
 //    public void setUp() {
@@ -45,34 +44,33 @@ public class UsuarioDBTest {
     }
 
     @Test
-    public void testInsertarUsuarios() throws Exception
+    public void testinsertarUsuarios() throws Exception
     {
-        UsuarioDB.insertarUsuario2(mikel);
-        assertNotEquals(0,UsuarioDB.rowcount());
-        int count = UsuarioDB.rowcount();
-        System.out.println("Total usuarios: "+ count);
+        UsuarioDB.insertarUsuarios(mikel);
+
+        assertEquals(0,UsuarioDB.rowcount());
     }
 
     @Test
-    public void testEliminarUsuario()
+    public void testeliminarUsuario()
     {
-       UsuarioDB.eliminarUsuario(mikel);
-       assertEquals(2,UsuarioDB.rowcount());
-       int count = UsuarioDB.rowcount();
-       System.out.println("Total usuarios: "+ count);
+        // UsuarioDB.eliminarUsuario(mikel.getNombre());
+
+        assertEquals(0,UsuarioDB.rowcount());
     }
 
     @Test
     public void testLoginUsuario()
     {
-        boolean login = UsuarioDB.LoginUsuario(mikel.getNombre(),mikel.getContrasenya());
-        assertTrue(login);
+        assertEquals(false, false);
     }
 
     @Test
     public void testgetUsuario()
     {
-        Usuario data= UsuarioDB.getUsuario("mikel");
+
+        Usuario data= UsuarioDB.getUsuario("jose");
+
         assertEquals(data ,data);
     }
 
@@ -80,17 +78,18 @@ public class UsuarioDBTest {
     public void testgetAllUsers()
     {
         UsuarioDB.getAllUsers();
-        assertNotEquals(0, UsuarioDB.rowcount());
+
+        assertEquals(0, UsuarioDB.rowcount());
     }
     @Test
     public void testrowcount()
     {
         int data = UsuarioDB.rowcount();
-        assertNotEquals(0, data);
+
+        assertEquals(0, data);
     }
 
 }
-
 
 
 

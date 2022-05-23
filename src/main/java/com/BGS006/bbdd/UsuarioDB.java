@@ -16,7 +16,7 @@ public class UsuarioDB {
     public static Usuario u = new Usuario();
 
 
-    public static void insertarUsuario2(Usuario u1) {
+    public static void insertarUsuarios(Usuario u1) {
         Statement st = null;
         Connection con = ConexionDB.Conexion();
         String query = "INSERT INTO USUARIO VALUES('" + u1.getNombre() + "','"+u1.getContrasenya()+"','"+u1.getTarjetaPago()+"','"+u1.getRutaAvatar()+"')";
