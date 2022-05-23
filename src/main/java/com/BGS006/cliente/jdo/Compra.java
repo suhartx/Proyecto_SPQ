@@ -43,6 +43,10 @@ public class Compra {
 	public String getNombreUsuario(){
 		return nombreUsuario;
 	}
+
+	public void setNombreUsuario(String nombreUsuario2){
+		this.nombreUsuario = nombreUsuario2;
+	}
 	
 	public long getIdCompra() {
 		return idCompra;
@@ -51,6 +55,10 @@ public class Compra {
 	public int getNumArticulo() {
 
 		return articulos.size();
+	}
+
+	public void setNumArticulos(int numero){
+		this.numArticulos = numero;
 	}
 	public void setIdCompra(long id) {
 		this.idCompra = id;
