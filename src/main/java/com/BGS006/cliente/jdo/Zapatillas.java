@@ -3,6 +3,9 @@ import javax.jdo.annotations.Inheritance;
 import javax.jdo.annotations.InheritanceStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 
+/**
+ *
+ */
 @PersistenceCapable(detachable = "true")
 @Inheritance(strategy = InheritanceStrategy.NEW_TABLE)
 public class Zapatillas extends Articulo {
@@ -11,7 +14,14 @@ public class Zapatillas extends Articulo {
 	private String color;
 	private String gen;
 
-
+	/**
+	 *
+	 * @param nombre
+	 * @param precio
+	 * @param id
+	 * @param rutaImagen
+	 * @param stock
+	 */
 	public Zapatillas(String nombre, double precio, long id, String rutaImagen, int stock) {
 		super(nombre, precio, id, rutaImagen, stock);
 		// TODO Auto-generated constructor stub
