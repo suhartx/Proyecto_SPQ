@@ -15,6 +15,10 @@ public class CompraDAO extends DataAccessObjectBase implements IDataAccessObject
 
 	private static CompraDAO instance;
 
+	/**
+	 * Metodo que permite la conexion entre objetos
+	 * @return instancia del obejto compra
+	 */
 	public static CompraDAO getInstance() {
 		if (instance == null) {
 			instance = new CompraDAO();
@@ -26,12 +30,21 @@ public class CompraDAO extends DataAccessObjectBase implements IDataAccessObject
 	private CompraDAO() {
 	}
 
+	/**
+	 * Metodo que elimina una compra
+	 * @param object
+	 */
 	@Override
 	public void delete(Compra object) {
 		// TODO Auto-generated method stub
 		super.deleteObject(object);
 	}
 
+	/**
+	 * Metodo que busca una compra
+	 * @param param Nombre de la compra
+	 * @return Compra
+	 */
 	@Override
 	public Compra find(String param) {
 		// TODO Auto-generated method stub
@@ -61,6 +74,10 @@ public class CompraDAO extends DataAccessObjectBase implements IDataAccessObject
 		return result;
 	}
 
+	/**
+	 * Metodo que devuele una lista con compras
+	 * @return lista de Compras
+	 */
 	@Override
 	public List<Compra> getAll() {
 		// TODO Auto-generated method stub
@@ -92,6 +109,10 @@ public class CompraDAO extends DataAccessObjectBase implements IDataAccessObject
 		return compras;
 	}
 
+	/**
+	 * Metodo que guarda una compra
+	 * @param object
+	 */
 	@Override
 	public void save(Compra object) {
 		// TODO Auto-generated method stub
