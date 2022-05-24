@@ -41,6 +41,11 @@ mvn -Pdatos exec:java
 mvn test
 ```
 
+**Generar documentacion**
+```
+mvn doxygen:report
+```
+
 **Instalar el proyecto para ejecutar el jar**
 ```
 //En la primera ocasion que se ejecute dará error
@@ -49,10 +54,7 @@ mvn install
 ```
 
 
-**Generar documentacion**
-```
-doxygen:report
-```
+
 **Generar latex**
 
 en ProyectoSPQ\target\doxygen\latex
