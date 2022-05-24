@@ -57,5 +57,9 @@ public class ArticuloTest {
         List<Articulo> articles = target.path("articulos/verArticulos").request(MediaType.APPLICATION_JSON).get(genericType);
         assertEquals(0, articles.size());
     }
+    @AfterClass
+    public static void tearDown() throws Exception {
+        server.stop();
+    }
 
 }
