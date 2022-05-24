@@ -45,7 +45,7 @@ public class ArticuloDBTest {
     public void testInsertarArticulo() throws Exception
     {
         ArticuloDB.insertarArticulo(a);
-        assertEquals(0,ArticuloDB.rowcount());
+        assertEquals(3,ArticuloDB.rowcount());
     }
 
     @Test
@@ -60,7 +60,7 @@ public class ArticuloDBTest {
     public void testrowcount()
     {
         int data = ArticuloDB.rowcount();
-        assertEquals(0, data);
+        assertEquals(2, data);
     }
 
 }

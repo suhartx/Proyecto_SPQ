@@ -55,14 +55,14 @@ public class CompraDBTest {
     public void testEliminarCompra()
     {
         //ComprasDB.eliminarCompra(c);
-        assertEquals(0,UsuarioDB.rowcount());
+        assertEquals(3,UsuarioDB.rowcount());
     }
 
     @Test
     public void testrowcount()
     {
         int data = ComprasDB.rowcount();
-        assertEquals(0, data);
+        assertEquals(2, data);
     }
 
 
