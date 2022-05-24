@@ -20,8 +20,8 @@ jobs:
         run: mvn --batch-mode --update-snapshots verify
       - name: Install doxygen
         run: sudo apt-get install -y doxygen
-      - name: Run the Maven Test phase
-        run: mvn test
+#      - name: Run the Maven Test phase
+#        run: mvn test
       - name: Generate documentation
         run: mvn doxygen:report
       - name: Publish on Github Pages
