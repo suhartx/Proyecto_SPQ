@@ -31,7 +31,10 @@ mvn datanucleus:enhance
 ```
 mvn datanucleus:schema-create
 ```
-
+**Datos de prueba**
+```
+mvn -Pdatos exec:java
+```
 
 **Testear el proyecto**
 ```
@@ -45,10 +48,7 @@ mvn test
 mvn install
 ```
 
-**Datos de prueba**
-```
-mvn -Pdatos exec:java
-```
+
 **Generar documentacion**
 ```
 doxygen:report
