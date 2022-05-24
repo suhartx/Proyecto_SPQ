@@ -1,0 +1,21 @@
+digraph "com.BGS006.cliente.jdo.Articulo.getId"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="com.BGS006.cliente.jdo.Articulo.getId",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="com.BGS006.cliente.bbdd.\lBD.insertarCalcetinBBDD",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1bbdd_1_1_b_d.html#a35e1fc5a077910d1c0d2b67523838bc9",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="com.BGS006.cliente.interfaz.\lLoginDeustoSneaker.LoginDeustoSneaker",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1interfaz_1_1_login_deusto_sneaker.html#a20f4fb7548298103bc04357870c584cc",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="com.BGS006.cliente.interfaz.\lLoginDeustoSneaker.main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1interfaz_1_1_login_deusto_sneaker.html#af66754cf4ea3e715e9e03ad47c731198",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="com.BGS006.cliente.bbdd.\lBD.insertarLimpiadorBBDD",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1bbdd_1_1_b_d.html#ae36691b83baecc2c65e8a26741b90e71",tooltip=" "];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="com.BGS006.cliente.bbdd.\lBD.insertarZapatillaBBDD",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1bbdd_1_1_b_d.html#abace65aa8650374f401bec870d4f9162",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="com.BGS006.cliente.interfaz.panel\lArticuloHome.panelArticuloHome",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1interfaz_1_1panel_articulo_home.html#a551c129e99cfd6454a56fbe3536e9381",tooltip=" "];
+}

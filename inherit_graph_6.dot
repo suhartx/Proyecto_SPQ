@@ -1,0 +1,8 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="com.BGS006.cliente.funcionalidad.\lFunUsuario",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1funcionalidad_1_1_fun_usuario.html",tooltip=" "];
+}

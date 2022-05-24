@@ -1,0 +1,16 @@
+digraph "com.BGS006.cliente.bbdd.BD.intertarUsuarioBBDD"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="com.BGS006.cliente.bbdd.\lBD.intertarUsuarioBBDD",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="com.BGS006.cliente.jdo.Usuario.get\lContrasenya",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_usuario.html#a191e600b0e951bdff6d6808442ad08fc",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="com.BGS006.cliente.jdo.Usuario.get\lNombre",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_usuario.html#a9a5d7d1cff9ea4f606ee10d6b3bb43cc",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="com.BGS006.cliente.jdo.Usuario.get\lRutaAvatar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_usuario.html#ae5e4fa96a5b0f761724e596331c67af9",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="com.BGS006.cliente.jdo.Usuario.get\lTarjetaPago",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_usuario.html#a90803f1850f1a18cd9ffc2e1167e3b4e",tooltip=" "];
+}

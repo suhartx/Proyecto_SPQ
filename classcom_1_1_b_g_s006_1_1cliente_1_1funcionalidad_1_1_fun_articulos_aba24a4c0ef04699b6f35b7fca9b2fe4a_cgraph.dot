@@ -1,0 +1,12 @@
+digraph "com.BGS006.cliente.funcionalidad.FunArticulos.addLimpiador"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="com.BGS006.cliente.funcionalidad.\lFunArticulos.addLimpiador",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="com.BGS006.cliente.funcionalidad.\lFunArticulos.comprobarArticulo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1funcionalidad_1_1_fun_articulos.html#a68eb4dd07a829cb8aabde835c0360cb1",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="com.BGS006.cliente.jdo.Articulo.get\lNombre",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_articulo.html#a03e52f20823a1ba2a9e9a3c19a4c7a23",tooltip=" "];
+}

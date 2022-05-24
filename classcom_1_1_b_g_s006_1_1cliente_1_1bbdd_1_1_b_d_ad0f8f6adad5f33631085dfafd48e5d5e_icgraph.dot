@@ -1,0 +1,12 @@
+digraph "com.BGS006.cliente.bbdd.BD.cargarCalcetinesDeInfoDeBBDD"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="com.BGS006.cliente.bbdd.\lBD.cargarCalcetinesDeInfoDeBBDD",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="com.BGS006.cliente.interfaz.\lVentanaPrincipal.cargarPanelesCon\lCalcetines",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1interfaz_1_1_ventana_principal.html#ab199a3b3898bc994196772819a083bdd",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="com.BGS006.cliente.interfaz.\lVentanaPrincipal.VentanaPrincipal",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1interfaz_1_1_ventana_principal.html#ad73ee0bb3fdcede7d8734e38391f3601",tooltip=" "];
+}

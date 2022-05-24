@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['save_337',['save',['../classcom_1_1_b_g_s006_1_1dao_1_1_articulo_d_a_o.html#a68254c1d24cb24f33a35cfadf3f21246',1,'com.BGS006.dao.ArticuloDAO.save()'],['../classcom_1_1_b_g_s006_1_1dao_1_1_compra_d_a_o.html#a6966bacea4db1d4d382e0f180d08e645',1,'com.BGS006.dao.CompraDAO.save()'],['../interfacecom_1_1_b_g_s006_1_1dao_1_1_i_data_access_object.html#ab5c143ca0a2cdade634e32c7cf87e920',1,'com.BGS006.dao.IDataAccessObject.save()'],['../classcom_1_1_b_g_s006_1_1dao_1_1_usuario_d_a_o.html#a541cfecc777594a6386e4765b548191a',1,'com.BGS006.dao.UsuarioDAO.save()']]],
+  ['saveobject_338',['saveObject',['../classcom_1_1_b_g_s006_1_1dao_1_1_data_access_object_base.html#a77c3c0169625870d5302bf2010e84584',1,'com::BGS006::dao::DataAccessObjectBase']]],
+  ['setarticulos_339',['setArticulos',['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_compra.html#a915a796bccd06bfef83f5833b1589159',1,'com::BGS006::cliente::jdo::Compra']]],
+  ['setcarro_340',['setCarro',['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_usuario.html#afa04d1fc39630881480ecd3dc0097ac6',1,'com::BGS006::cliente::jdo::Usuario']]],
+  ['setcolor_341',['setColor',['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_calcetines.html#ac21bdba589ebb652585fbe66ae5e8175',1,'com.BGS006.cliente.jdo.Calcetines.setColor()'],['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_zapatillas.html#aa028e28a1f7b83bc6eeb68aeaa5cd274',1,'com.BGS006.cliente.jdo.Zapatillas.setColor()']]],
+  ['setcontrasenya_342',['setContrasenya',['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_usuario.html#a936dac58b88f4dcd4d9582cd9f51a31c',1,'com::BGS006::cliente::jdo::Usuario']]],
+  ['setgen_343',['setGen',['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_calcetines.html#ae306509d5faca309ca76b8772f41f649',1,'com.BGS006.cliente.jdo.Calcetines.setGen()'],['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_zapatillas.html#a1c66cd099ad542b206e6441ac95c9a52',1,'com.BGS006.cliente.jdo.Zapatillas.setGen()']]],
+  ['setid_344',['setId',['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_articulo.html#afeb09954c190c5016225412cb14ce57d',1,'com::BGS006::cliente::jdo::Articulo']]],
+  ['setidcompra_345',['setIdCompra',['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_compra.html#a2d7648930c0c83cca9a6256d7211f977',1,'com::BGS006::cliente::jdo::Compra']]],
+  ['setnombre_346',['setNombre',['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_articulo.html#a68275aaedb790481e160786e1ce3c1fa',1,'com.BGS006.cliente.jdo.Articulo.setNombre()'],['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_usuario.html#a151ba6d298b92d5ef4b6c8160070a68a',1,'com.BGS006.cliente.jdo.Usuario.setNombre()']]],
+  ['setnombreusuario_347',['setNombreUsuario',['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_compra.html#afe945aee095a13ba81db8825c2040aa0',1,'com::BGS006::cliente::jdo::Compra']]],
+  ['setnumarticulos_348',['setNumArticulos',['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_compra.html#a36df88dbff1cc402bfeb65264a4c1ddb',1,'com::BGS006::cliente::jdo::Compra']]],
+  ['setpedidos_349',['setPedidos',['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_usuario.html#a73c811fd8b19b6a6bfeac6a8847a5307',1,'com::BGS006::cliente::jdo::Usuario']]],
+  ['setplus_350',['setPlus',['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_limpiador.html#a5698263005f8b26b76c9d6c8916c1636',1,'com::BGS006::cliente::jdo::Limpiador']]],
+  ['setprecio_351',['setPrecio',['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_articulo.html#a348cb13f3e3b1331f613d5301f4bc408',1,'com.BGS006.cliente.jdo.Articulo.setPrecio()'],['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_compra.html#a317349e80f7aefaa91d344ed87187be9',1,'com.BGS006.cliente.jdo.Compra.setPrecio()']]],
+  ['setrutaavatar_352',['setRutaAvatar',['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_usuario.html#a5c3bafdce7acfb852a2946364d16e73c',1,'com::BGS006::cliente::jdo::Usuario']]],
+  ['setrutaimagen_353',['setRutaImagen',['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_articulo.html#a69fb15c65b783ed4ef4a1edb71251e61',1,'com::BGS006::cliente::jdo::Articulo']]],
+  ['setstock_354',['setStock',['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_articulo.html#a98228fd2104973252b3a032365fe6431',1,'com::BGS006::cliente::jdo::Articulo']]],
+  ['settalla_355',['setTalla',['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_calcetines.html#afc677f9aeb38b304001574806edd3c93',1,'com.BGS006.cliente.jdo.Calcetines.setTalla()'],['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_zapatillas.html#a0f4ebdffa9f68105d8154d6ec458b158',1,'com.BGS006.cliente.jdo.Zapatillas.setTalla()']]],
+  ['settarjetapago_356',['setTarjetaPago',['../classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_usuario.html#a747a6beb7d5296cd0fe0e89767f985ef',1,'com::BGS006::cliente::jdo::Usuario']]],
+  ['startserver_357',['startServer',['../classcom_1_1_b_g_s006_1_1servidor_1_1_main.html#ac15d2df01206030e8184e1aceb1ca81a',1,'com::BGS006::servidor::Main']]]
+];

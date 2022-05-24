@@ -1,0 +1,43 @@
+digraph "com.BGS006.bbdd.ConexionDB.Conexion"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="com.BGS006.bbdd.Conexion\lDB.Conexion",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="com.BGS006.bbdd.Articulo\lDB.cargarMapaArticulosDeInfoBBDD",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1bbdd_1_1_articulo_d_b.html#a07f6da72d6c33d782b08ce4f24b0950b",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="com.BGS006.cliente.interfaz.\lVentanaPrincipal.cargarPaneles",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1interfaz_1_1_ventana_principal.html#a53cd0df6a55742d161d867e064d58653",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="com.BGS006.cliente.interfaz.\lVentanaPrincipal.VentanaPrincipal",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1interfaz_1_1_ventana_principal.html#ad73ee0bb3fdcede7d8734e38391f3601",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="com.BGS006.bbdd.Articulo\lDB.eliminarArticulo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1bbdd_1_1_articulo_d_b.html#a7724b19833d7c6eda8d23fd24c6f9e19",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="com.BGS006.bbdd.ComprasDB.eliminar\lCompra",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1bbdd_1_1_compras_d_b.html#afb81a3de837a031ea739a7988aae4209",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="com.BGS006.bbdd.UsuarioDB.eliminar\lUsuario",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1bbdd_1_1_usuario_d_b.html#a635d4d67969a5f5cd724d26563260e5e",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="com.BGS006.bbdd.Conexion\lDB.executeQuery",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1bbdd_1_1_conexion_d_b.html#a418a894de7d98f04cac396c45a18f1be",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="com.BGS006.bbdd.UsuarioDB.get\lAllUsers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1bbdd_1_1_usuario_d_b.html#a7645125c6baca61b32b00ff65f2ef99f",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="com.BGS006.servidor.Usuario.get\lUsers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1servidor_1_1_usuario.html#aee0c6dff3d5e1d385e4c5cb25620b7e1",tooltip=" "];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="com.BGS006.bbdd.UsuarioDB.get\lUsuario",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1bbdd_1_1_usuario_d_b.html#aa4fc8e64d2ebbf57976034998b7f2d07",tooltip=" "];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="com.BGS006.bbdd.UsuarioDB.\lLoginUsuario",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1bbdd_1_1_usuario_d_b.html#adb81cc027ff6fd63a4610b6e47f69941",tooltip=" "];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="com.BGS006.bbdd.Articulo\lDB.insertarArticulo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1bbdd_1_1_articulo_d_b.html#a2dde935f85b5a415939cb772b25fbe78",tooltip=" "];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="com.BGS006.bbdd.ComprasDB.insertar\lCompra",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1bbdd_1_1_compras_d_b.html#a5f7176340573c453d2101923910a7bdf",tooltip=" "];
+  Node1 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="com.BGS006.bbdd.UsuarioDB.insertar\lUsuarios",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1bbdd_1_1_usuario_d_b.html#a418ad0c36a3c84df4d3b64e7222a52bc",tooltip=" "];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="com.BGS006.bbdd.Articulo\lDB.rowcount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1bbdd_1_1_articulo_d_b.html#aa28ba15c66124e81c4e53eecdb5a7996",tooltip=" "];
+  Node1 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="com.BGS006.bbdd.ComprasDB.rowcount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1bbdd_1_1_compras_d_b.html#ae7867d73c7529b491a961c0d4224eed9",tooltip=" "];
+  Node1 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="com.BGS006.bbdd.UsuarioDB.rowcount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1bbdd_1_1_usuario_d_b.html#aba197b5ddec22a079a8c0238b1a941aa",tooltip=" "];
+}

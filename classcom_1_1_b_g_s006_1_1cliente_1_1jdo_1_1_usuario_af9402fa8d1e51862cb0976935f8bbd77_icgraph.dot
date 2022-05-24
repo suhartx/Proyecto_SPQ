@@ -1,0 +1,12 @@
+digraph "com.BGS006.cliente.jdo.Usuario.getCarro"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="com.BGS006.cliente.jdo.Usuario.get\lCarro",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="com.BGS006.cliente.funcionalidad.\lFunUsuario.aniadirArticuloACesta",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1funcionalidad_1_1_fun_usuario.html#a90b3b3685b8eea975bbb1bbaa53cc7b3",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="com.BGS006.cliente.interfaz.panel\lArticuloHome.panelArticuloHome",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1interfaz_1_1panel_articulo_home.html#a551c129e99cfd6454a56fbe3536e9381",tooltip=" "];
+}

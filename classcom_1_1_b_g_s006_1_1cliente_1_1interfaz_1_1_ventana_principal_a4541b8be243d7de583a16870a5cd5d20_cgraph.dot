@@ -1,0 +1,14 @@
+digraph "com.BGS006.cliente.interfaz.VentanaPrincipal.cargarPanelesConLimpiadores"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="com.BGS006.cliente.interfaz.\lVentanaPrincipal.cargarPanelesCon\lLimpiadores",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="com.BGS006.cliente.bbdd.\lBD.cargarLimpiadoresDeInfoDeBBDD",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1bbdd_1_1_b_d.html#adc0dd748a35068ad93325a34365d6b0b",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="com.BGS006.cliente.bbdd.\lBD.closeBD",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1bbdd_1_1_b_d.html#a5c2cf54c2edbbc0d99a4d249befb9f13",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="com.BGS006.cliente.bbdd.\lBD.initBD",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1bbdd_1_1_b_d.html#ab72218b15917db1130623d31713a30e4",tooltip=" "];
+}

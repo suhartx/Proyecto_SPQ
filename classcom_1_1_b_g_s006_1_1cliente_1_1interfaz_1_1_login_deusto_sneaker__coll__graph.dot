@@ -1,0 +1,14 @@
+digraph "com.BGS006.cliente.interfaz.LoginDeustoSneaker"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="com.BGS006.cliente.interfaz.\lLoginDeustoSneaker",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" con" ,fontname="Helvetica"];
+  Node2 [label="Connection",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" tmArticulos" ,fontname="Helvetica"];
+  Node3 [label="TreeMap\< Integer, com.BGS006.cliente.jdo.\lArticulo \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" tmUsuarios" ,fontname="Helvetica"];
+  Node4 [label="TreeMap\< String, com.BGS006.cliente.jdo.\lUsuario \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

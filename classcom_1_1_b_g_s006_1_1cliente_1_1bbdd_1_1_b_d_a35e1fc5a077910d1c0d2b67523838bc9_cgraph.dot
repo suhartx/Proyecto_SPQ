@@ -1,0 +1,24 @@
+digraph "com.BGS006.cliente.bbdd.BD.insertarCalcetinBBDD"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="com.BGS006.cliente.bbdd.\lBD.insertarCalcetinBBDD",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="com.BGS006.cliente.jdo.Calcetines.get\lColor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_calcetines.html#ac53af164be9f140e67b6d1a42b70d5e7",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="com.BGS006.cliente.jdo.Calcetines.getGen",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_calcetines.html#aab59ad35bbe79d04149299ce571d05c0",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="com.BGS006.cliente.jdo.Articulo.getId",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_articulo.html#a0a51701043cde3157a09a523e31d0966",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="com.BGS006.cliente.jdo.Articulo.get\lNombre",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_articulo.html#a03e52f20823a1ba2a9e9a3c19a4c7a23",tooltip=" "];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="com.BGS006.cliente.jdo.Articulo.get\lPrecio",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_articulo.html#a04a7c0500098e2126d4783caa76cf026",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="com.BGS006.cliente.jdo.Articulo.get\lRutaImagen",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_articulo.html#ad60cf54307accd21dd908bbc5d213d2c",tooltip=" "];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="com.BGS006.cliente.jdo.Articulo.get\lStock",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_articulo.html#a3d08598ecc4e7755b7e1a3def6523cdb",tooltip=" "];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="com.BGS006.cliente.jdo.Calcetines.get\lTalla",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_calcetines.html#a6240fd60670d6773ad976e0bceddc600",tooltip=" "];
+}

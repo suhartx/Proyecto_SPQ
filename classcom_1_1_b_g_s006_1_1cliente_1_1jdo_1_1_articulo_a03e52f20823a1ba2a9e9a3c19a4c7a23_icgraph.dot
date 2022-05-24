@@ -1,0 +1,35 @@
+digraph "com.BGS006.cliente.jdo.Articulo.getNombre"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="com.BGS006.cliente.jdo.Articulo.get\lNombre",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="com.BGS006.cliente.funcionalidad.\lFunArticulos.addCalcetin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1funcionalidad_1_1_fun_articulos.html#a15922a82fd299331914336f35f970e11",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="com.BGS006.cliente.funcionalidad.\lFunArticulos.addLimpiador",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1funcionalidad_1_1_fun_articulos.html#aba24a4c0ef04699b6f35b7fca9b2fe4a",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="com.BGS006.cliente.funcionalidad.\lFunArticulos.addZapatilla",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1funcionalidad_1_1_fun_articulos.html#a5700491e78af512f918b173a451ddf1b",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="com.BGS006.bbdd.Articulo\lDB.eliminarArticulo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1bbdd_1_1_articulo_d_b.html#a7724b19833d7c6eda8d23fd24c6f9e19",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="com.BGS006.cliente.funcionalidad.\lFunArticulos.eliminarArticulo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1funcionalidad_1_1_fun_articulos.html#a9bbb9115f0031af1b042530088ed44aa",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="com.BGS006.bbdd.Articulo\lDB.insertarArticulo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1bbdd_1_1_articulo_d_b.html#a2dde935f85b5a415939cb772b25fbe78",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="com.BGS006.cliente.bbdd.\lBD.insertarCalcetinBBDD",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1bbdd_1_1_b_d.html#a35e1fc5a077910d1c0d2b67523838bc9",tooltip=" "];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="com.BGS006.cliente.interfaz.\lLoginDeustoSneaker.LoginDeustoSneaker",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1interfaz_1_1_login_deusto_sneaker.html#a20f4fb7548298103bc04357870c584cc",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="com.BGS006.cliente.interfaz.\lLoginDeustoSneaker.main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1interfaz_1_1_login_deusto_sneaker.html#af66754cf4ea3e715e9e03ad47c731198",tooltip=" "];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="com.BGS006.cliente.bbdd.\lBD.insertarLimpiadorBBDD",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1bbdd_1_1_b_d.html#ae36691b83baecc2c65e8a26741b90e71",tooltip=" "];
+  Node11 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="com.BGS006.cliente.bbdd.\lBD.insertarZapatillaBBDD",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1bbdd_1_1_b_d.html#abace65aa8650374f401bec870d4f9162",tooltip=" "];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="com.BGS006.cliente.interfaz.panel\lArticuloHome.panelArticuloHome",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1interfaz_1_1panel_articulo_home.html#a551c129e99cfd6454a56fbe3536e9381",tooltip=" "];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="com.BGS006.cliente.jdo.Compra.quitar\lArticulo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1cliente_1_1jdo_1_1_compra.html#aaa8e60b4b778af6ad0e855767c2f150a",tooltip=" "];
+}

@@ -1,0 +1,10 @@
+digraph "com.BGS006.servidor.Usuario.AnyadirUsuario"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="com.BGS006.servidor.Usuario.\lAnyadirUsuario",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="com.BGS006.dao.DataAccess\lObjectBase.saveObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcom_1_1_b_g_s006_1_1dao_1_1_data_access_object_base.html#a77c3c0169625870d5302bf2010e84584",tooltip=" "];
+}
