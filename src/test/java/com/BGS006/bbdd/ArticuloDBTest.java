@@ -60,7 +60,7 @@ public class ArticuloDBTest {
     public void testrowcount()
     {
         int data = ArticuloDB.rowcount();
-        assertEquals(2, data);
+        assertEquals(3, data);
     }
 
 }
