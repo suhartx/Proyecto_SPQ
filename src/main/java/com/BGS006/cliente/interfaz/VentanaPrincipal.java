@@ -177,9 +177,13 @@ public class VentanaPrincipal extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//ventanaActual.dispose();
-				//new VentanaCesta(ventanaActual,u);
-				//new VentanaPerfil(ventanaActual);
+				JOptionPane.showMessageDialog(null, "Compra realizada","Exito!", JOptionPane.INFORMATION_MESSAGE);
+				ventanaActual.dispose();
+				try {
+					new VentanaPrincipal(ventanaActual,u);
+				} catch (BindException ex) {
+					ex.printStackTrace();
+				}
 			}
 		});
 /**

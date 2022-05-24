@@ -46,12 +46,12 @@ public static void main(String[] args)
 //    System.out.println("");
     UsuarioDAO u = new UsuarioDAO();
 
-    Usuario suhar = new Usuario("suhar", "suhar","","");
+    Usuario suhar = new Usuario("suhar", "suhar","","src/main/resources/avatares/Avatar2.png");
 
 
-    Articulo a1 = new Zapatillas("hola",20,1,"",6,5, "negro","H");
-    Articulo a2 = new Calcetines("ktal",20,2,"",6,5,"rojo","h");
-    Articulo a3 = new Limpiador("holakpasaktal",20,3,"",6,true);
+    Articulo a1 = new Zapatillas("Jordan 1 Retro",20,1,"src/main/resources/imagenes/airJordan1Retro.jpg",6,5, "negro","H");
+    Articulo a2 = new Calcetines("Nike shocks",9,2,"src/main/resources/imagenes/calcetinesNike.jpg",9,5,"rojo","h");
+    Articulo a3 = new Limpiador("Creep Clean",19,3,"src/main/resources/imagenes/limpiadorCreep.jpg",33,true);
 
 
     Compra c1 = new Compra(1,"suhar",30,5);

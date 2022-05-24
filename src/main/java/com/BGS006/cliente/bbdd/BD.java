@@ -476,36 +476,36 @@ public class BD {
 		Statement stmt = null;
 
 		String sentSQL = "SELECT * FROM Articulos WHERE TipoArticulo = 'z'";
-//		try {
-//			stmt = con.createStatement();
-//			ResultSet rs = stmt.executeQuery(sentSQL);
-//			while(rs.next()) {
-//				int ID = rs.getInt("ID");
-//				String nombre = rs.getString("Nombre");
-//				int precio = rs.getInt("Precio");
-//				String imagen = rs.getString("Imagen");
-//				int stock = rs.getInt("Stock");
-//				int talla = rs.getInt("Talla");
-//				String color = rs.getString("Color");
-//				String genero = rs.getString("Genero");
-//
-//				Zapatillas z = new Zapatillas(nombre,precio,ID,imagen,stock,talla,color,genero);
-//				tmZapatillas.put(ID, z);
-//			}
-//			rs.close();
-//			stmt.close();
-//			System.out.println("Zapatillas cargadas con exito.... \n");
-//		} catch (Exception e1) {
-//
-//		} finally {
-//			if(stmt!=null) {
-//				try {
-//					stmt.close();
-//				} catch (Exception e) {
-//
-//				}
-//			}
-//		}
+		try {
+			stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sentSQL);
+			while(rs.next()) {
+				int ID = rs.getInt("ID");
+				String nombre = rs.getString("Nombre");
+				int precio = rs.getInt("Precio");
+				String imagen = rs.getString("Imagen");
+				int stock = rs.getInt("Stock");
+				int talla = rs.getInt("Talla");
+				String color = rs.getString("Color");
+				String genero = rs.getString("Genero");
+
+				Zapatillas z = new Zapatillas(nombre,precio,ID,imagen,stock,talla,color,genero);
+				tmZapatillas.put(ID, z);
+			}
+			rs.close();
+			stmt.close();
+			System.out.println("Zapatillas cargadas con exito.... \n");
+		} catch (Exception e1) {
+
+		} finally {
+			if(stmt!=null) {
+				try {
+					stmt.close();
+				} catch (Exception e) {
+
+				}
+			}
+		}
 
 		return tmZapatillas;
 	}
