@@ -123,6 +123,9 @@ public class VentanaPerfil extends JFrame {
 		
 		
 		JButton btnEditar = new JButton("Cambiar contraseya");
+		/**
+		 * Botón para editar la contraseña
+		 */
 		btnEditar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String contra = JOptionPane.showInputDialog("Introduzca la nueva contrase�a:");
@@ -154,8 +157,10 @@ public class VentanaPerfil extends JFrame {
 			}
 
 		});
-		
-		
+
+		/**
+		 * Botón para ir a la ventana principal
+		 */
 		btnPrincipal.addActionListener(new ActionListener() {
 			
 			@Override

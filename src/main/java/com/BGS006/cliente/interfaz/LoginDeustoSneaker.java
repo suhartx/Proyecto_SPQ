@@ -72,6 +72,9 @@ public class LoginDeustoSneaker {
 		});
 	}
 
+	/**
+	 * Método que inicializa la base de datos en la aplicación
+	 */
 	public LoginDeustoSneaker() {
 		//Zapatillas z = new Zapatillas("Jordan 1 Retro", 499.99, 527, "src/main/resources/imagenes/airJordan1Retro.jpg", 12, 40, "Naranja/Blanco", "Hombre");
 
