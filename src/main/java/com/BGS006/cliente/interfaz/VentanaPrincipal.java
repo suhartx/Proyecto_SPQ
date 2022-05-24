@@ -8,6 +8,7 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.text.html.ImageView;
 
+import com.BGS006.bbdd.ArticuloDB;
 import com.BGS006.cliente.bbdd.BD;
 import com.BGS006.cliente.jdo.Articulo;
 import com.BGS006.cliente.jdo.Usuario;
@@ -228,14 +229,16 @@ public class VentanaPrincipal extends JFrame {
 	 * Metodo que permite cargar los paneles de los distinos articulos en el panelCentro
 	 */
 	public void cargarPaneles() {
-		Connection con = BD.initBD("baseDeDatos.db");
-		TreeMap<Integer , Articulo> tm = BD.cargarMapaArticulosDeInfoBBDD(con);
+
+		//Connection con = BD.initBD("baseDeDatos.db");
+		ArticuloDB.cargarMapaArticulosDeInfoBBDD();
+		TreeMap<String , Articulo> tm = ArticuloDB.cargarMapaArticulosDeInfoBBDD();
 		for(Articulo a: tm.values()) {
 			panelArticuloHome pi = new panelArticuloHome(a);
 			panelCentro.add(pi);
 			panelCentro.updateUI();
 		}
-		BD.closeBD(con);
+
 	}
 
 	/**

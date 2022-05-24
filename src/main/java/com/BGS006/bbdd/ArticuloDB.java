@@ -54,13 +54,12 @@ public class ArticuloDB {
 
     /**
      * Método que muestra todos los artículos en la base de datos
-     * @param con
      * @return mapa con los artículos
      */
-    public static TreeMap<String, Articulo> cargarMapaArticulosDeInfoBBDD(Connection con) {
+    public static TreeMap<String, Articulo> cargarMapaArticulosDeInfoBBDD() {
         TreeMap<String, Articulo> tmArticulos = new TreeMap<>();
         Statement stmt = null;
-
+        Connection con = ConexionDB.Conexion();
         String sentSQL = "SELECT * FROM ARTICULO";
         try {
             stmt = con.createStatement();
@@ -69,10 +68,11 @@ public class ArticuloDB {
                 String nombre = rs.getString("NOMBRE");
                 double precio = rs.getDouble("PRECIO");
                 String ruta = rs.getString("RUTAIMAGEN");
-                String id = "";
-                int stock = 0;
-                //Articulo a = new Articulo(nombre, precio,id, ruta, stock);
-                //tmArticulos.put(nombre, a);
+                Long id = rs.getLong("ID");
+                int stock = rs.getInt("STOCK");
+
+                Articulo a = new Articulo(nombre, precio,id, ruta, stock);
+                tmArticulos.put(nombre, a);
 
             }
             rs.close();

@@ -26,6 +26,7 @@ import javax.swing.text.html.ImageView;
 import javax.ws.rs.client.*;
 import javax.ws.rs.core.MediaType;
 
+import com.BGS006.bbdd.UsuarioDB;
 import com.BGS006.cliente.bbdd.BD;
 import com.BGS006.cliente.jdo.*;
 
@@ -137,32 +138,31 @@ public class LoginDeustoSneaker {
 										// TODO Auto-generated method stub
 										String nick = nombretxt.getText();
 										String c = contraseyatxt.getText();
+
+
+										UsuarioDB.LoginUsuario(nick,c);
 										
 										if((!nick.equals("") && !c.equals("")) || (!nick.equals("admin") && !c.equals("admin"))) {
 											Connection con = null;
-											try {
-												con = BD.initBD("baseDeDatos.db");
-											} catch (Exception e3) {
-												// TODO Auto-generated catch block
-												e3.printStackTrace();
-											}
-											int resul = 0;
-											try {
-												resul = BD.obtenerUsuario(con, nick, c);
-											} catch (Exception e2) {
-												// TODO Auto-generated catch block
-												e2.printStackTrace();
-											}
-											if((resul == 0) && !nick.equals("admin") && !c.equals("admin")){
+//											try {
+//												con = BD.initBD("baseDeDatos.db");
+//											} catch (Exception e3) {
+//												// TODO Auto-generated catch block
+//												e3.printStackTrace();
+//											}
+//											int resul = 0;
+//											try {
+//												resul = BD.obtenerUsuario(con, nick, c);
+//											} catch (Exception e2) {
+//												// TODO Auto-generated catch block
+//												e2.printStackTrace();
+//											}
+											if((!UsuarioDB.LoginUsuario(nick,c)) && !nick.equals("admin") && !c.equals("admin")){
 												JOptionPane.showMessageDialog(null, "Todavia no te has registrado","��ERROR!!", JOptionPane.ERROR_MESSAGE);
 												nombretxt.setText("");
 												contraseyatxt.setText("");
-											}else if(resul==1) {
-												JOptionPane.showMessageDialog(null, "La contrase�a no es correcta","��ERROR!!", JOptionPane.ERROR_MESSAGE);
-												
-												contraseyatxt.setText("");
 											}else {
-												if((resul == 2) && (!nick.equals("admin") && !c.equals("admin"))){
+												if((UsuarioDB.LoginUsuario(nick,c)) && (!nick.equals("admin") && !c.equals("admin"))){
 													
 													JOptionPane.showMessageDialog(null, "Cargando SneakerHome, bienvenid@ "+ nick,"WELCOME", JOptionPane.INFORMATION_MESSAGE);
 													Usuario u = new Usuario(nick,c);
