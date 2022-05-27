@@ -52,9 +52,7 @@ public class UsuarioDBTest {
     @Test
     public void testeliminarUsuario()
     {
-        // UsuarioDB.eliminarUsuario(mikel.getNombre());
-
-
+        UsuarioDB.eliminarUsuario(mikel);
         assertEquals(2,UsuarioDB.rowcount());
     }
 
@@ -86,6 +84,13 @@ public class UsuarioDBTest {
         int data = UsuarioDB.rowcount();
 
         assertEquals(2, data);
+    }
+    @Test
+    public void testCambiarPassword()
+    {
+        UsuarioDB.cambiarPassword(con,mikel.getNombre(), "mikel2");
+        String contraenaNueva = UsuarioDB.getUsuario("mikel").getContrasenya();
+        assertEquals("mikel2", contraenaNueva);
     }
 
 }
