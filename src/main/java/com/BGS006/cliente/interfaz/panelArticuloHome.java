@@ -78,7 +78,9 @@ public class panelArticuloHome extends JPanel {
         btnComprar.setBackground(new Color(153, 255, 0));
         panelSur.add(btnComprar, "cell 1 1");
 
-        /*EVENTOS*/
+        /**
+         * eventos de los botones
+         */
         btnComprar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 if(a instanceof Zapatillas){

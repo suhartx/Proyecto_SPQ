@@ -175,6 +175,9 @@ public class VentanaPerfil extends JFrame {
 				//new VentanaPerfil(ventanaActual);
 			}
 		});
+		/**
+		 * boton para ir a la ventana cesta
+		 */
 		btnCesta.addActionListener( new ActionListener() {
 			
 			@Override
