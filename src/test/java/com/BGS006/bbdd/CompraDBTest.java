@@ -16,6 +16,9 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
+/**
+ * Clase que testea las compras en la BD
+ */
 public class CompraDBTest {
 
     public CompraDBTest() {

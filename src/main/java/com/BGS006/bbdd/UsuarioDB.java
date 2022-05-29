@@ -8,6 +8,9 @@ import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * Clase que gestiona los usuarios en la BD
+ */
 public class UsuarioDB {
 
 
@@ -35,36 +38,6 @@ public class UsuarioDB {
             System.out.println(e);
         }
     }
-
-    /**
-     * This is the method that inserts Users into the database
-     * @param nuevoUsuario
-     */
-    /*public static void insertarUsuarios(Usuario nuevoUsuario) {
-       
-        PreparedStatement preparedStatement = null;
-        Connection con = ConexionDB.Conexion();
-        
-        try {
-            String query = " INSERT INTO USUARIO (NOMBRE, CONTRASENYA, RUTAAVATAR, TARJETAPAGO)"
-                    + " VALUES (?, ?, ?, ?)";
-
-            preparedStatement = con.prepareStatement(query);
-
-            preparedStatement.setString(1, nuevoUsuario.getNombre());
-            preparedStatement.setString(2, nuevoUsuario.getContrasenya());
-            preparedStatement.setString(3, nuevoUsuario.getRutaAvatar());
-            preparedStatement.setString(4, nuevoUsuario.getTarjetaPago());
-
-            preparedStatement.execute();
-
-            System.out.println("Insert existoso");
-
-        } catch (Exception e) {
-            System.out.println("ERROR al insertar el usuario");
-            System.out.println(e);
-        }
-    }*/
 
 
     /**
@@ -164,7 +137,7 @@ public class UsuarioDB {
             Statement statement = con.createStatement();
             ResultSet resultSet = statement.executeQuery(query);
             while (resultSet.next()) {
-                    if (resultSet.getString("NOMBRE").equals(nombre)) {
+                if (resultSet.getString("NOMBRE").equals(nombre)) {
                     user.setNombre(nombre);
                     user.setContrasenya(resultSet.getString("CONTRASENYA"));
                 } else {

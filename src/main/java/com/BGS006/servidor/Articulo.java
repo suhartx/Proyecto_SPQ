@@ -7,10 +7,16 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 
+/**
+ * Clase de articulos en servidor
+ */
 @Path("articulos")
 public class Articulo {
 
-
+    /**
+     * Hace una petición GET de los articullos que hay
+     * @return Arraylist de usuarios
+     */
     @GET
     @Path("/verArticulos")
     @Produces(MediaType.APPLICATION_JSON)
@@ -20,6 +26,9 @@ public class Articulo {
         return articulos;
     }
 
+    /**
+     * Hace una petición POST de un articulo
+     */
     @POST
     @Path("/anyadirArticulos")
     public Boolean AnyadirArticulo(Articulo articulo){

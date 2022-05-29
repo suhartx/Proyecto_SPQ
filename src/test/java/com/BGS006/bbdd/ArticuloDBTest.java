@@ -13,6 +13,10 @@ import java.sql.Connection;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
+
+/**
+ * Clase que testea el ArticuloDB
+ */
 public class ArticuloDBTest {
 
     public ArticuloDBTest() {
@@ -48,13 +52,6 @@ public class ArticuloDBTest {
         assertEquals(3,ArticuloDB.rowcount());
     }
 
-    @Test
-    public void testEliminarCompra()
-    {
-//        ArticuloDB.insertarArticulo(a);
-//        ArticuloDB.eliminarArticulo(a);
-//        assertEquals(0,UsuarioDB.rowcount());
-    }
 
     @Test
     public void testrowcount()

@@ -15,6 +15,10 @@ import java.sql.Connection;
 
 import static org.junit.Assert.*;
 
+
+/**
+ * Clase que testea los usuarios en la BD
+ */
 public class UsuarioDBTest {
 
     public UsuarioDBTest() {

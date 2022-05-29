@@ -12,6 +12,9 @@ import java.sql.Statement;
 
 import static org.junit.Assert.*;
 
+/**
+ * Clase que testea la conexion a la BD
+ */
 public class ConexionDBTest {
 
     @InjectMocks

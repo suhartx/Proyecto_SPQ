@@ -11,7 +11,9 @@ import javax.jdo.Transaction;
 import com.BGS006.cliente.jdo.Usuario;
 
 
-//This class implements Singleton and DAO patterns
+/**
+ * Clase que gestiona el DAO del usuario
+ */
 public class UsuarioDAO extends DataAccessObjectBase implements IDataAccessObject<Usuario> {
 
 	/**

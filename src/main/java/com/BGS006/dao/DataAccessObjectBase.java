@@ -5,7 +5,9 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
 import javax.jdo.Transaction;
 
-//This class defines the basic methods of the DAO pattern.
+/**
+ * Clase que define el patrón DAO de nuestro proyecto
+ */
 public class DataAccessObjectBase {
 	protected static PersistenceManagerFactory pmf = JDOHelper.getPersistenceManagerFactory("datanucleus.properties");
 

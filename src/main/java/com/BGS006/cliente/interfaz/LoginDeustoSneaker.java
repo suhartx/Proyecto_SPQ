@@ -30,7 +30,9 @@ import com.BGS006.bbdd.UsuarioDB;
 import com.BGS006.cliente.bbdd.BD;
 import com.BGS006.cliente.jdo.*;
 
-
+/**
+ * Ventana principal de login del cliente
+ */
 public class LoginDeustoSneaker {
 
 	private JFrame frame;

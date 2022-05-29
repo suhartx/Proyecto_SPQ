@@ -17,6 +17,9 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+/**
+ * Clase con test d eusuario
+ */
 public class UsuarioTest {
 
     @Rule
@@ -25,6 +28,10 @@ public class UsuarioTest {
     private static HttpServer server;
     private static WebTarget target;
 
+    /**
+     * GGeneramos un setup en el que iniciamos un server y cliente
+     * @throws Exception
+     */
     @BeforeClass
     public static void setUp() throws Exception {
         // start the server
@@ -41,13 +48,17 @@ public class UsuarioTest {
         target = c.target(Main.BASE_URI);
     }
 
+    /**
+     * Despues paramos el servidor
+     * @throws Exception
+     */
     @AfterClass
     public static void tearDown() throws Exception {
         server.stop();
     }
 
     /**
-     * Test to see that the message "Got it!" is sent in the response.
+     * Test de peticiones
      */
     @Test
     @PerfTest(invocations = 100, threads = 40)

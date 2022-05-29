@@ -10,7 +10,9 @@ import javax.jdo.Transaction;
 
 import com.BGS006.cliente.jdo.Compra;
 
-
+/**
+ * Clase que gestiona el DAO de las compras
+ */
 public class CompraDAO extends DataAccessObjectBase implements IDataAccessObject<Compra> {
 
 	private static CompraDAO instance;

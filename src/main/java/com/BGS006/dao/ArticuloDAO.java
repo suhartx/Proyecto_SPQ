@@ -11,7 +11,9 @@ import javax.jdo.Transaction;
 import com.BGS006.cliente.jdo.Articulo;
 import com.BGS006.cliente.jdo.Compra;
 
-
+/**
+ * Clase que gestiona el DAO del articulo
+ */
 public class ArticuloDAO extends DataAccessObjectBase implements IDataAccessObject<Articulo> {
 
     private static ArticuloDAO instance;

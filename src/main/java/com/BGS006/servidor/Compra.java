@@ -7,9 +7,16 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 
+/**
+ * Clase de compras en servidor
+ */
 @Path("compras")
 public class Compra {
 
+    /**
+     * Hace una petición GET de los compras que hay
+     * @return Arraylist de compras
+     */
     @GET
     @Path("/verCompras")
     @Produces(MediaType.APPLICATION_JSON)
@@ -19,6 +26,9 @@ public class Compra {
         return compras;
     }
 
+    /**
+     * Hace una petición POST de lo compra
+     */
     @POST
     @Path("/anyadirCompras")
     public Boolean AnyadirUsuario(Usuario usuario){

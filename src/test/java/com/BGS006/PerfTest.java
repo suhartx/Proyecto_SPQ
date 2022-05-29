@@ -15,6 +15,9 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+/**
+ * Clase de test de performance con contiperf
+ */
 @org.databene.contiperf.PerfTest(invocations = 5)
 @Required(max = 1200, average = 250)
 public class PerfTest {
@@ -65,7 +68,7 @@ public class PerfTest {
     @Required(max = 1200, average = 300)
     public void testArticulos() throws Exception {
         logger.info("Starting testBagMultiply");
-        // {[12 CHF][7 USD]} *2 == {[24 CHF][14 USD]}
+
         Articulo expected = new Zapatillas("hola",20,1,"",6,5, "negro","H");
         assertEquals(suhar.getCompras().get(0).getArticulo().get(0), a1);
         assertEquals(suhar.getCarro().get(0), a3);
