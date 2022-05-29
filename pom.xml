@@ -55,13 +55,8 @@
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-binding</artifactId>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>org.glassfish.jersey.media</groupId>-->
-        <!--            <artifactId>jersey-media-json-jackson</artifactId>-->
-        <!--            <version>2.30.1</version>-->
-        <!--        </dependency>-->
 
-        <!-- Need this to hide warning for jakarta.activation.DataSource -->
+
         <!-- https://mvnrepository.com/artifact/jakarta.activation/jakarta.activation-api -->
 
         <dependency>
@@ -225,17 +220,7 @@
                 </configuration>
 
             </plugin>
-<!--            <plugin>
-                <groupId>org.datanucleus</groupId>
-                <artifactId>datanucleus-maven-plugin</artifactId>
-                <version>5.2.1</version>
-                <configuration>
-                    <fork>false</fork>
-                    <log4jConfiguration>${config.files.dir}/log4j.properties</log4jConfiguration>
-                    <verbose>true</verbose>
-                    <props>${config.files.dir}/datanucleus.properties</props>
-                </configuration>
-            </plugin>-->
+
 
             <plugin>
                 <groupId>org.jacoco</groupId>
@@ -292,66 +277,14 @@
                     <verbose>true</verbose>
                     <fork>false</fork>
                 </configuration>
-                <!--                <executions>-->
-                <!--                    <execution>-->
-                <!--                        <phase>process-classes</phase>-->
-                <!--                        <goals>-->
-                <!--                            <goal>enhance</goal>-->
-                <!--                        </goals>-->
-                <!--                    </execution>-->
-                <!--                </executions>-->
+
             </plugin>
 
         </plugins>
     </build>
 
 
-    <!--   <profiles>
-        <profile>
-            <id>cliente</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.2.1</version>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>java</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <mainClass>com.cliente.Interfaz.LoginDeusto_Sneaker</mainClass>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
-            <id>datos</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <version>1.2.1</version>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>java</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                        <configuration>
-                            <mainClass>com.cliente.BGS006.Cliente.jdo.MainJDO</mainClass>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-      </profiles> -->
+
     <profiles>
         <profile>
             <id>datos</id>

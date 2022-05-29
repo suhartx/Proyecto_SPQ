@@ -10,6 +10,10 @@ import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
+
+/**
+ * Clase de todos los test unitarios SPRINT 2
+ */
 public class CoverTest {
 
     Articulo art;
