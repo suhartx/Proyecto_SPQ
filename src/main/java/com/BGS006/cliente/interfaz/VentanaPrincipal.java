@@ -258,7 +258,7 @@ public class VentanaPrincipal extends JFrame {
 		}
 		BD.closeBD(con);
 	}
-	/*
+	/**
 	 * Metodos para el sistema de busqueda de articulos
 	 */
 	public void cargarPanelesConCalcetines() {

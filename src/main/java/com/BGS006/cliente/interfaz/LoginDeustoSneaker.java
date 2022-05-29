@@ -379,6 +379,9 @@ public class LoginDeustoSneaker {
 
 	}
 
+	/**
+	 * metodo que se utiliza para borrar la informacion de los campos
+	 */
 	public void vaciarCampos() {
 		nombre.setText("");
 		password.setText("");
